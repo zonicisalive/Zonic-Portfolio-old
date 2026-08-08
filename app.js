@@ -3489,40 +3489,213 @@ class KonamiCode {
     }
   }
 
-  _trigger() {
-    if (!this.overlay) return;
+  _playSynth() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 synth arpeggio
+      notes.forEach((freq, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.08, ctx.currentTime + idx * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.08 + 0.2);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + idx * 0.08);
+        osc.stop(ctx.currentTime + idx * 0.08 + 0.22);
+      });
+    } catch (e) {}
+  }
 
-    // Hyper-speed matrix rain for 2.5s
+  _trigger() {
+    this._playSynth();
+
+    // Step 1: Show the classic ACCESS GRANTED overlay
+    if (this.overlay) {
+      this.overlay.removeAttribute('aria-hidden');
+      this.overlay.classList.add('active');
+
+      // Show ACCESS GRANTED banner briefly (1.8s), then launch hack terminal
+      setTimeout(() => {
+        this.overlay.classList.remove('active');
+        this.overlay.setAttribute('aria-hidden', 'true');
+        setTimeout(() => this._launchHackSequence(), 200);
+      }, 1800);
+    } else {
+      // No overlay, go straight to hack terminal
+      this._launchHackSequence();
+    }
+  }
+
+  _launchHackSequence() {
+    // Build the full-screen hack terminal
+    const terminal = document.createElement('div');
+    terminal.id = 'konami-hack-terminal';
+    terminal.setAttribute('aria-modal', 'true');
+    terminal.setAttribute('role', 'dialog');
+    terminal.innerHTML = `
+      <div class="kht-bar">
+        <span class="kht-dot" style="background:#FF5F57"></span>
+        <span class="kht-dot" style="background:#FFBD2E"></span>
+        <span class="kht-dot" style="background:#28CA41"></span>
+        <span class="kht-title">root@zonic-system:~</span>
+        <button class="kht-close" title="Close">✕</button>
+      </div>
+      <div class="kht-screen" id="kht-screen"></div>
+    `;
+    document.body.appendChild(terminal);
+    // Blur the background
+    document.body.classList.add('kht-active');
+
+    // Close button
+    terminal.querySelector('.kht-close').addEventListener('click', () => this._endHack(terminal));
+
+    // Typewriter lines
+    const lines = [
+      { text: '$ sudo access --override --user=root', delay: 0, cls: 'kht-cmd' },
+      { text: '[sudo] password for zonic: ••••••••', delay: 500, cls: 'kht-muted' },
+      { text: 'Verifying identity ... OK', delay: 1100, cls: 'kht-ok' },
+      { text: 'Loading system manifest ...', delay: 1700, cls: 'kht-muted' },
+      { text: '┌─ SYSTEM BREACH INITIATED ─────────────────┐', delay: 2200, cls: 'kht-warn' },
+      { text: '│  Host     : portfolio.zonic.dev           │', delay: 2400, cls: 'kht-warn' },
+      { text: '│  Protocol : HTTPS/TLS 1.3 (bypassed)      │', delay: 2550, cls: 'kht-warn' },
+      { text: '│  Cipher   : AES-256-GCM (nullified)       │', delay: 2700, cls: 'kht-warn' },
+      { text: '└───────────────────────────────────────────┘', delay: 2850, cls: 'kht-warn' },
+      { text: '$ ls -la /secrets/', delay: 3200, cls: 'kht-cmd' },
+      { text: '-rw-r--r--  contact_email.txt', delay: 3700, cls: 'kht-file' },
+      { text: '-rw-------  unreleased_projects.md', delay: 3900, cls: 'kht-file' },
+      { text: '-rwx------  resume_2026.pdf', delay: 4100, cls: 'kht-file' },
+      { text: '$ ./activate_glitch_mode.sh', delay: 4500, cls: 'kht-cmd' },
+      { text: 'Injecting scanlines into DOM ...  DONE', delay: 6000, cls: 'kht-ok' },
+      { text: 'Overriding CSS variables ...      DONE', delay: 6300, cls: 'kht-ok' },
+      { text: 'Corrupting project cards ...      DONE', delay: 6600, cls: 'kht-ok' },
+      { text: '⚡ GLITCH MODE ACTIVE — 15 seconds', delay: 7000, cls: 'kht-big' },
+      { text: '  terminal auto-closes in 15s ...', delay: 7400, cls: 'kht-muted' },
+    ];
+
+    const screen = terminal.querySelector('#kht-screen');
+    let glitchActive = false;
+
+    lines.forEach(({ text, delay, cls }) => {
+      setTimeout(() => {
+        const line = document.createElement('div');
+        line.className = `kht-line ${cls}`;
+        line.textContent = text;
+        screen.appendChild(line);
+        screen.scrollTop = screen.scrollHeight;
+
+        // At the glitch step, activate site-wide glitch mode
+        if (cls === 'kht-big' && !glitchActive) {
+          glitchActive = true;
+          this._activateGlitchMode(terminal);
+        }
+      }, delay);
+    });
+
+    // Only the X button can close early — no click-anywhere dismiss
+  }
+
+  _activateGlitchMode(terminal) {
+    // Keep blur (kht-active) on — glitch colours show through it
+    document.body.classList.add('konami-glitch-mode');
+
+    const root = document.documentElement;
+    // Random bright colour generator
+    // Cyberpunk Glitch Palette
+    const cyberpunkPalette = [
+      { hex: '#FF007F', rgb: '255, 0, 127' },  // Hot Pink
+      { hex: '#00FFD1', rgb: '0, 255, 209' },  // Cyan
+      { hex: '#FFF000', rgb: '255, 240, 0' },  // Acid Yellow
+      { hex: '#007BFF', rgb: '0, 123, 255' },  // Electric Blue
+    ];
+    let pIdx = 0;
+
+    // Rapid CSS variable injection — cycles through Hot Pink, Cyan, Acid Yellow, Electric Blue
+    const varTimer = setInterval(() => {
+      pIdx = (pIdx + 1) % cyberpunkPalette.length;
+      const themeCol = cyberpunkPalette[pIdx];
+      const cyanCol = cyberpunkPalette[(pIdx + 1) % cyberpunkPalette.length];
+      const accentCol = cyberpunkPalette[(pIdx + 2) % cyberpunkPalette.length];
+
+      root.style.setProperty('--color-matrix-green', themeCol.hex);
+      root.style.setProperty('--color-matrix-green-rgb', themeCol.rgb);
+      root.style.setProperty('--color-cyan', cyanCol.hex);
+      root.style.setProperty('--color-accent', accentCol.hex);
+    }, 100);
+
+    // Boost matrix rain with Cyberpunk Glitch Palette color cycling
     if (this.rain) {
       const origSpeed = this.rain.speedSetting;
       const origDensity = this.rain.density;
-      this.rain.speedSetting = 60;
-      this.rain.frameInterval = 1000 / 60;
+      const origColor = this.rain.color;
+      this.rain.speedSetting = 45;
+      this.rain.frameInterval = 1000 / 45;
       this.rain.density = 1;
-      setTimeout(() => {
+      const colors = ['#FF007F', '#00FFD1', '#FFF000', '#007BFF'];
+      let ci = 0;
+      const ct = setInterval(() => {
+        ci = (ci + 1) % colors.length;
+        if (typeof this.rain.setColor === 'function') this.rain.setColor(colors[ci]);
+      }, 150);
+      this._glitchCleanup = () => {
+        clearInterval(ct);
+        clearInterval(varTimer);
+        // Restore original CSS variables
+        root.style.removeProperty('--color-matrix-green');
+        root.style.removeProperty('--color-matrix-green-rgb');
+        root.style.removeProperty('--color-cyan');
+        root.style.removeProperty('--color-accent');
         this.rain.speedSetting = origSpeed;
         this.rain.frameInterval = 1000 / origSpeed;
         this.rain.density = origDensity;
-      }, 2500);
+        if (typeof this.rain.setColor === 'function') this.rain.setColor(origColor);
+      };
+    } else {
+      this._glitchCleanup = () => {
+        clearInterval(varTimer);
+        root.style.removeProperty('--color-matrix-green');
+        root.style.removeProperty('--color-matrix-green-rgb');
+        root.style.removeProperty('--color-cyan');
+        root.style.removeProperty('--color-accent');
+      };
     }
 
-    // Show overlay
-    this.overlay.removeAttribute('aria-hidden');
-    this.overlay.classList.add('active');
+    // Live countdown ticker in the terminal
+    let secs = 15;
+    const countdownTimer = setInterval(() => {
+      secs--;
+      const screen = terminal.querySelector('#kht-screen');
+      if (screen) {
+        // Update or create the countdown line
+        let cdLine = screen.querySelector('.kht-countdown');
+        if (!cdLine) {
+          cdLine = document.createElement('div');
+          cdLine.className = 'kht-line kht-countdown kht-muted';
+          screen.appendChild(cdLine);
+        }
+        cdLine.textContent = `  closing in ${secs}s ...`;
+        screen.scrollTop = screen.scrollHeight;
+      }
+      if (secs <= 0) {
+        clearInterval(countdownTimer);
+        if (this._glitchCleanup) clearInterval(this._glitchCleanup._varTimer);
+      }
+    }, 1000);
+    this._countdownTimer = countdownTimer;
 
-    // Auto-dismiss after 3s
-    setTimeout(() => {
-      this.overlay.classList.remove('active');
-      this.overlay.setAttribute('aria-hidden', 'true');
-    }, 3000);
+    // Auto-end after 15s
+    this._glitchTimer = setTimeout(() => this._endHack(terminal), 15000);
+  }
 
-    // Click to dismiss early
-    const dismiss = () => {
-      this.overlay.classList.remove('active');
-      this.overlay.setAttribute('aria-hidden', 'true');
-      this.overlay.removeEventListener('click', dismiss);
-    };
-    this.overlay.addEventListener('click', dismiss);
+  _endHack(terminal) {
+    clearTimeout(this._glitchTimer);
+    clearInterval(this._countdownTimer);
+    if (this._glitchCleanup) { this._glitchCleanup(); this._glitchCleanup = null; }
+    document.body.classList.remove('konami-glitch-mode');
+    document.body.classList.remove('kht-active');
+    terminal.classList.add('kht-closing');
+    setTimeout(() => { if (terminal.parentNode) terminal.parentNode.removeChild(terminal); }, 400);
   }
 }
 
