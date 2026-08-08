@@ -1,0 +1,64 @@
+<!-- assets/project8.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Window -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">bit-vault.ts</text>
+
+  <!-- Vault Header -->
+  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">🛡️ BIT VAULT — ZERO-KNOWLEDGE</text>
+  <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Key Derivation / Encryption Status -->
+  <text x="60" y="100" font-family="monospace" font-size="9" fill="#808080">Cipher:</text>
+  <text x="110" y="100" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">AES-256-GCM</text>
+  <text x="200" y="100" font-family="monospace" font-size="9" fill="#808080">KDF:</text>
+  <text x="230" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">PBKDF2 (100k iter)</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="108" x2="340" y2="108" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Vault Items list -->
+  <text x="60" y="125" font-family="monospace" font-size="9" fill="#E0E0E0">🔑 GitHub Account</text>
+  <text x="220" y="125" font-family="monospace" font-size="9" fill="#00F0FF">2FA [649 201]</text>
+  <text x="310" y="125" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+
+  <text x="60" y="142" font-family="monospace" font-size="9" fill="#E0E0E0">💳 Primary Card</text>
+  <text x="220" y="142" font-family="monospace" font-size="9" fill="#808080">•••• 4242</text>
+  <text x="310" y="142" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+
+  <text x="60" y="159" font-family="monospace" font-size="9" fill="#E0E0E0">📁 tax_return_2025.pdf</text>
+  <text x="220" y="159" font-family="monospace" font-size="9" fill="#808080">Encrypted (1.4MB)</text>
+  <text x="310" y="159" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="168" x2="340" y2="168" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Security Audit Row -->
+  <text x="60" y="185" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Security Audit (k-Anonymity):</text>
+  <text x="60" y="200" font-family="monospace" font-size="9" fill="#2ACA45">✓ 0 Exposed Passwords Found</text>
+
+  <text x="60" y="217" font-family="monospace" font-size="9" fill="#808080">TOTP Timer:</text>
+  <!-- Progress bar track -->
+  <rect x="130" y="210" width="150" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+  <rect x="131" y="211" width="105" height="6" rx="3" fill="#00FF8C" fill-opacity="0.85"/>
+  <text x="290" y="217" font-family="monospace" font-size="9" fill="#00FF8C">21s</text>
+
+  <!-- Status bar -->
+  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Zero-Knowledge Vault Locked &amp; Secured</text>
+  <!-- Blinking cursor -->
+  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

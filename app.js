@@ -1575,6 +1575,20 @@ if __name__ == "__main__":
         code: '',
         images: ['assets/project7.svg'],
         demoUrl: 'https://github.com/ZonicExists/wl-gammactl-rust'
+      },
+      '8': {
+        title: 'Bit-Vault',
+        description: 'Zero-Knowledge Password Manager & Encrypted File Vault featuring PBKDF2 key stretching, AES-256-GCM authenticated encryption, RFC 6238 TOTP 2FA generator, and k-Anonymity breach auditing.',
+        features: [
+          'Zero-Knowledge Architecture with PBKDF2 (100k iter) & AES-256-GCM encryption',
+          'Live RFC 6238 2FA TOTP authenticator with 30s countdown progress',
+          'Encrypted file & document hub with 1-click decrypted downloads',
+          'k-Anonymity Pwned Password Breach Audit & Cryptographic Password Generator'
+        ],
+        tech: ['TypeScript', 'Security', 'AES-256', 'Crypto'],
+        code: '',
+        images: ['assets/project8.svg'],
+        demoUrl: 'https://github.com/ZonicExists/Bit-Vault'
       }
     };
 

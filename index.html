@@ -779,6 +779,7 @@
                 <div class="project-filters" role="radiogroup" aria-label="Filter projects by category"
                     data-animate="fade-up">
                     <button class="filter-btn active" data-filter="all" role="radio" aria-checked="true">All</button>
+                    <button class="filter-btn" data-filter="security" role="radio" aria-checked="false">Security</button>
                     <button class="filter-btn" data-filter="rust" role="radio" aria-checked="false">Rust</button>
                     <button class="filter-btn" data-filter="python" role="radio" aria-checked="false">Python</button>
                     <button class="filter-btn" data-filter="c" role="radio" aria-checked="false">C</button>
@@ -1371,6 +1372,105 @@
                                         Code
                                     </a>
                                     <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 8: Bit Vault (Zero-Knowledge Password Manager & File Vault) -->
+                    <article class="project-card" data-tags="security,typescript,crypto" data-project-id="8"
+                        data-animate="blur-up" data-delay="320">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bit-Vault - Zero-Knowledge Password Manager &amp; Encrypted File Vault">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">bit-vault.ts</text>
+
+                                  <!-- Vault Header -->
+                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">🛡️ BIT VAULT — ZERO-KNOWLEDGE</text>
+                                  <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Key Derivation / Encryption Status -->
+                                  <text x="60" y="100" font-family="monospace" font-size="9" fill="#808080">Cipher:</text>
+                                  <text x="110" y="100" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">AES-256-GCM</text>
+                                  <text x="200" y="100" font-family="monospace" font-size="9" fill="#808080">KDF:</text>
+                                  <text x="230" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">PBKDF2 (100k iter)</text>
+
+                                  <line x1="60" y1="108" x2="340" y2="108" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Vault Items list -->
+                                  <text x="60" y="125" font-family="monospace" font-size="9" fill="#E0E0E0">🔑 GitHub Account</text>
+                                  <text x="220" y="125" font-family="monospace" font-size="9" fill="#00F0FF">2FA [649 201]</text>
+                                  <text x="310" y="125" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+
+                                  <text x="60" y="142" font-family="monospace" font-size="9" fill="#E0E0E0">💳 Primary Card</text>
+                                  <text x="220" y="142" font-family="monospace" font-size="9" fill="#808080">•••• 4242</text>
+                                  <text x="310" y="142" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+
+                                  <text x="60" y="159" font-family="monospace" font-size="9" fill="#E0E0E0">📁 tax_return_2025.pdf</text>
+                                  <text x="220" y="159" font-family="monospace" font-size="9" fill="#808080">Encrypted (1.4MB)</text>
+                                  <text x="310" y="159" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+
+                                  <line x1="60" y1="168" x2="340" y2="168" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Security Audit Row -->
+                                  <text x="60" y="185" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Security Audit (k-Anonymity):</text>
+                                  <text x="60" y="200" font-family="monospace" font-size="9" fill="#2ACA45">✓ 0 Exposed Passwords Found</text>
+
+                                  <text x="60" y="217" font-family="monospace" font-size="9" fill="#808080">TOTP Timer:</text>
+                                  <rect x="130" y="210" width="150" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+                                  <rect x="131" y="211" width="105" height="6" rx="3" fill="#00FF8C" fill-opacity="0.85"/>
+                                  <text x="290" y="217" font-family="monospace" font-size="9" fill="#00FF8C">21s</text>
+
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Zero-Knowledge Vault Locked &amp; Secured</text>
+                                  <!-- Blinking cursor -->
+                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                  </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="8" aria-label="View Bit-Vault details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Bit-Vault</h3>
+                                <p class="project-description">Zero-Knowledge password manager &amp; AES-256 encrypted file vault with 2FA TOTP &amp; breach audit.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">TypeScript</span>
+                                    <span class="tech-badge">Security</span>
+                                    <span class="tech-badge">Crypto</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ZonicExists/Bit-Vault" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Bit-Vault repository">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="https://github.com/ZonicExists/Bit-Vault" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Bit-Vault source code">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                                             <path
                                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
