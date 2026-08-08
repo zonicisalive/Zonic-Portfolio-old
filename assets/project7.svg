@@ -1,0 +1,69 @@
+<!-- assets/project7.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Terminal body -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">wl-gammactl-rust</text>
+
+  <!-- Command prompt -->
+  <text x="56" y="76" font-family="monospace" font-size="9" fill="#00FF8C">$ wl-gammactl --output eDP-1 \</text>
+  <text x="56" y="89" font-family="monospace" font-size="9" fill="#00FF8C">    --gamma 1.2 --temp 6500K --brightness 1.0</text>
+  <text x="56" y="102" font-family="monospace" font-size="9" fill="#00F0FF">[Wayland] Connected · wlr-gamma-control-v1</text>
+
+  <!-- Divider -->
+  <line x1="56" y1="112" x2="344" y2="112" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- R channel label + bar -->
+  <text x="56" y="128" font-family="monospace" font-size="9" fill="#FF5555" font-weight="bold">R</text>
+  <rect x="70" y="118" width="200" height="10" rx="2" fill="#1a1a1a"/>
+  <rect x="70" y="118" width="160" height="10" rx="2" fill="#FF5555" fill-opacity="0.85"/>
+  <text x="278" y="128" font-family="monospace" font-size="9" fill="#FF5555">1.00</text>
+
+  <!-- G channel label + bar -->
+  <text x="56" y="148" font-family="monospace" font-size="9" fill="#50FA7B" font-weight="bold">G</text>
+  <rect x="70" y="138" width="200" height="10" rx="2" fill="#1a1a1a"/>
+  <rect x="70" y="138" width="176" height="10" rx="2" fill="#50FA7B" fill-opacity="0.85"/>
+  <text x="278" y="148" font-family="monospace" font-size="9" fill="#50FA7B">1.10</text>
+
+  <!-- B channel label + bar -->
+  <text x="56" y="168" font-family="monospace" font-size="9" fill="#8BE9FD" font-weight="bold">B</text>
+  <rect x="70" y="158" width="200" height="10" rx="2" fill="#1a1a1a"/>
+  <rect x="70" y="158" width="192" height="10" rx="2" fill="#8BE9FD" fill-opacity="0.85"/>
+  <text x="278" y="168" font-family="monospace" font-size="9" fill="#8BE9FD">1.20</text>
+
+  <!-- Divider -->
+  <line x1="56" y1="179" x2="344" y2="179" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Info rows -->
+  <text x="56" y="195" font-family="monospace" font-size="9" fill="#808080">Temp:</text>
+  <text x="96" y="195" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">6500K</text>
+  <text x="152" y="195" font-family="monospace" font-size="9" fill="#E0E0E0">Daylight Neutral</text>
+
+  <text x="56" y="210" font-family="monospace" font-size="9" fill="#808080">Bright:</text>
+  <text x="104" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">100%</text>
+  <text x="144" y="210" font-family="monospace" font-size="9" fill="#808080">Contrast:</text>
+  <text x="207" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.05</text>
+
+  <text x="56" y="225" font-family="monospace" font-size="9" fill="#808080">Sat:</text>
+  <text x="84" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.15</text>
+  <text x="120" y="225" font-family="monospace" font-size="9" fill="#808080">Gamma:</text>
+  <text x="171" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.20</text>
+
+  <!-- Status bar -->
+  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+  <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Gamma ramp applied to eDP-1 [Rust]</text>
+  <!-- Blinking cursor -->
+  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

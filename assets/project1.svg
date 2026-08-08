@@ -1,0 +1,47 @@
+<!-- assets/project1.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Window -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">python quiz.py</text>
+
+  <!-- Command -->
+  <text x="60" y="80" font-family="monospace" font-size="11" fill="#00FF8C">$ python quiz.py</text>
+  <text x="60" y="97" font-family="monospace" font-size="10" fill="#00F0FF">Question 1/10:</text>
+  <text x="60" y="113" font-family="monospace" font-size="10" fill="#E0E0E0">What is 2 + 2?</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="122" x2="340" y2="122" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Multiple choice options -->
+  <text x="60" y="140" font-family="monospace" font-size="10" fill="#808080">[A] 3</text>
+  <text x="60" y="158" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">[B] 4 ✓</text>
+  <text x="60" y="176" font-family="monospace" font-size="10" fill="#808080">[C] 5</text>
+  <text x="60" y="194" font-family="monospace" font-size="10" fill="#808080">[D] 6</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="203" x2="340" y2="203" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Score -->
+  <text x="60" y="220" font-family="monospace" font-size="10" fill="#00F0FF">Score:</text>
+  <text x="110" y="220" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">8/10  (80%)</text>
+
+  <!-- Status bar -->
+  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Quiz complete — all answers reviewed</text>
+
+  <!-- Cursor blink -->
+  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

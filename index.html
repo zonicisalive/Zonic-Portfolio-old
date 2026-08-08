@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zonic Exists - Knows basics of Linux, Networking, and Automation.">
+    <meta name="keywords" content="matrix design, Automation, scripter, designer, portfolio, interactive design">
+    <meta name="author" content="Zonic Exists">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Open Graph / Facebook / Discord / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zonicisalive.com/">
+    <meta property="og:title" content="Zonic Is Alive">
+    <meta property="og:description"
+        content="Portfolio of Zonic - Developer, scripter, and creator of awesome projects.">
+    <meta property="og:image" content="https://zonicisalive.com/assets/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Zonic Exists - Intermediate Programmer - Scripter </title>
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zonic Exists",
+  "alternateName": "Prince",
+  "url": "https://zonicisalive.com",
+  "image": "https://zonicisalive.com/assets/profile.jpg",
+  "jobTitle": "Intermediate Programmer & Scripter",
+  "description": "Knows basics of Linux, Networking, and Automation.",
+  "sameAs": [
+    "https://github.com/ZonicExists",
+    "https://instagram.com/princeisalive"
+  ],
+  "knowsAbout": [
+    "Python",
+    "C Programming",
+    "Linux",
+    "System Internals"
+  ]
+}
+</script>
+
+</head>
+
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Matrix Rain Canvas Background -->
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+    <!-- WebGL Starfield -->
+    <canvas id="stellar-canvas" aria-hidden="true"></canvas>
+
+    <!-- Spider Web SVG overlay -->
+    <svg id="spider-web" aria-hidden="true" width="100%" height="100%" viewBox="0 0 1920 1080"
+        preserveAspectRatio="xMidYMid slice"
+        style="position:fixed;inset:0;pointer-events:none;z-index:var(--z-content);opacity:0.9;">
+        <g id="spider-web-lines" transform="translate(0,0)"></g>
+    </svg>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" aria-hidden="true">
+        <span class="scroll-progress-bar"></span>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <span class="logo-text glitch" data-text="Zonic">Zonic</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" role="list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" type="button" aria-label="Toggle neon effects" aria-pressed="false"
+                        title="Toggle neon effects">
+                        <!-- existing svg -->
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343M13 10C13 11.657 11.657 13 10 13C8.343 13 7 11.657 7 10C7 8.343 8.343 7 10 7C11.657 7 13 8.343 13 10Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+    </header>
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-label" data-animate="fade-down" data-distance="20">Welcome to the Matrix</p>
+                    <h1 class="hero-title">
+                        <span class="glitch-title" data-text="Zonic" data-animate="fade-up" data-delay="120"
+                            data-distance="30">Zonic</span>
+                        <span class="glitch-title" data-text="Exists" data-animate="fade-up" data-delay="220"
+                            data-distance="30">Exists</span>
+                    </h1>
+                    <p class="hero-subtitle" data-animate="fade-up" data-delay="320">
+                        <span class="typing-text">Intermediate Programmer · Scripter · Automation</span>
+                    </p>
+                    <p class="hero-description" data-animate="fade-up" data-delay="420">
+                        "I don’t chase exploits; I chase the logic that creates them."
+                    </p>
+                    <div class="hero-cta" data-animate="fade-up" data-delay="520">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                        </a>
+                        <a href="assets/resume.pdf" class="btn btn-secondary" download>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                    <!-- Currently Learning Badge -->
+                    <div class="currently-learning" data-animate="fade-up" data-delay="620" aria-live="polite">
+                        <span class="cl-prompt">$&nbsp;</span><span class="cl-label">currently_learning</span><span class="cl-sep">:&nbsp;</span><span id="cl-topic" class="cl-topic"></span><span class="cl-cursor" aria-hidden="true">_</span>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true" data-animate="scale-in" data-delay="350">
+                    <div class="hero-orb hero-orb-one"></div>
+                    <div class="hero-orb hero-orb-two"></div>
+                    <!-- HUD floating data chips -->
+                    <div class="radar-hud-chip radar-hud-chip--tl" aria-hidden="true">
+                        <span class="hud-chip-label">SYS</span>
+                        <span class="hud-chip-value" id="hud-ping">42ms</span>
+                    </div>
+                    <div class="radar-hud-chip radar-hud-chip--tr" aria-hidden="true">
+                        <span class="hud-chip-label">SCAN</span>
+                        <span class="hud-chip-value hud-chip-blink">LIVE</span>
+                    </div>
+                    <div class="radar-hud-chip radar-hud-chip--bl" aria-hidden="true">
+                        <span class="hud-chip-label">BLIP</span>
+                        <span class="hud-chip-value" id="hud-blips">03</span>
+                    </div>
+                    <div class="radar-hud-chip radar-hud-chip--br" aria-hidden="true">
+                        <span class="hud-chip-label">FREQ</span>
+                        <span class="hud-chip-value">2.4GHz</span>
+                    </div>
+                    <div class="hologram-container interactive-hologram"
+                        aria-label="Interactive matrix radar hologram visual" id="hero-hologram-wrap">
+                        <canvas id="hero-radar-canvas" width="300" height="300"
+                            style="display:block;width:100%;height:100%;border-radius:50%;"></canvas>
+                        <!-- Scanline overlay -->
+                        <div class="hologram-scanlines" aria-hidden="true"></div>
+                        <!-- Outer ring pulse -->
+                        <div class="hologram-ring-pulse" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true" data-animate="fade-up" data-delay="700">
+                <span>Scroll</span>
+
+                <svg class="scroll-arrow" width="40" height="80" viewBox="0 0 40 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10 L20 50 M10 40 L20 50 L30 40" stroke="currentColor" stroke-width="3" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section-title" data-animate="fade-right" data-distance="60">
+                    <span class="section-number">01.</span>
+                    <span class="glitch" data-text="About">About</span>
+                </h2>
+
+                <div class="about-content">
+                    <div class="about-text" data-animate="fade-up" data-delay="100">
+                        <p data-animate="fade-up" data-delay="160">I'm a teen student with a strong interest in computer
+                            science and technology. I enjoy learning how system works, exploring programming, and
+                            building small projects that help me improve my skills.</p>
+                        <p data-animate="fade-up" data-delay="240">I primarily work with Python, Bash, and C, and I
+                            enjoy creating simple applications, websites, and automation scripts. I love understanding
+                            concepts from the ground up and experimenting with new ideas.</p>
+                        <p data-animate="fade-up" data-delay="320">When I'm not studying or coding, I spend time
+                            exploring open-source tools, watching tech tutorials, or learn penetration testing that help
+                            me grow as a learner.</p>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item" data-year="2026" data-animate="fade-up" data-delay="120">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Intermediate Programmer</h3>
+                                <p>Participating in coding events and collaborative projects</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2023" data-animate="fade-up" data-delay="220">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Worked at Funngro to automate Email Marketing</h3>
+                                <p>Presented a small automation or programming-based projects</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2020" data-animate="fade-up" data-delay="320">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Started Learning Programming</h3>
+                                <p>Began exploring Python and basic computer science concepts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <!-- Skills Section -->
+                <h2 class="section-title" data-animate="fade-right" data-distance="60">
+                    <span class="section-number">02.</span>
+                    <span class="glitch" data-text="Skills">Skills</span>
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-category" data-animate="fade-up">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="Python" data-level="85">
+                                <div class="skill-bar-label">
+                                    <span>Python</span>
+                                    <span class="skill-bar-percent">85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="--skill-level: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="C" data-level="70">
+                                <div class="skill-bar-label">
+                                    <span>C</span>
+                                    <span class="skill-bar-percent">70%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="--skill-level: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Bash/Shell" data-level="80">
+                                <div class="skill-bar-label">
+                                    <span>Bash/Shell</span>
+                                    <span class="skill-bar-percent">80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="--skill-level: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category" data-animate="fade-up" data-delay="120">
+                        <h3>Specializations</h3>
+                        <div class="radial-skills">
+                            <div class="radial-skill" data-skill="System Programming" data-level="60">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="radial-bg" cx="60" cy="60" r="54" />
+                                    <circle class="radial-fill" cx="60" cy="60" r="54" style="--radial-level: 60%" />
+                                </svg>
+                                <div class="radial-label">
+                                    <span class="radial-percent">60%</span>
+                                    <span class="radial-name">Systems</span>
+                                </div>
+                            </div>
+                            <div class="radial-skill" data-skill="Automation" data-level="50">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="radial-bg" cx="60" cy="60" r="54" />
+                                    <circle class="radial-fill" cx="60" cy="60" r="54" style="--radial-level: 50%" />
+                                </svg>
+                                <div class="radial-label">
+                                    <span class="radial-percent">50%</span>
+                                    <span class="radial-name">Automation</span>
+                                </div>
+                            </div>
+                            <div class="radial-skill" data-skill="Scripting" data-level="60">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="radial-bg" cx="60" cy="60" r="54" />
+                                    <circle class="radial-fill" cx="60" cy="60" r="54" style="--radial-level: 60%" />
+                                </svg>
+                                <div class="radial-label">
+                                    <span class="radial-percent">60%</span>
+                                    <span class="radial-name">Scripting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category" data-animate="fade-up" data-delay="240">
+                        <h3>Tools & Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">Git Basics</span>
+                            <span class="skill-tag">Linux Commands</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">CLI</span>
+                            <span class="skill-tag">Computer Systems</span>
+                            <span class="skill-tag">Operating System Basics</span>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Radar Chart Row -->
+                <div class="radar-chart-row" data-animate="fade-up" data-delay="200">
+                    <div class="radar-chart-card">
+                        <h3 class="radar-chart-title">Skill Radar</h3>
+                        <div class="radar-chart-wrap">
+                            <canvas id="skills-radar" width="340" height="340" aria-label="Skills radar chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications section">
+            <div class="container">
+                <h2 class="section-title" data-animate="fade-right" data-distance="60">
+                    <span class="section-number">03.</span>
+                    <span class="glitch" data-text="Certifications">Certifications</span>
+                </h2>
+                <div class="certifications-content" data-animate="fade-up" data-delay="100">
+                    <div class="certifications-track-wrapper">
+                        <div class="certification-spinner-container">
+                            <div class="certification-item" data-animate="fade-up" data-delay="100">
+                                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="60" y="80" width="80" height="60" rx="4" fill="none" stroke="var(--color-matrix-green)"
+                                        stroke-width="6" />
+                                    <path d="M75 80 V55 C75 40 125 40 125 55 V80" fill="none" stroke="var(--color-matrix-green)"
+                                        stroke-width="6" />
+                                    <line x1="40" y1="170" x2="160" y2="170" stroke="var(--color-matrix-green)" stroke-width="2"
+                                        stroke-dasharray="5,5">
+                                        <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s"
+                                            repeatCount="indefinite" />
+                                    </line>
+                                </svg>
+                                <span>Google Cybersecurity <strong>[Progress]</strong></span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="200">
+                                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M100 30 L160 55 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V55 L100 30"
+                                        fill="none" stroke="var(--color-matrix-green)" stroke-width="6">
+                                        <animate attributeName="stroke-dasharray" values="0,600;600,0" dur="3s"
+                                            repeatCount="indefinite" />
+                                    </path>
+                                    <circle cx="100" cy="100" r="10" fill="var(--color-matrix-green)">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                </svg>
+
+                                <span>CompTIA Security+ [Planned]</span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="300">
+                                <svg width="200" height="200" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="scanner-1" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                            <stop offset="50%" stop-color="var(--color-matrix-green)" stop-opacity="1" />
+                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M150 75 H80 V155 H150 M80 115 H140" fill="none" stroke="var(--color-matrix-green)"
+                                        stroke-width="10" stroke-linecap="square">
+                                        <animate attributeName="stroke-dasharray" values="0,400;400,0" dur="2.5s"
+                                            repeatCount="indefinite" />
+                                    </path>
+                                    <circle cx="120" cy="115" r="70" fill="none" stroke="var(--color-matrix-green)" stroke-width="1"
+                                        opacity="0.5">
+                                        <animate attributeName="r" values="70;90;70" dur="2s"
+                                            repeatCount="indefinite" />
+                                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <rect x="50" y="25" width="140" height="30" fill="url(#scanner-1)">
+                                        <animate attributeName="y" values="25;155;25" dur="3s"
+                                            repeatCount="indefinite" />
+                                    </rect>
+                                </svg>
+                                <span>eJPT [Planned]</span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="400">
+                                <svg class="interactive-radar" width="200" height="200" viewBox="0 0 200 200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-label="Interactive radar scanner representing PNPT certification">
+                                    <defs>
+                                        <radialGradient id="orb-glow-pnpt-1" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="1" />
+                                            <stop offset="30%" stop-color="var(--color-matrix-green)" stop-opacity="0.8" />
+                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                        </radialGradient>
+
+                                        <linearGradient id="sweep-gradient-pnpt-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="0.4" />
+                                            <stop offset="50%" stop-color="var(--color-matrix-green)" stop-opacity="0.1" />
+                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                        </linearGradient>
+
+                                        <clipPath id="radar-clip-pnpt-1">
+                                            <circle cx="100" cy="100" r="80" />
+                                        </clipPath>
+                                    </defs>
+
+                                    <!-- Background matrix texts clipped to circle -->
+                                    <g clip-path="url(#radar-clip-pnpt-1)" opacity="0.25" class="matrix-bg">
+                                        <text x="35" y="40" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ｱ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s"
+                                                repeatCount="indefinite" begin="0.1s" />
+                                            <animate attributeName="y" values="30;120" dur="4s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="35" y="60" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ｷ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s"
+                                                repeatCount="indefinite" begin="0.5s" />
+                                            <animate attributeName="y" values="50;140" dur="4s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="60" y="30" fill="var(--color-matrix-green)" font-family="monospace" font-size="11"
+                                            opacity="0">
+                                            ｻ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.5s"
+                                                repeatCount="indefinite" begin="0.3s" />
+                                            <animate attributeName="y" values="20;160" dur="5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="60" y="70" fill="var(--color-matrix-green)" font-family="monospace" font-size="11"
+                                            opacity="0">
+                                            ﾃ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.5s"
+                                                repeatCount="indefinite" begin="0.9s" />
+                                            <animate attributeName="y" values="60;180" dur="5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="85" y="50" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ﾇ
+                                            <animate attributeName="opacity" values="0;1;0" dur="3s"
+                                                repeatCount="indefinite" begin="0s" />
+                                            <animate attributeName="y" values="10;170" dur="6s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="85" y="90" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ﾍ
+                                            <animate attributeName="opacity" values="0;1;0" dur="3s"
+                                                repeatCount="indefinite" begin="0.7s" />
+                                            <animate attributeName="y" values="50;190" dur="6s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="110" y="40" fill="var(--color-matrix-green)" font-family="monospace" font-size="12"
+                                            opacity="0">
+                                            ﾐ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.2s"
+                                                repeatCount="indefinite" begin="0.4s" />
+                                            <animate attributeName="y" values="30;150" dur="4.5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="110" y="80" fill="var(--color-matrix-green)" font-family="monospace" font-size="12"
+                                            opacity="0">
+                                            ﾖ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.2s"
+                                                repeatCount="indefinite" begin="1.2s" />
+                                            <animate attributeName="y" values="70;190" dur="4.5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="135" y="60" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ﾗ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.8s"
+                                                repeatCount="indefinite" begin="0.2s" />
+                                            <animate attributeName="y" values="40;160" dur="5.5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="160" y="50" fill="var(--color-matrix-green)" font-family="monospace" font-size="11"
+                                            opacity="0">
+                                            ｦ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s"
+                                                repeatCount="indefinite" begin="0.6s" />
+                                            <animate attributeName="y" values="20;140" dur="3.8s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                    </g>
+
+                                    <!-- Concentric Radar Rings -->
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="var(--color-matrix-green)" stroke-width="2"
+                                        opacity="0.8" />
+
+                                    <circle class="radar-ring-dashed-1" cx="100" cy="100" r="60" fill="none"
+                                        stroke="var(--color-matrix-green)" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
+
+                                    <circle cx="100" cy="100" r="40" fill="none" stroke="var(--color-matrix-green)" stroke-width="1.5"
+                                        opacity="0.4" />
+
+                                    <circle class="radar-ring-dashed-2" cx="100" cy="100" r="20" fill="none"
+                                        stroke="var(--color-matrix-green)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+
+                                    <!-- Crosshair lines -->
+                                    <line x1="100" y1="20" x2="100" y2="180" stroke="var(--color-matrix-green)" stroke-width="0.5"
+                                        opacity="0.3" />
+                                    <line x1="20" y1="100" x2="180" y2="100" stroke="var(--color-matrix-green)" stroke-width="0.5"
+                                        opacity="0.3" />
+
+                                    <!-- Sweeping Radar Beam (Sector) -->
+                                    <path class="radar-sweep" d="M100 100 L100 20 A80 80 0 0 1 156.56 43.44 Z"
+                                        fill="url(#sweep-gradient-pnpt-1)" opacity="0.7" />
+
+                                    <!-- Glowing Orbiting Orb -->
+                                    <g class="radar-orb-group">
+                                        <circle cx="100" cy="20" r="8" fill="url(#orb-glow-pnpt-1)" />
+                                        <circle cx="100" cy="20" r="3" fill="#FFFFFF" />
+                                    </g>
+                                </svg>
+                                <span>PNPT [Planned]</span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="100">
+                                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="60" y="80" width="80" height="60" rx="4" fill="none" stroke="var(--color-matrix-green)"
+                                        stroke-width="6" />
+                                    <path d="M75 80 V55 C75 40 125 40 125 55 V80" fill="none" stroke="var(--color-matrix-green)"
+                                        stroke-width="6" />
+                                    <line x1="40" y1="170" x2="160" y2="170" stroke="var(--color-matrix-green)" stroke-width="2"
+                                        stroke-dasharray="5,5">
+                                        <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s"
+                                            repeatCount="indefinite" />
+                                    </line>
+                                </svg>
+                                <span>Google Cybersecurity <strong>[Progress]</strong></span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="200">
+                                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M100 30 L160 55 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V55 L100 30"
+                                        fill="none" stroke="var(--color-matrix-green)" stroke-width="6">
+                                        <animate attributeName="stroke-dasharray" values="0,600;600,0" dur="3s"
+                                            repeatCount="indefinite" />
+                                    </path>
+                                    <circle cx="100" cy="100" r="10" fill="var(--color-matrix-green)">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                </svg>
+
+                                <span>CompTIA Security+ [Planned]</span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="300">
+                                <svg width="200" height="200" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="scanner-2" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                            <stop offset="50%" stop-color="var(--color-matrix-green)" stop-opacity="1" />
+                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M150 75 H80 V155 H150 M80 115 H140" fill="none" stroke="var(--color-matrix-green)"
+                                        stroke-width="10" stroke-linecap="square">
+                                        <animate attributeName="stroke-dasharray" values="0,400;400,0" dur="2.5s"
+                                            repeatCount="indefinite" />
+                                    </path>
+                                    <circle cx="120" cy="115" r="70" fill="none" stroke="var(--color-matrix-green)" stroke-width="1"
+                                        opacity="0.5">
+                                        <animate attributeName="r" values="70;90;70" dur="2s"
+                                            repeatCount="indefinite" />
+                                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <rect x="50" y="25" width="140" height="30" fill="url(#scanner-2)">
+                                        <animate attributeName="y" values="25;155;25" dur="3s"
+                                            repeatCount="indefinite" />
+                                    </rect>
+                                </svg>
+                                <span>eJPT [Planned]</span>
+                            </div>
+                            <div class="certification-item" data-animate="fade-up" data-delay="400">
+                                <svg class="interactive-radar" width="200" height="200" viewBox="0 0 200 200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-label="Interactive radar scanner representing PNPT certification">
+                                    <defs>
+                                        <radialGradient id="orb-glow-pnpt-2" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="1" />
+                                            <stop offset="30%" stop-color="var(--color-matrix-green)" stop-opacity="0.8" />
+                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                        </radialGradient>
+
+                                        <linearGradient id="sweep-gradient-pnpt-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="0.4" />
+                                            <stop offset="50%" stop-color="var(--color-matrix-green)" stop-opacity="0.1" />
+                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
+                                        </linearGradient>
+
+                                        <clipPath id="radar-clip-pnpt-2">
+                                            <circle cx="100" cy="100" r="80" />
+                                        </clipPath>
+                                    </defs>
+
+                                    <!-- Background matrix texts clipped to circle -->
+                                    <g clip-path="url(#radar-clip-pnpt-2)" opacity="0.25" class="matrix-bg">
+                                        <text x="35" y="40" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ｱ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s"
+                                                repeatCount="indefinite" begin="0.1s" />
+                                            <animate attributeName="y" values="30;120" dur="4s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="35" y="60" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ｷ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s"
+                                                repeatCount="indefinite" begin="0.5s" />
+                                            <animate attributeName="y" values="50;140" dur="4s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="60" y="30" fill="var(--color-matrix-green)" font-family="monospace" font-size="11"
+                                            opacity="0">
+                                            ｻ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.5s"
+                                                repeatCount="indefinite" begin="0.3s" />
+                                            <animate attributeName="y" values="20;160" dur="5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="60" y="70" fill="var(--color-matrix-green)" font-family="monospace" font-size="11"
+                                            opacity="0">
+                                            ﾃ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.5s"
+                                                repeatCount="indefinite" begin="0.9s" />
+                                            <animate attributeName="y" values="60;180" dur="5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="85" y="50" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ﾇ
+                                            <animate attributeName="opacity" values="0;1;0" dur="3s"
+                                                repeatCount="indefinite" begin="0s" />
+                                            <animate attributeName="y" values="10;170" dur="6s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="85" y="90" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ﾍ
+                                            <animate attributeName="opacity" values="0;1;0" dur="3s"
+                                                repeatCount="indefinite" begin="0.7s" />
+                                            <animate attributeName="y" values="50;190" dur="6s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="110" y="40" fill="var(--color-matrix-green)" font-family="monospace" font-size="12"
+                                            opacity="0">
+                                            ﾐ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.2s"
+                                                repeatCount="indefinite" begin="0.4s" />
+                                            <animate attributeName="y" values="30;150" dur="4.5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                        <text x="110" y="80" fill="var(--color-matrix-green)" font-family="monospace" font-size="12"
+                                            opacity="0">
+                                            ﾖ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.2s"
+                                                repeatCount="indefinite" begin="1.2s" />
+                                            <animate attributeName="y" values="70;190" dur="4.5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="135" y="60" fill="var(--color-matrix-green)" font-family="monospace" font-size="10"
+                                            opacity="0">
+                                            ﾗ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.8s"
+                                                repeatCount="indefinite" begin="0.2s" />
+                                            <animate attributeName="y" values="40;160" dur="5.5s"
+                                                repeatCount="indefinite" />
+                                        </text>
+
+                                        <text x="160" y="50" fill="var(--color-matrix-green)" font-family="monospace" font-size="11"
+                                            opacity="0">
+                                            ｦ
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s"
+                                                repeatCount="indefinite" begin="0.6s" />
+                                            <animate attributeName="y" values="20;140" dur="3.8s"
+                                                repeatCount="indefinite" />
+                                        </text>
+                                    </g>
+
+                                    <!-- Concentric Radar Rings -->
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="var(--color-matrix-green)" stroke-width="2"
+                                        opacity="0.8" />
+
+                                    <circle class="radar-ring-dashed-1" cx="100" cy="100" r="60" fill="none"
+                                        stroke="var(--color-matrix-green)" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
+
+                                    <circle cx="100" cy="100" r="40" fill="none" stroke="var(--color-matrix-green)" stroke-width="1.5"
+                                        opacity="0.4" />
+
+                                    <circle class="radar-ring-dashed-2" cx="100" cy="100" r="20" fill="none"
+                                        stroke="var(--color-matrix-green)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+
+                                    <!-- Crosshair lines -->
+                                    <line x1="100" y1="20" x2="100" y2="180" stroke="var(--color-matrix-green)" stroke-width="0.5"
+                                        opacity="0.3" />
+                                    <line x1="20" y1="100" x2="180" y2="100" stroke="var(--color-matrix-green)" stroke-width="0.5"
+                                        opacity="0.3" />
+
+                                    <!-- Sweeping Radar Beam (Sector) -->
+                                    <path class="radar-sweep" d="M100 100 L100 20 A80 80 0 0 1 156.56 43.44 Z"
+                                        fill="url(#sweep-gradient-pnpt-2)" opacity="0.7" />
+
+                                    <!-- Glowing Orbiting Orb -->
+                                    <g class="radar-orb-group">
+                                        <circle cx="100" cy="20" r="8" fill="url(#orb-glow-pnpt-2)" />
+                                        <circle cx="100" cy="20" r="3" fill="#FFFFFF" />
+                                    </g>
+                                </svg>
+                                <span>PNPT [Planned]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <!-- Projects Section -->
+                <h2 class="section-title" data-animate="fade-right" data-distance="60">
+                    <span class="section-number">04.</span>
+                    <span class="glitch" data-text="Projects">Projects</span>
+                </h2>
+
+                <!-- Project Filters -->
+                <div class="project-filters" role="radiogroup" aria-label="Filter projects by category"
+                    data-animate="fade-up">
+                    <button class="filter-btn active" data-filter="all" role="radio" aria-checked="true">All</button>
+                    <button class="filter-btn" data-filter="rust" role="radio" aria-checked="false">Rust</button>
+                    <button class="filter-btn" data-filter="python" role="radio" aria-checked="false">Python</button>
+                    <button class="filter-btn" data-filter="c" role="radio" aria-checked="false">C</button>
+                    <button class="filter-btn" data-filter="bash" role="radio" aria-checked="false">Bash</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" role="region" aria-live="polite">
+
+                    <!-- Project 1: Python Quiz App -->
+                    <article class="project-card" data-tags="python,education" data-project-id="1"
+                        data-animate="blur-up">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QuizApp - Interactive CLI quiz application">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">python quiz.py</text>
+                                  <!-- Command -->
+                                  <text x="60" y="80" font-family="monospace" font-size="11" fill="#00FF8C">$ python quiz.py</text>
+                                  <text x="60" y="97" font-family="monospace" font-size="10" fill="#00F0FF">Question 1/10:</text>
+                                  <text x="60" y="113" font-family="monospace" font-size="10" fill="#E0E0E0">What is 2 + 2?</text>
+                                  <line x1="60" y1="122" x2="340" y2="122" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <!-- Choices -->
+                                  <text x="60" y="140" font-family="monospace" font-size="10" fill="#808080">[A] 3</text>
+                                  <text x="60" y="158" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">[B] 4 ✓</text>
+                                  <text x="60" y="176" font-family="monospace" font-size="10" fill="#808080">[C] 5</text>
+                                  <text x="60" y="194" font-family="monospace" font-size="10" fill="#808080">[D] 6</text>
+                                  <line x1="60" y1="203" x2="340" y2="203" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <!-- Score -->
+                                  <text x="60" y="220" font-family="monospace" font-size="10" fill="#00F0FF">Score:</text>
+                                  <text x="110" y="220" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">8/10  (80%)</text>
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Quiz complete — all answers reviewed</text>
+                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                  </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="1" aria-label="View QuizApp details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">QuizApp</h3>
+                                <p class="project-description">Interactive multiple-choice quiz (CLI) with scoring and
+                                    answer review.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">CLI</span>
+                                    <span class="tech-badge">File I/O</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Run QuizApp demo">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="View QuizApp source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: C Student Report Card System -->
+                    <article class="project-card" data-tags="c,education" data-project-id="2" data-animate="blur-up"
+                        data-delay="80">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg shrink-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ReportCard - Student report card system in C">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">REPORT CARD</text>
+                                  <!-- Student info -->
+                                  <text x="60" y="78" font-family="monospace" font-size="10" fill="#00F0FF">Student:</text>
+                                  <text x="120" y="78" font-family="monospace" font-size="10" fill="#E0E0E0">John Doe</text>
+                                  <text x="60" y="94" font-family="monospace" font-size="10" fill="#00F0FF">Roll No:</text>
+                                  <text x="120" y="94" font-family="monospace" font-size="10" fill="#E0E0E0">2024001</text>
+                                  <line x1="60" y1="104" x2="340" y2="104" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <!-- Table header -->
+                                  <text x="60" y="120" font-family="monospace" font-size="10" fill="#B028FF" font-weight="bold">Subject</text>
+                                  <text x="280" y="120" font-family="monospace" font-size="10" fill="#B028FF" font-weight="bold">Marks</text>
+                                  <!-- Subjects -->
+                                  <text x="60" y="138" font-family="monospace" font-size="10" fill="#E0E0E0">Mathematics</text>
+                                  <text x="280" y="138" font-family="monospace" font-size="10" fill="#00FF8C">95</text>
+                                  <text x="60" y="156" font-family="monospace" font-size="10" fill="#E0E0E0">Physics</text>
+                                  <text x="280" y="156" font-family="monospace" font-size="10" fill="#00FF8C">88</text>
+                                  <text x="60" y="174" font-family="monospace" font-size="10" fill="#E0E0E0">Chemistry</text>
+                                  <text x="280" y="174" font-family="monospace" font-size="10" fill="#00FF8C">92</text>
+                                  <text x="60" y="192" font-family="monospace" font-size="10" fill="#808080">English</text>
+                                  <text x="280" y="192" font-family="monospace" font-size="10" fill="#00FF8C">78</text>
+                                  <text x="60" y="210" font-family="monospace" font-size="10" fill="#808080">Computer Sc.</text>
+                                  <text x="280" y="210" font-family="monospace" font-size="10" fill="#00FF8C">97</text>
+                                  <line x1="60" y1="218" x2="340" y2="218" stroke="#00FF8C" stroke-width="1"/>
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Grade: A+ · Percent: 90.00%</text>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="2" aria-label="View ReportCard details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">ReportCard</h3>
+                                <p class="project-description">Enter student marks for subjects, compute total,
+                                    percentage and grade; save/view records.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">File I/O</span>
+                                    <span class="tech-badge">Structs</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="View ReportCard demo">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="View ReportCard source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Bash System Info Dashboard -->
+                    <article class="project-card" data-tags="bash,education" data-project-id="3" data-animate="blur-up"
+                        data-delay="120">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SysInfo - Bash system information dashboard">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">sys_info.sh</text>
+                                  <!-- Header -->
+                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">=== SYSTEM INFO DASHBOARD ===</text>
+                                  <!-- Info rows -->
+                                  <text x="60" y="95" font-family="monospace" font-size="10" fill="#00FF8C">Hostname:</text>
+                                  <text x="148" y="95" font-family="monospace" font-size="10" fill="#E0E0E0">matrix-server</text>
+                                  <text x="60" y="112" font-family="monospace" font-size="10" fill="#00FF8C">Uptime:</text>
+                                  <text x="132" y="112" font-family="monospace" font-size="10" fill="#E0E0E0">42 days, 13:37:01</text>
+                                  <text x="60" y="129" font-family="monospace" font-size="10" fill="#00FF8C">Memory:</text>
+                                  <text x="136" y="129" font-family="monospace" font-size="10" fill="#E0E0E0">8.2 / 16.0 GB (51%)</text>
+                                  <!-- Memory bar -->
+                                  <rect x="60" y="135" width="280" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+                                  <rect x="61" y="136" width="140" height="6" rx="3" fill="#00FF8C" fill-opacity="0.8"/>
+                                  <text x="60" y="162" font-family="monospace" font-size="10" fill="#00FF8C">Disk:</text>
+                                  <text x="100" y="162" font-family="monospace" font-size="10" fill="#E0E0E0">450 / 1024 GB (44%)</text>
+                                  <!-- Disk bar -->
+                                  <rect x="60" y="168" width="280" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+                                  <rect x="61" y="169" width="122" height="6" rx="3" fill="#B028FF" fill-opacity="0.85"/>
+                                  <line x1="60" y1="185" x2="340" y2="185" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <!-- Processes -->
+                                  <text x="60" y="202" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Top Processes:</text>
+                                  <text x="60" y="218" font-family="monospace" font-size="9" fill="#808080">python  12.3% | nginx  8.1% | node  6.5%</text>
+                                  <text x="60" y="233" font-family="monospace" font-size="9" fill="#808080">Load avg: 0.82  0.79  0.65</text>
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Dashboard rendered successfully</text>
+                                  <rect x="60" y="252" width="6" height="10" fill="#00FF8C">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                  </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="3" aria-label="View SysInfo details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">SysInfo</h3>
+                                <p class="project-description">Quick system snapshot: hostname, uptime, memory, disk and
+                                    top processes (Bash).</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Bash</span>
+                                    <span class="tech-badge">Linux</span>
+                                    <span class="tech-badge">Shell</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Run SysInfo demo">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="View SysInfo source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Bash Automated Backup Script -->
+                    <article class="project-card" data-tags="bash,education" data-project-id="4" data-animate="blur-up"
+                        data-delay="160">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BackupScript - Automated backup script in Bash">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">backup.sh</text>
+                                  <!-- Command -->
+                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF">$ ./backup.sh /home/user</text>
+                                  <text x="60" y="92" font-family="monospace" font-size="10" fill="#00FF8C">[✓] Backup started...</text>
+                                  <line x1="60" y1="100" x2="340" y2="100" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="116" font-family="monospace" font-size="10" fill="#E0E0E0">Creating backup directory:</text>
+                                  <text x="60" y="130" font-family="monospace" font-size="9" fill="#808080">backup_2024-11-13_14-30-00</text>
+                                  <!-- Progress -->
+                                  <text x="60" y="150" font-family="monospace" font-size="10" fill="#E0E0E0">Copying files...</text>
+                                  <rect x="60" y="157" width="280" height="12" rx="6" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+                                  <rect x="61" y="158" width="210" height="10" rx="5" fill="#00FF8C" fill-opacity="0.85">
+                                    <animate attributeName="width" from="0" to="210" dur="3s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <text x="60" y="185" font-family="monospace" font-size="9" fill="#808080">2.3 GB / 3.1 GB  (75%)</text>
+                                  <line x1="60" y1="193" x2="340" y2="193" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="210" font-family="monospace" font-size="10" fill="#00F0FF">Files copied:</text>
+                                  <text x="168" y="210" font-family="monospace" font-size="10" fill="#E0E0E0">1,247</text>
+                                  <text x="60" y="226" font-family="monospace" font-size="10" fill="#00F0FF">Directories:</text>
+                                  <text x="160" y="226" font-family="monospace" font-size="10" fill="#E0E0E0">89</text>
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Backup completed successfully!</text>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="4" aria-label="View BackupScript details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">BackupScript</h3>
+                                <p class="project-description">Copy folders to timestamped backups; safe and easy to
+                                    schedule with cron.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Bash</span>
+                                    <span class="tech-badge">Cron</span>
+                                    <span class="tech-badge">File Ops</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Run BackupScript demo">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="View BackupScript source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: C Number Guessing Game -->
+                    <article class="project-card" data-tags="c,education" data-project-id="5" data-animate="blur-up"
+                        data-delay="200">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GuessGame - Number guessing game in C">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">guess_game.c</text>
+                                  <!-- Header -->
+                                  <text x="200" y="76" font-family="monospace" font-size="11" fill="#00F0FF" text-anchor="middle" font-weight="bold">NUMBER GUESSING GAME</text>
+                                  <line x1="60" y1="83" x2="340" y2="83" stroke="#00FF8C" stroke-width="1"/>
+                                  <!-- Prompt -->
+                                  <text x="200" y="103" font-family="monospace" font-size="10" fill="#808080" text-anchor="middle">Guess a number between 1 and 100</text>
+                                  <!-- Mystery number box -->
+                                  <rect x="155" y="115" width="90" height="55" rx="8" fill="#00FF8C" fill-opacity="0.08" stroke="#00FF8C" stroke-width="2">
+                                    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <text x="200" y="153" font-family="monospace" font-size="32" fill="#00FF8C" text-anchor="middle" font-weight="bold">??</text>
+                                  <line x1="60" y1="181" x2="340" y2="181" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <!-- Hints -->
+                                  <text x="60" y="199" font-family="monospace" font-size="10" fill="#E0E0E0">Your guess:</text>
+                                  <text x="155" y="199" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">50</text>
+                                  <text x="60" y="216" font-family="monospace" font-size="10" fill="#B028FF">Hint: Too low! ↑</text>
+                                  <text x="60" y="233" font-family="monospace" font-size="10" fill="#00F0FF">Attempts:</text>
+                                  <text x="130" y="233" font-family="monospace" font-size="10" fill="#E0E0E0">4 / 10</text>
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#808080">Keep going! The number is between 50 and 100</text>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="5" aria-label="View GuessGame details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">GuessGame</h3>
+                                <p class="project-description">Classic number-guessing game (1â€“100) with hints and
+                                    attempt counter.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">stdlib</span>
+                                    <span class="tech-badge">Loops</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Play GuessGame demo">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="View GuessGame source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Python Expense Tracker -->
+                    <article class="project-card" data-tags="python,education" data-project-id="6"
+                        data-animate="blur-up" data-delay="240">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ExpenseTracker - Simple CSV expense tracker in Python">
+                                  <!-- Window -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">expense_tracker.py</text>
+
+                                  <!-- Table headers -->
+                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Date</text>
+                                  <text x="130" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Category</text>
+                                  <text x="220" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Amount</text>
+                                  <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Expense entries -->
+                                  <text x="60" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">11-10</text>
+                                  <text x="130" y="100" font-family="monospace" font-size="9" fill="#808080">Food</text>
+                                  <text x="220" y="100" font-family="monospace" font-size="9" fill="#00FF8C">$25.50</text>
+
+                                  <text x="60" y="116" font-family="monospace" font-size="9" fill="#E0E0E0">11-11</text>
+                                  <text x="130" y="116" font-family="monospace" font-size="9" fill="#808080">Transport</text>
+                                  <text x="220" y="116" font-family="monospace" font-size="9" fill="#00FF8C">$15.00</text>
+
+                                  <text x="60" y="132" font-family="monospace" font-size="9" fill="#E0E0E0">11-12</text>
+                                  <text x="130" y="132" font-family="monospace" font-size="9" fill="#808080">Shopping</text>
+                                  <text x="220" y="132" font-family="monospace" font-size="9" fill="#00FF8C">$89.99</text>
+
+                                  <text x="60" y="148" font-family="monospace" font-size="9" fill="#E0E0E0">11-13</text>
+                                  <text x="130" y="148" font-family="monospace" font-size="9" fill="#808080">Bills</text>
+                                  <text x="220" y="148" font-family="monospace" font-size="9" fill="#00FF8C">$120.00</text>
+
+                                  <line x1="60" y1="158" x2="340" y2="158" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Category Summary -->
+                                  <text x="60" y="174" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Totals by Category:</text>
+                                  <text x="60" y="190" font-family="monospace" font-size="9" fill="#808080">Food: $125.50  |  Transport: $45.00</text>
+                                  <text x="60" y="204" font-family="monospace" font-size="9" fill="#808080">Shopping: $289.99  |  Bills: $320.00</text>
+
+                                  <line x1="60" y1="214" x2="340" y2="214" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Total Expenses -->
+                                  <text x="60" y="230" font-family="monospace" font-size="10" fill="#00F0FF">Total Expenses:</text>
+                                  <text x="175" y="230" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">$780.49</text>
+
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Expenses saved to expenses.csv</text>
+                                  <!-- Blinking cursor -->
+                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                  </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="6" aria-label="View ExpenseTracker details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">ExpenseTracker</h3>
+                                <p class="project-description">Add/view expenses saved to CSV, and show totals by
+                                    category (CLI).</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">CSV</span>
+                                    <span class="tech-badge">File I/O</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Run ExpenseTracker demo">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="View ExpenseTracker source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Rust Wayland Gamma Controller -->
+                    <article class="project-card" data-tags="rust,wayland,system" data-project-id="7"
+                        data-animate="blur-up" data-delay="280">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="wl-gammactl - Wayland Gamma and Color Controller in Rust">
+                                  <!-- Terminal body -->
+                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+                                  <!-- Title bar -->
+                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">wl-gammactl-rust</text>
+
+                                  <!-- Command prompt -->
+                                  <text x="56" y="76" font-family="monospace" font-size="9" fill="#00FF8C">$ wl-gammactl --output eDP-1 \</text>
+                                  <text x="56" y="89" font-family="monospace" font-size="9" fill="#00FF8C">    --gamma 1.2 --temp 6500K --brightness 1.0</text>
+                                  <text x="56" y="102" font-family="monospace" font-size="9" fill="#00F0FF">[Wayland] Connected · wlr-gamma-control-v1</text>
+
+                                  <!-- Divider -->
+                                  <line x1="56" y1="112" x2="344" y2="112" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- R channel label + bar -->
+                                  <text x="56" y="128" font-family="monospace" font-size="9" fill="#FF5555" font-weight="bold">R</text>
+                                  <rect x="70" y="118" width="200" height="10" rx="2" fill="#1a1a1a"/>
+                                  <rect x="70" y="118" width="160" height="10" rx="2" fill="#FF5555" fill-opacity="0.85"/>
+                                  <text x="278" y="128" font-family="monospace" font-size="9" fill="#FF5555">1.00</text>
+
+                                  <!-- G channel label + bar -->
+                                  <text x="56" y="148" font-family="monospace" font-size="9" fill="#50FA7B" font-weight="bold">G</text>
+                                  <rect x="70" y="138" width="200" height="10" rx="2" fill="#1a1a1a"/>
+                                  <rect x="70" y="138" width="176" height="10" rx="2" fill="#50FA7B" fill-opacity="0.85"/>
+                                  <text x="278" y="148" font-family="monospace" font-size="9" fill="#50FA7B">1.10</text>
+
+                                  <!-- B channel label + bar -->
+                                  <text x="56" y="168" font-family="monospace" font-size="9" fill="#8BE9FD" font-weight="bold">B</text>
+                                  <rect x="70" y="158" width="200" height="10" rx="2" fill="#1a1a1a"/>
+                                  <rect x="70" y="158" width="192" height="10" rx="2" fill="#8BE9FD" fill-opacity="0.85"/>
+                                  <text x="278" y="168" font-family="monospace" font-size="9" fill="#8BE9FD">1.20</text>
+
+                                  <!-- Divider -->
+                                  <line x1="56" y1="179" x2="344" y2="179" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                  <!-- Info rows -->
+                                  <text x="56" y="195" font-family="monospace" font-size="9" fill="#808080">Temp:</text>
+                                  <text x="96" y="195" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">6500K</text>
+                                  <text x="152" y="195" font-family="monospace" font-size="9" fill="#E0E0E0">Daylight Neutral</text>
+
+                                  <text x="56" y="210" font-family="monospace" font-size="9" fill="#808080">Bright:</text>
+                                  <text x="104" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">100%</text>
+                                  <text x="144" y="210" font-family="monospace" font-size="9" fill="#808080">Contrast:</text>
+                                  <text x="207" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.05</text>
+
+                                  <text x="56" y="225" font-family="monospace" font-size="9" fill="#808080">Sat:</text>
+                                  <text x="84" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.15</text>
+                                  <text x="120" y="225" font-family="monospace" font-size="9" fill="#808080">Gamma:</text>
+                                  <text x="171" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.20</text>
+
+                                  <!-- Status bar -->
+                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                  <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                  <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Gamma ramp applied to eDP-1 [Rust]</text>
+                                  <!-- Blinking cursor -->
+                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                  </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="7" aria-label="View wl-gammactl details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">wl-gammactl</h3>
+                                <p class="project-description">Fast Wayland gamma, brightness, contrast &amp; temperature controller in Rust.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Rust</span>
+                                    <span class="tech-badge">Wayland</span>
+                                    <span class="tech-badge">CLI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl repository">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <!-- Contact Section -->
+                <h2 class="section-title" data-animate="fade-right" data-distance="60">
+                    <span class="section-number">05.</span>
+                    <span class="glitch" data-text="Contact">Contact</span>
+                </h2>
+                <div class="contact-content">
+                    <div class="contact-info" data-animate="fade-up">
+                        <p class="contact-tagline" data-animate="fade-up" data-delay="100">Let's build something
+                            extraordinary together.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method" data-animate="fade-up" data-delay="140">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <path d="M22 6l-10 7L2 6" />
+                                    </svg>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:change@me.com" class="contact-value" id="email-contact-value"><span
+                                            class="obfuscated-email"></span></a>
+                                    <button class="copy-btn" aria-label="Copy email address" id="email-copy-btn">
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="contact-method" data-animate="fade-up" data-delay="200">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">GitHub</span>
+                                    <a href="https://github.com/ZonicExists" target="_blank" rel="noopener noreferrer"
+                                        class="contact-value">@ZonicExists</a>
+                                </div>
+                            </div>
+                            <div class="contact-method" data-animate="fade-up" data-delay="260">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
+                                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                                    </svg>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Instagram</span>
+                                    <a href="https://instagram.com/princeisalive" target="_blank"
+                                        rel="noopener noreferrer" class="contact-value">@princeisalive</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form" id="contact-form"
+                        data-forwarder="https://contact-forwarder.princekumar19841.workers.dev" novalidate
+                        data-animate="fade-up" data-delay="200">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+                            <span class="form-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                aria-required="true">
+                            <span class="form-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-input" rows="5" required
+                                aria-required="true"></textarea>
+                            <span class="form-error" role="alert"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" aria-hidden="true"></span>
+                        </button>
+                        <div class="form-status" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" data-animate="fade-up">
+                <p class="footer-text">&copy; 2026 Zonic Exists. Crafted with code and creativity.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/ZonicExists" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub profile" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></a>
+                    <a href="https://instagram.com/princeisalive" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram profile" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                        </svg></a>
+                    <a href="mailto:change@me.com" aria-label="Send email" class="social-link"
+                        id="email-social-link-footer">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <path d="M22 6l-10 7L2 6" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-container">
+            <button class="modal-close" data-close-modal aria-label="Close modal">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-gallery">
+                    <button class="gallery-nav gallery-prev" aria-label="Previous image">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <div class="gallery-container">
+                        <img src="" alt="" class="gallery-image">
+                    </div>
+                    <button class="gallery-nav gallery-next" aria-label="Next image">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                    <div class="gallery-indicators"></div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Key Features</h3>
+                        <ul class="modal-features"></ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Tech Stack</h3>
+                        <div class="modal-tech"></div>
+                    </div>
+                    <div class="modal-links">
+                        <a href="#" class="btn btn-primary modal-demo" target="_blank" rel="noopener noreferrer">
+                            <span>GitHub</span>
+                        </a>
+                        <button class="btn btn-secondary modal-code-toggle" type="button" aria-pressed="false">
+                            <span class="toggle-text">View Code</span>
+                            <svg class="toggle-icon" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="modal-section modal-code-section hidden">
+                        <h3 class="modal-section-title">Code Snippet</h3>
+                        <pre class="code-block"><code class="modal-code"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulated Terminal -->
+    <div id="sim-terminal" class="sim-terminal" aria-hidden="false" role="application" aria-label="terminal">
+        <div class="sim-terminal-header">
+            <span>terminal</span>
+            <!-- C5 FIX: SVG Ã— icon replacing emoji âœ• -->
+            <button id="sim-terminal-close" class="sim-terminal-close" aria-label="Close terminal">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div id="sim-terminal-screen" class="sim-terminal-screen" tabindex="0" aria-live="polite"></div>
+        <div class="sim-terminal-prompt">
+            <span class="sim-prompt-prefix">$</span>
+            <input id="sim-terminal-input" class="sim-terminal-input" aria-label="Terminal command input"
+                autocomplete="off" autocapitalize="off" spellcheck="false" />
+        </div>
+    </div>
+    <!-- Terminal toggle button (floating) -->
+    <button id="sim-terminal-btn" class="sim-terminal-btn" aria-label="Open simulated terminal" title="Open terminal">
+        <!-- C4 FIX: SVG terminal icon replacing emoji âŒ˜ -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 17 10 11 4 5" />
+            <line x1="12" y1="19" x2="20" y2="19" />
+        </svg>
+    </button>
+
+    <!-- Matrix Rain Customizer Panel -->
+    <div id="matrix-customizer" class="matrix-customizer" aria-label="Matrix rain customizer" role="dialog" aria-hidden="true">
+        <div class="mc-header">
+            <span class="mc-title">Color Manager</span>
+            <button id="mc-close" class="mc-close" aria-label="Close customizer">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="mc-body">
+            <label class="mc-label">Speed
+                <input id="mc-speed" type="range" min="2" max="40" value="15" class="mc-slider">
+                <span id="mc-speed-val" class="mc-val">15</span>
+            </label>
+            <label class="mc-label">Density
+                <input id="mc-density" type="range" min="10" max="100" value="50" class="mc-slider">
+                <span id="mc-density-val" class="mc-val">50%</span>
+            </label>
+            <div class="mc-colors">
+                                <span class="mc-colors-label">Color</span>
+                                <button class="mc-color-swatch active" data-color="#00FF8C" aria-label="Matrix green" style="--sw:#00FF8C"></button>
+                                <button class="mc-color-swatch" data-color="#00F0FF" aria-label="Cyan" style="--sw:#00F0FF"></button>
+                                <button class="mc-color-swatch" data-color="#FF3333" aria-label="Red" style="--sw:#FF3333"></button>
+                                <button class="mc-color-swatch" data-color="#B028FF" aria-label="Purple" style="--sw:#B028FF"></button>
+                            </div>
+        </div>
+    </div>
+    <!-- Customizer Toggle Button -->
+    <button id="matrix-customizer-btn" class="matrix-customizer-btn" aria-label="Open matrix customizer" title="Customize matrix rain">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+    </button>
+
+    <!-- Konami ACCESS GRANTED overlay -->
+    <div id="konami-overlay" class="konami-overlay" aria-hidden="true">
+        <div class="konami-inner">
+            <div class="konami-text glitch" data-text="ACCESS GRANTED">ACCESS GRANTED</div>
+            <div class="konami-sub">[ Konami Code Accepted ]</div>
+        </div>
+    </div>
+
+    <!-- Visitor Counter — Fixed HUD chip (bottom-left) -->
+    <div class="visitor-hud" aria-label="Site visitor count">
+        <span class="vc-label">CONN</span>
+        <span class="vc-sep">&gt;</span>
+        <span id="visitor-count" class="vc-count">----</span>
+        <span class="vc-unit">visits</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

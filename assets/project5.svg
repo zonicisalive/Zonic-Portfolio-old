@@ -1,0 +1,43 @@
+<!-- assets/project5.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Window -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">guess_game.c</text>
+
+  <!-- Header -->
+  <text x="200" y="76" font-family="monospace" font-size="11" fill="#00F0FF" text-anchor="middle" font-weight="bold">NUMBER GUESSING GAME</text>
+  <line x1="60" y1="83" x2="340" y2="83" stroke="#00FF8C" stroke-width="1"/>
+
+  <!-- Prompt -->
+  <text x="200" y="103" font-family="monospace" font-size="10" fill="#808080" text-anchor="middle">Guess a number between 1 and 100</text>
+
+  <!-- Mystery number box -->
+  <rect x="155" y="115" width="90" height="55" rx="8" fill="#00FF8C" fill-opacity="0.08" stroke="#00FF8C" stroke-width="2">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="200" y="153" font-family="monospace" font-size="32" fill="#00FF8C" text-anchor="middle" font-weight="bold">??</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="181" x2="340" y2="181" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Hints -->
+  <text x="60" y="199" font-family="monospace" font-size="10" fill="#E0E0E0">Your guess:</text>
+  <text x="155" y="199" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">50</text>
+  <text x="60" y="216" font-family="monospace" font-size="10" fill="#B028FF">Hint: Too low! ↑</text>
+  <text x="60" y="233" font-family="monospace" font-size="10" fill="#00F0FF">Attempts:</text>
+  <text x="130" y="233" font-family="monospace" font-size="10" fill="#E0E0E0">4 / 10</text>
+
+  <!-- Status bar -->
+  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="60" y="261" font-family="monospace" font-size="9" fill="#808080">Keep going! The number is between 50 and 100</text>
+
+</svg>

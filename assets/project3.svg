@@ -1,0 +1,58 @@
+<!-- assets/project3.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Window -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">sys_info.sh</text>
+
+  <!-- Header -->
+  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">=== SYSTEM INFO DASHBOARD ===</text>
+
+  <!-- Info rows -->
+  <text x="60" y="95" font-family="monospace" font-size="10" fill="#00FF8C">Hostname:</text>
+  <text x="148" y="95" font-family="monospace" font-size="10" fill="#E0E0E0">matrix-server</text>
+
+  <text x="60" y="112" font-family="monospace" font-size="10" fill="#00FF8C">Uptime:</text>
+  <text x="132" y="112" font-family="monospace" font-size="10" fill="#E0E0E0">42 days, 13:37:01</text>
+
+  <text x="60" y="129" font-family="monospace" font-size="10" fill="#00FF8C">Memory:</text>
+  <text x="136" y="129" font-family="monospace" font-size="10" fill="#E0E0E0">8.2 / 16.0 GB (51%)</text>
+
+  <!-- Memory bar -->
+  <rect x="60" y="135" width="280" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+  <rect x="61" y="136" width="140" height="6" rx="3" fill="#00FF8C" fill-opacity="0.8"/>
+
+  <text x="60" y="162" font-family="monospace" font-size="10" fill="#00FF8C">Disk:</text>
+  <text x="100" y="162" font-family="monospace" font-size="10" fill="#E0E0E0">450 / 1024 GB (44%)</text>
+
+  <!-- Disk bar -->
+  <rect x="60" y="168" width="280" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+  <rect x="61" y="169" width="122" height="6" rx="3" fill="#B028FF" fill-opacity="0.85"/>
+
+  <!-- Divider -->
+  <line x1="60" y1="185" x2="340" y2="185" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Processes -->
+  <text x="60" y="202" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Top Processes:</text>
+  <text x="60" y="218" font-family="monospace" font-size="9" fill="#808080">python  12.3% | nginx  8.1% | node  6.5%</text>
+  <text x="60" y="233" font-family="monospace" font-size="9" fill="#808080">Load avg: 0.82  0.79  0.65</text>
+
+  <!-- Status bar -->
+  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Dashboard rendered successfully</text>
+
+  <!-- Cursor blink -->
+  <rect x="60" y="252" width="6" height="10" fill="#00FF8C">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>
