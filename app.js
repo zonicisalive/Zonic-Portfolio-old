@@ -1582,43 +1582,7 @@ if __name__ == "__main__":
           'Blazing fast execution written in Rust'
         ],
         tech: ['Rust', 'Wayland', 'CLI', 'System'],
-        code: `use anyhow::Result;
-use clap::Parser;
-
-/// Fast, feature-rich Wayland gamma & color control tool in Rust
-#[derive(Parser, Debug)]
-#[command(author, version, about = "Wayland Gamma & Color Controller")]
-struct Args {
-    /// Output connector name (e.g. eDP-1, DP-1)
-    #[arg(short, long)]
-    output: Option<String>,
-
-    /// Gamma adjustment value (default: 1.0)
-    #[arg(short, long, default_value_t = 1.0)]
-    gamma: f32,
-
-    /// Brightness level (0.0 - 2.0)
-    #[arg(short, long, default_value_t = 1.0)]
-    brightness: f32,
-
-    /// Contrast multiplier
-    #[arg(short, long, default_value_t = 1.0)]
-    contrast: f32,
-
-    /// Color temperature in Kelvin (1000K - 10000K)
-    #[arg(short, long, default_value_t = 6500)]
-    temperature: u32,
-}
-
-fn main() -> Result<()> {
-    let args = Args::parse();
-    println!("Connecting to Wayland display server...");
-    
-    // Apply color gamma ramp transformations
-    println!("Setting temperature: {}K, Gamma: {}", args.temperature, args.gamma);
-    println!("Gamma & color controls applied successfully.");
-    Ok(())
-}`,
+        code: '',
         images: ['assets/project7.svg'],
         demoUrl: 'https://github.com/ZonicExists/wl-gammactl-rust'
       }
@@ -1728,7 +1692,10 @@ fn main() -> Result<()> {
     });
 
     // Code snippet (hidden by default)
-    this.modalCode.textContent = this.currentProject.code;
+    this.modalCode.textContent = this.currentProject.code || '';
+    if (this.modalCodeToggle) {
+      this.modalCodeToggle.style.display = this.currentProject.code ? '' : 'none';
+    }
 
     // Links
     this.modalDemo.href = this.currentProject.demoUrl;
