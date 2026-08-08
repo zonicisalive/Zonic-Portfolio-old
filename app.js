@@ -1695,10 +1695,20 @@ if __name__ == "__main__":
       this.modalTech.appendChild(badge);
     });
 
-    // Code snippet (hidden by default)
-    this.modalCode.textContent = this.currentProject.code || '';
+    // Code snippet (hidden by default or hidden completely if project has no code snippet)
+    const hasCode = Boolean(this.currentProject && this.currentProject.code && this.currentProject.code.trim().length > 0);
+    this.modalCode.textContent = hasCode ? this.currentProject.code : '';
     if (this.modalCodeToggle) {
-      this.modalCodeToggle.style.display = this.currentProject.code ? '' : 'none';
+      this.modalCodeToggle.style.display = hasCode ? '' : 'none';
+    }
+    if (this.modalCodeSection) {
+      if (!hasCode) {
+        this.modalCodeSection.style.display = 'none';
+        this.modalCodeSection.classList.add('hidden');
+        this.modalCodeSection.classList.remove('visible');
+      } else {
+        this.modalCodeSection.style.display = '';
+      }
     }
 
     // Links
