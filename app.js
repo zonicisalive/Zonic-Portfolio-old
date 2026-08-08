@@ -247,10 +247,14 @@ class CustomCursor {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
       
-      // Instant 1:1 cursor dot positioning (0ms delay)
+      // Instant 1:1 cursor dot & glow positioning (0ms delay)
       if (this.cursor) {
         this.cursor.style.left = `${e.clientX}px`;
         this.cursor.style.top = `${e.clientY}px`;
+      }
+      if (this.cursorGlow) {
+        this.cursorGlow.style.left = `${e.clientX}px`;
+        this.cursorGlow.style.top = `${e.clientY}px`;
       }
     });
 
@@ -258,9 +262,6 @@ class CustomCursor {
     document.addEventListener('click', (e) => {
       this.createClickRipple(e);
     });
-
-    // Smooth ambient glow following using requestAnimationFrame
-    this.animate();
 
     // Scale cursor on interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .project-card, input, select, textarea, .filter-btn, .social-link');
@@ -274,19 +275,6 @@ class CustomCursor {
         if (this.cursorGlow) this.cursorGlow.classList.remove('hovering');
       });
     });
-  }
-
-  animate() {
-    // Fast responsive easing for soft ambient glow
-    this.glowX += (this.mouseX - this.glowX) * 0.35;
-    this.glowY += (this.mouseY - this.glowY) * 0.35;
-
-    if (this.cursorGlow) {
-      this.cursorGlow.style.left = `${this.glowX}px`;
-      this.cursorGlow.style.top = `${this.glowY}px`;
-    }
-
-    requestAnimationFrame(() => this.animate());
   }
 
   createClickRipple(e) {
