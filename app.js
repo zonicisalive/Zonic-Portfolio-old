@@ -246,6 +246,12 @@ class CustomCursor {
     document.addEventListener('mousemove', (e) => {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
+      
+      // Instant 1:1 cursor dot positioning (0ms delay)
+      if (this.cursor) {
+        this.cursor.style.left = `${e.clientX}px`;
+        this.cursor.style.top = `${e.clientY}px`;
+      }
     });
 
     // Global click ripple effect
@@ -253,36 +259,32 @@ class CustomCursor {
       this.createClickRipple(e);
     });
 
-    // Smooth cursor following using requestAnimationFrame
+    // Smooth ambient glow following using requestAnimationFrame
     this.animate();
 
     // Scale cursor on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .project-card');
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, input, select, textarea, .filter-btn, .social-link');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
-        this.cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        this.cursorGlow.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        if (this.cursor) this.cursor.classList.add('hovering');
+        if (this.cursorGlow) this.cursorGlow.classList.add('hovering');
       });
       el.addEventListener('mouseleave', () => {
-        this.cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        this.cursorGlow.style.transform = 'translate(-50%, -50%) scale(1)';
+        if (this.cursor) this.cursor.classList.remove('hovering');
+        if (this.cursorGlow) this.cursorGlow.classList.remove('hovering');
       });
     });
   }
 
   animate() {
-    // Smooth easing for cursor
-    this.cursorX += (this.mouseX - this.cursorX) * 0.2;
-    this.cursorY += (this.mouseY - this.cursorY) * 0.2;
+    // Fast responsive easing for soft ambient glow
+    this.glowX += (this.mouseX - this.glowX) * 0.35;
+    this.glowY += (this.mouseY - this.glowY) * 0.35;
 
-    // Slower easing for glow
-    this.glowX += (this.mouseX - this.glowX) * 0.1;
-    this.glowY += (this.mouseY - this.glowY) * 0.1;
-
-    this.cursor.style.left = `${this.cursorX}px`;
-    this.cursor.style.top = `${this.cursorY}px`;
-    this.cursorGlow.style.left = `${this.glowX}px`;
-    this.cursorGlow.style.top = `${this.glowY}px`;
+    if (this.cursorGlow) {
+      this.cursorGlow.style.left = `${this.glowX}px`;
+      this.cursorGlow.style.top = `${this.glowY}px`;
+    }
 
     requestAnimationFrame(() => this.animate());
   }

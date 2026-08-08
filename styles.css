@@ -168,7 +168,11 @@ body {
     background: var(--color-matrix-green);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    transition: transform 0.1s ease;
+    transition: transform 0.15s ease;
+    will-change: left, top;
+}
+.cursor.hovering {
+    transform: translate(-50%, -50%) scale(1.5);
 }
 
 .cursor-glow {
@@ -178,7 +182,12 @@ body {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.5;
-    transition: transform 0.2s ease;
+    transition: transform 0.15s ease;
+    will-change: left, top;
+}
+.cursor-glow.hovering {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.8;
 }
 
 /* ============================================
