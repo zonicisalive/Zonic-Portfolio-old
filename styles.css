@@ -2693,8 +2693,8 @@ body {
 .modal-container {
     position: relative;
     width: 92%;
-    max-width: 760px;
-    max-height: 85vh;
+    max-width: 1040px;
+    max-height: 88vh;
     background: rgba(0, 0, 0, 0.94);
     border: 2px solid var(--color-matrix-green);
     border-radius: 12px;
@@ -2736,8 +2736,8 @@ body {
 
 .modal-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-height: 85vh;
+    grid-template-columns: 1.1fr 1fr;
+    max-height: 88vh;
     overflow-y: auto;
 }
 
@@ -2748,7 +2748,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
+    min-height: 360px;
 }
 
 .gallery-container {
@@ -2760,8 +2761,9 @@ body {
 
 .gallery-image {
     width: 100%;
-    max-width: 360px;
-    max-height: 270px;
+    max-width: 480px;
+    max-height: 360px;
+    height: auto;
     object-fit: contain;
     border-radius: 6px;
 }
@@ -2823,7 +2825,7 @@ body {
 
 /* Modal Details */
 .modal-details {
-    padding: 1.5rem;
+    padding: 2rem 2.2rem;
     overflow-y: auto;
 }
 
@@ -4261,6 +4263,15 @@ body.konami-glitch-mode .nav {
     .projects-grid.single-item .project-card {
         max-width: 420px;
     }
+
+    .modal-container {
+        max-width: 1160px;
+    }
+
+    .gallery-image {
+        max-width: 540px;
+        max-height: 400px;
+    }
 }
 
 /* 1920px (Full HD Ultra-wide & 1440p Widescreen) */
@@ -4290,6 +4301,15 @@ body.konami-glitch-mode .nav {
     .projects-grid.single-item .project-card {
         max-width: 460px;
     }
+
+    .modal-container {
+        max-width: 1300px;
+    }
+
+    .gallery-image {
+        max-width: 600px;
+        max-height: 440px;
+    }
 }
 
 /* 2560px+ (4K UHD & Super Ultra-wide) */
@@ -4318,5 +4338,14 @@ body.konami-glitch-mode .nav {
 
     .projects-grid.single-item .project-card {
         max-width: 520px;
+    }
+
+    .modal-container {
+        max-width: 1500px;
+    }
+
+    .gallery-image {
+        max-width: 700px;
+        max-height: 520px;
     }
 }
