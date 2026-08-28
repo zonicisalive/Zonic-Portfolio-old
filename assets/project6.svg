@@ -1,59 +1,39 @@
-<!-- assets/project6.svg -->
-<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- assets/project6.svg - Autonomous Discord AI Agent -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chatbot - Autonomous Discord AI Agent in Python">
   <!-- Window -->
   <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-
   <!-- Title bar -->
   <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
   <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
   <circle cx="60" cy="44" r="5" fill="#FF6059"/>
   <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
   <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">expense_tracker.py</text>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">Chatbot</text>
+  
+  <!-- Command -->
+  <text x="60" y="78" font-family="monospace" font-size="9.5" fill="#00FF8C">$ python agent.py --graph=langgraph</text>
+  <text x="60" y="95" font-family="monospace" font-size="9" fill="#00F0FF">[Agent] LangGraph State Engine · ChromaDB Vector Memory</text>
+  <line x1="60" y1="104" x2="340" y2="104" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
 
-  <!-- Table headers -->
-  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Date</text>
-  <text x="130" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Category</text>
-  <text x="220" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Amount</text>
-  <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- Reasoning step -->
+  <text x="60" y="122" font-family="monospace" font-size="8.5" fill="#B028FF">🧠 REASONING (LangGraph Node):</text>
+  <text x="60" y="138" font-family="monospace" font-size="8.5" fill="#E0E0E0">1. Parse intent → 2. Query ChromaDB → 3. OpenRouter LLM</text>
 
-  <!-- Expense entries -->
-  <text x="60" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">11-10</text>
-  <text x="130" y="100" font-family="monospace" font-size="9" fill="#808080">Food</text>
-  <text x="220" y="100" font-family="monospace" font-size="9" fill="#00FF8C">$25.50</text>
+  <!-- Chat exchange -->
+  <line x1="60" y1="148" x2="340" y2="148" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="60" y="165" font-family="monospace" font-size="9" fill="#808080">User: How do I configure Niri on Wayland?</text>
+  <text x="60" y="183" font-family="monospace" font-size="9" fill="#00FF8C">AI Agent: Checking vector store &amp; generating config...</text>
+  <text x="60" y="199" font-family="monospace" font-size="8.5" fill="#00F0FF">↳ Context recalled: ~/.config/niri/config.kdl [Match: 99.1%]</text>
 
-  <text x="60" y="116" font-family="monospace" font-size="9" fill="#E0E0E0">11-11</text>
-  <text x="130" y="116" font-family="monospace" font-size="9" fill="#808080">Transport</text>
-  <text x="220" y="116" font-family="monospace" font-size="9" fill="#00FF8C">$15.00</text>
-
-  <text x="60" y="132" font-family="monospace" font-size="9" fill="#E0E0E0">11-12</text>
-  <text x="130" y="132" font-family="monospace" font-size="9" fill="#808080">Shopping</text>
-  <text x="220" y="132" font-family="monospace" font-size="9" fill="#00FF8C">$89.99</text>
-
-  <text x="60" y="148" font-family="monospace" font-size="9" fill="#E0E0E0">11-13</text>
-  <text x="130" y="148" font-family="monospace" font-size="9" fill="#808080">Bills</text>
-  <text x="220" y="148" font-family="monospace" font-size="9" fill="#00FF8C">$120.00</text>
-
-  <line x1="60" y1="158" x2="340" y2="158" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-  <!-- Category Summary -->
-  <text x="60" y="174" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Totals by Category:</text>
-  <text x="60" y="190" font-family="monospace" font-size="9" fill="#808080">Food: $125.50  |  Transport: $45.00</text>
-  <text x="60" y="204" font-family="monospace" font-size="9" fill="#808080">Shopping: $289.99  |  Bills: $320.00</text>
-
-  <line x1="60" y1="214" x2="340" y2="214" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-  <!-- Total Expenses -->
-  <text x="60" y="230" font-family="monospace" font-size="10" fill="#00F0FF">Total Expenses:</text>
-  <text x="175" y="230" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">$780.49</text>
+  <line x1="60" y1="210" x2="340" y2="210" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="60" y="226" font-family="monospace" font-size="8.5" fill="#808080">Multi-Model Router: Claude / GPT / DeepSeek</text>
 
   <!-- Status bar -->
   <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
   <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
   <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Expenses saved to expenses.csv</text>
-  <!-- Blinking cursor -->
+  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Agent Session active · Vector Memory online</text>
   <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 </svg>

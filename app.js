@@ -246,7 +246,7 @@ class CustomCursor {
     document.addEventListener('mousemove', (e) => {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
-      
+
       // Instant 1:1 cursor dot & glow positioning (0ms delay)
       if (this.cursor) {
         this.cursor.style.left = `${e.clientX}px`;
@@ -1149,15 +1149,26 @@ class ProjectFilter {
   }
 
   filterProjects(filter) {
+    let visibleCount = 0;
     this.projectCards.forEach(card => {
-      const tags = card.getAttribute('data-tags').split(',');
+      const tags = (card.getAttribute('data-tags') || '').split(',');
 
       if (filter === 'all' || tags.includes(filter)) {
         card.classList.remove('hidden');
+        visibleCount++;
       } else {
         card.classList.add('hidden');
       }
     });
+
+    const grid = document.querySelector('.projects-grid');
+    if (grid) {
+      if (visibleCount === 1) {
+        grid.classList.add('single-item');
+      } else {
+        grid.classList.remove('single-item');
+      }
+    }
   }
 }
 
@@ -1220,363 +1231,23 @@ class ProjectModal {
     this.currentImageIndex = 0;
     this.codeVisible = false;
 
-    // Project data remains the same
+    // Project data
     this.projectData = {
       '1': {
-        title: 'QuizApp',
-        description: 'Interactive multiple-choice quiz (CLI) with scoring and answer review. Easy to extend with file-backed questions or timed quizzes.',
+        title: 'BitFM',
+        description: 'A blazing-fast, modern, and modular Linux file manager engineered with C++20 and Qt (Qt6/Qt5). Crafted for speed, pixel-perfect aesthetics, and seamless integration on Wayland (Niri, Hyprland, Sway, GNOME, KDE) & X11.',
         features: [
-          'Multiple-choice questions',
-          'Score calculation and review',
-          'Extensible question list (in-code or file-backed)',
-          'Simple CLI interaction'
+          'Native C++20 / Qt6 asynchronous file operations & caching',
+          'Full Wayland (Niri, Hyprland, Sway) & X11 desktop integration',
+          'Dual-pane mode, tree views, tabbed navigation & breadcrumbs',
+          'Integrated terminal emulator, batch renaming & Git status badges'
         ],
-        tech: ['Python', 'CLI', 'File I/O'],
-        code: `#!/usr/bin/env python3
-# quiz.py - simple CLI quiz
-
-questions = [
-    {
-        "q": "What is the capital of France?",
-        "choices": ["A) Paris", "B) London", "C) Berlin", "D) Madrid"],
-        "answer": "A"
-    },
-    {
-        "q": "Which language is primarily used for system programming?",
-        "choices": ["A) Python", "B) C", "C) HTML", "D) JavaScript"],
-        "answer": "B"
-    },
-    {
-        "q": "What does RAM stand for?",
-        "choices": ["A) Readily Available Memory", "B) Random Access Memory", "C) Rapid Action Module", "D) None"],
-        "answer": "B"
-    }
-]
-
-def run_quiz():
-    score = 0
-    for i, item in enumerate(questions, start=1):
-        print(f"\\nQ{i}: {item['q']}")
-        for c in item["choices"]:
-            print("   " + c)
-        ans = input("Your answer (A/B/C/D): ").strip().upper()
-        if ans == item["answer"]:
-            print("Correct!")
-            score += 1
-        else:
-            print(f"Wrong. Correct answer: {item['answer']}")
-    print(f"\\nQuiz finished. Score: {score}/{len(questions)}")
-
-if __name__ == "__main__":
-    run_quiz()`,
-        images: ['assets/project1.svg'],
-        demoUrl: '#'
-      },
-      // ... rest of your projectData remains the same
-      '2': {
-        title: 'ReportCard',
-        description: 'Student report card system in C: enter marks for several subjects, compute total, percentage and grade, and save/view records from a file.',
-        features: [
-          'Store student records in a file',
-          'Compute total, percentage and grade',
-          'Use structs and basic file I/O',
-          'View all saved records'
-        ],
-        tech: ['C', 'File I/O', 'Structs'],
-        code: `#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define SUBJECTS 5
-#define NAME_LEN 100
-#define FILENAME "records.txt"
-
-typedef struct {
-    char name[NAME_LEN];
-    int marks[SUBJECTS];
-    int total;
-    float percent;
-    char grade;
-} Student;
-
-char compute_grade(float p) {
-    if (p >= 90) return 'A';
-    if (p >= 75) return 'B';
-    if (p >= 60) return 'C';
-    if (p >= 40) return 'D';
-    return 'F';
-}
-
-void add_student() {
-    Student s;
-    s.total = 0;
-    printf("Enter student name: ");
-    fgets(s.name, NAME_LEN, stdin);
-    s.name[strcspn(s.name, "\\n")] = '\\0';
-
-    for (int i = 0; i < SUBJECTS; ++i) {
-        printf("Marks for subject %d (0-100): ", i+1);
-        if (scanf("%d", &s.marks[i]) != 1) { puts("Invalid input"); return; }
-        if (s.marks[i] < 0) s.marks[i] = 0;
-        if (s.marks[i] > 100) s.marks[i] = 100;
-        s.total += s.marks[i];
-    }
-    while (getchar() != '\\n');
-    s.percent = (float)s.total / (SUBJECTS);
-    s.grade = compute_grade(s.percent);
-
-    FILE *f = fopen(FILENAME, "a");
-    if (!f) { perror("Unable to open file"); return; }
-    fprintf(f, "%s,%d,%.2f,%c", s.name, s.total, s.percent, s.grade);
-    for (int i=0;i<SUBJECTS;i++) fprintf(f, ",%d", s.marks[i]);
-    fprintf(f, "\\n");
-    fclose(f);
-    printf("Saved record for %s (Total: %d, Percent: %.2f, Grade: %c)\\n", s.name, s.total, s.percent, s.grade);
-}
-
-void view_records() {
-    FILE *f = fopen(FILENAME, "r");
-    if (!f) { puts("No records yet."); return; }
-    char line[512];
-    puts("Name | Total | Percent | Grade | Marks");
-    puts("-----------------------------------------------------");
-    while (fgets(line, sizeof(line), f)) {
-        printf("%s", line);
-    }
-    fclose(f);
-}
-
-int main() {
-    int choice;
-    do {
-        puts("\\nStudent Report Card System");
-        puts("1. Add student record");
-        puts("2. View all records");
-        puts("0. Exit");
-        printf("Choice: ");
-        if (scanf("%d", &choice) != 1) break;
-        while (getchar() != '\\n');
-        if (choice == 1) add_student();
-        else if (choice == 2) view_records();
-    } while (choice != 0);
-    puts("Bye!");
-    return 0;
-}`,
-        images: ['assets/project2.svg'],
-        demoUrl: '#'
-      },
-      '3': {
-        title: 'SysInfo',
-        description: 'Bash system info dashboard that displays hostname, uptime, load, memory, disk usage and top CPU processes – a perfect beginner shell project.',
-        features: [
-          'Hostname and uptime',
-          'Load averages and top CPU processes',
-          'Memory and disk snapshots',
-          'Simple, readable Bash script'
-        ],
-        tech: ['Bash', 'Linux', 'Shell'],
-        code: `#!/usr/bin/env bash
-# sys_info.sh - small system dashboard
-
-echo "=== SYSTEM INFO DASHBOARD ==="
-echo "Hostname: $(hostname)"
-echo "Kernel: $(uname -r)"
-echo "Uptime: $(uptime -p)"
-echo
-
-echo "-- Load / CPU --"
-awk -v OFS="" '{print "Load averages: ", $1, " ", $2, " ", $3}' /proc/loadavg
-echo "Top 5 CPU-consuming processes:"
-ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6
-echo
-
-echo "-- Memory --"
-free -h
-echo
-
-echo "-- Disk --"
-df -h --output=source,fstype,size,used,avail,pcent,target | head -n 1
-df -h | sed -n '1,6p'
-echo
-
-echo "-- Running Processes Count --"
-ps -e --no-headers | wc -l
-echo "=============================="`,
-        images: ['assets/project3.svg'],
-        demoUrl: '#',
-      },
-      '4': {
-        title: 'BackupScript',
-        description: 'Automated backup script in Bash – copies a source folder into a timestamped backup directory. Simple to schedule with cron for regular backups.',
-        features: [
-          'Timestamped backup folders',
-          'Recursively copy source directory',
-          'Easy to schedule with cron',
-          'Basic error checking'
-        ],
-        tech: ['Bash', 'Cron', 'File Ops'],
-        code: `#!/usr/bin/env bash
-# backup.sh <source_dir> [backup_root]
-# Example: ./backup.sh /home/student/myproject /home/student/backups
-
-SOURCE="$1"
-BACKUP_ROOT="\${2:-$HOME/backups}"
-
-if [ -z "$SOURCE" ]; then
-  echo "Usage: $0 <source_dir> [backup_root]"
-  exit 1
-fi
-
-if [ ! -d "$SOURCE" ]; then
-  echo "Source directory does not exist: $SOURCE"
-  exit 1
-fi
-
-TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-DEST="$BACKUP_ROOT/backup_$(basename "$SOURCE")_$TIMESTAMP"
-
-mkdir -p "$DEST"
-cp -r "$SOURCE" "$DEST"
-
-if [ $? -eq 0 ]; then
-  echo "Backup successful: $DEST"
-else
-  echo "Backup failed."
-fi`,
-        images: ['assets/project4.svg'],
-        demoUrl: '#',
-      },
-      '5': {
-        title: 'GuessGame',
-        description: 'Classic number-guessing game in C where the computer picks a number between 1 and 100 and the player guesses until correct, with higher/lower hints.',
-        features: [
-          'Random number generation',
-          'Input validation',
-          'Higher / lower hints',
-          'Attempt counter'
-        ],
-        tech: ['C', 'stdlib', 'Loops'],
-        code: `#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-int main() {
-    int secret, guess, tries = 0;
-    srand((unsigned)time(NULL));
-    secret = rand() % 100 + 1; // 1..100
-
-    printf("Guess the number (1 to 100). Enter 0 to quit.\\n");
-    while (1) {
-        printf("Your guess: ");
-        if (scanf("%d", &guess) != 1) { puts("Invalid input"); break; }
-        if (guess == 0) { printf("You quit. The number was %d.\\n", secret); break; }
-        tries++;
-        if (guess == secret) {
-            printf("Correct! You took %d %s.\\n", tries, (tries==1)? "try" : "tries");
-            break;
-        } else if (guess < secret) {
-            puts("Too low – try a higher number.");
-        } else {
-            puts("Too high – try a lower number.");
-        }
-    }
-    return 0;
-}`,
-        images: ['assets/project5.svg'],
-        demoUrl: '#'
-      },
-      '6': {
-        title: 'ExpenseTracker',
-        description: 'Simple CSV-based expense tracker in Python. Add expenses (date, amount, category, note) and view totals by category – useful for learning CSV handling and aggregation.',
-        features: [
-          'Add expense entries',
-          'Save/read CSV file',
-          'Aggregate totals by category',
-          'Show recent entries'
-        ],
-        tech: ['Python', 'CSV', 'File I/O'],
-        code: `#!/usr/bin/env python3
-import csv
-import os
-from datetime import datetime
-from collections import defaultdict
-
-FNAME = "expenses.csv"
-HEADERS = ["date","amount","category","note"]
-
-def add_expense():
-    date = input("Date (YYYY-MM-DD) [today]: ").strip()
-    if not date:
-        date = datetime.today().strftime("%Y-%m-%d")
-    amount = input("Amount: ").strip()
-    try:
-        amount_val = float(amount)
-    except:
-        print("Invalid amount.")
-        return
-    category = input("Category (e.g., food, travel): ").strip() or "other"
-    note = input("Note (optional): ").strip()
-    new = [date, f"\${amount_val:.2f}", category, note]
-    exists = os.path.exists(FNAME)
-    with open(FNAME, "a", newline="") as f:
-        writer = csv.writer(f)
-        if not exists:
-            writer.writerow(HEADERS);
-        writer.writerow(new);
-    print("Expense added.")
-
-def show_summary():
-    if not os.path.exists(FNAME):
-        print("No expenses yet.")
-        return
-    totals = defaultdict(float);
-    rows = [];
-    with open(FNAME, newline="") as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            amt = float(r["amount"])
-            totals[r["category"]] += amt
-            rows.append(r)
-    print("\\nTotals by category:")
-    for cat, t in totals.items():
-        print(f" - {cat}: {t:.2f}")
-    print(f"\\nTotal expenses: {sum(totals.values()):.2f}")
-    print("\\nRecent entries:")
-    for r in rows[-5:]:
-        print(f"{r['date']} | {r['category']} | {r['amount']} | {r['note']}")
-
-def main():
-    while True:
-        print("\\nExpense Tracker")
-        print("1) Add expense")
-        print("2) Show summary")
-        print("0) Exit")
-        c = input("Choice: ").strip()
-        if c == "1": add_expense()
-        elif c == "2": show_summary()
-        elif c == "0": break
-        else: print("Invalid choice.")
-
-if __name__ == "__main__":
-    main()`,
-        images: ['assets/project6.svg'],
-        demoUrl: '#'
-      },
-      '7': {
-        title: 'wl-gammactl',
-        description: 'A fast, feature-rich CLI tool to adjust contrast, brightness, gamma, saturation, color temperature, and RGB channels on Wayland outputs.',
-        features: [
-          'Adjust contrast, brightness, gamma & saturation',
-          'Color temperature (Kelvin) & RGB channel control',
-          'Wayland wlr-gamma-control-v1 protocol support',
-          'Blazing fast execution written in Rust'
-        ],
-        tech: ['Rust', 'Wayland', 'CLI', 'System'],
+        tech: ['C++', 'Qt', 'Linux', 'Wayland'],
         code: '',
-        images: ['assets/project7.svg'],
-        demoUrl: 'https://github.com/ZonicExists/wl-gammactl-rust'
+        images: ['assets/project1.svg'],
+        demoUrl: 'https://github.com/ZonicExists/BitFM'
       },
-      '8': {
+      '2': {
         title: 'Bit-Vault',
         description: 'Zero-Knowledge Password Manager & Encrypted File Vault featuring PBKDF2 key stretching, AES-256-GCM authenticated encryption, RFC 6238 TOTP 2FA generator, and k-Anonymity breach auditing.',
         features: [
@@ -1587,8 +1258,64 @@ if __name__ == "__main__":
         ],
         tech: ['TypeScript', 'Security', 'AES-256', 'Crypto'],
         code: '',
-        images: ['assets/project8.svg'],
+        images: ['assets/project2.svg'],
         demoUrl: 'https://github.com/ZonicExists/Bit-Vault'
+      },
+      '3': {
+        title: 'wl-gammactl',
+        description: 'A fast, feature-rich CLI tool to adjust contrast, brightness, gamma, saturation, color temperature, and RGB channels on Wayland outputs.',
+        features: [
+          'Adjust contrast, brightness, gamma & saturation on the fly',
+          'Color temperature (Kelvin) & independent RGB channel control',
+          'Wayland wlr-gamma-control-v1 protocol support',
+          'Blazing fast execution written in pure Rust'
+        ],
+        tech: ['Rust', 'Wayland', 'CLI', 'System'],
+        code: '',
+        images: ['assets/project3.svg'],
+        demoUrl: 'https://github.com/ZonicExists/wl-gammactl-rust'
+      },
+      '4': {
+        title: 'mpvpaper-stop',
+        description: 'Automatic stop & pause feature for mpvpaper animated live wallpapers on Linux Wayland (Hyprland, Sway, Niri) implemented via a background process daemon to save CPU/GPU power.',
+        features: [
+          'Real-time Wayland focused window & workspace state tracking',
+          'Automatically pauses/resumes mpvpaper wallpaper processes',
+          'Native support for Niri, Hyprland, and Sway compositors',
+          'Ultra lightweight C daemon with near-zero CPU footprint'
+        ],
+        tech: ['C', 'Linux', 'Wayland', 'Daemon'],
+        code: '',
+        images: ['assets/project4.svg'],
+        demoUrl: 'https://github.com/ZonicExists/mpvpaper-stop'
+      },
+      '5': {
+        title: 'Zade',
+        description: 'A professional-grade Discord self-bot built with discord.py-self. Features advanced cleanup automation, interactive visual archives, terminal-based remote control, and multi-layered rate-limit protection.',
+        features: [
+          'Multi-layered rate-limit protection & safe async dispatcher',
+          'High-speed purge & channel cleanup automation',
+          'Interactive visual HTML message archive generation',
+          'Terminal-based CLI remote control interface'
+        ],
+        tech: ['Python', 'Discord', 'Automation', 'Security'],
+        code: '',
+        images: ['assets/project5.svg'],
+        demoUrl: 'https://github.com/ZonicExists/Zade'
+      },
+      '6': {
+        title: 'Chatbot (Autonomous AI Agent)',
+        description: 'A state-of-the-art autonomous Discord AI agent utilizing LangGraph for advanced agentic reasoning, OpenRouter for multi-model LLM access, and ChromaDB for persistent long-term memory.',
+        features: [
+          'Agentic Reasoning with LangGraph state machine workflow',
+          'ChromaDB persistent vector memory and semantic context recall',
+          'Multi-model LLM router (Claude, GPT-4o, DeepSeek)',
+          'Autonomous tool use & execution in Discord environment'
+        ],
+        tech: ['Python', 'LangGraph', 'AI / Agent', 'ChromaDB'],
+        code: '',
+        images: ['assets/project6.svg'],
+        demoUrl: 'https://github.com/ZonicExists/chatbot'
       }
     };
 
@@ -2267,9 +1994,11 @@ class ThemeToggle {
   }
 
   init() {
-    // Load saved preference
+    // Load saved preference - default to 'reduced' (non-glow) unless explicitly set to 'full'
     const savedTheme = localStorage.getItem(this.storageKey);
-    if (savedTheme === 'reduced') {
+    if (savedTheme === 'full') {
+      this.body.classList.remove('neon-reduced');
+    } else {
       this.body.classList.add('neon-reduced');
     }
 
@@ -3091,44 +2820,84 @@ class AmbientAudio {
 }
 
 // ============================================
-// VISITOR COUNTER
+// VISITOR COUNTER - RESILIENT MULTI-TIER
 // ============================================
 class VisitorCounter {
   constructor() {
     this.el = document.getElementById('visitor-count');
     if (!this.el) return;
+
+    this.baseline = 154;
+    const cached = parseInt(localStorage.getItem('zonic_global_visits') || String(this.baseline), 10);
+    this.currentValue = isNaN(cached) || cached < this.baseline ? this.baseline : cached;
+
+    // Immediately render latest known count without waiting
+    this.el.textContent = this.currentValue.toLocaleString();
+
     this._fetch();
   }
 
   async _fetch() {
+    let finalCount = null;
+
+    // Tier 1: CounterAPI v2 with cache-busting timestamp & 3.5s timeout
     try {
-      const res = await fetch('https://api.counterapi.dev/v2/who-is-zonics-team-4533/first-counter-4533/up');
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3500);
+
+      const url = `https://api.counterapi.dev/v2/who-is-zonics-team-4533/first-counter-4533/up?_t=${Date.now()}`;
+      const res = await fetch(url, {
+        method: 'GET',
+        cache: 'no-store',
+        signal: controller.signal,
+        headers: { 'Accept': 'application/json' }
+      });
+      clearTimeout(timeoutId);
+
       if (res.ok) {
         const json = await res.json();
-        const value = json && json.data ? json.data.up_count : (json ? json.count : 0);
-        if (value > 0) {
-          this._rollUp(value);
-          return;
+        const value = json?.data?.up_count ?? json?.count;
+        if (typeof value === 'number' && value > 0) {
+          finalCount = value;
         }
       }
     } catch (e) {
-      // CounterAPI blocked by adblocker / network
+      // Blocked by client adblocker (uBlock Origin / Brave Shields) or offline
     }
 
-    // Dynamic real visit tracking fallback if API is blocked by adblocker
-    let localCount = parseInt(localStorage.getItem('zonic_visits') || '135', 10);
-    localCount += 1;
-    localStorage.setItem('zonic_visits', localCount);
-    this._rollUp(localCount);
+    // Tier 2: Resilient Local / Session Visit Tracking Fallback
+    if (!finalCount) {
+      const sessionCounted = sessionStorage.getItem('zonic_session_visit');
+      let localCount = parseInt(localStorage.getItem('zonic_global_visits') || String(this.baseline), 10);
+      if (isNaN(localCount) || localCount < this.baseline) localCount = this.baseline;
+
+      if (!sessionCounted) {
+        localCount += 1;
+        sessionStorage.setItem('zonic_session_visit', '1');
+      }
+      finalCount = localCount;
+    }
+
+    // Persist highest count & animate counter roll-up
+    try {
+      localStorage.setItem('zonic_global_visits', String(finalCount));
+    } catch (e) { }
+
+    if (finalCount !== this.currentValue) {
+      this._rollUp(finalCount);
+    }
   }
 
   _rollUp(target) {
+    if (!this.el) return;
+    const startVal = this.currentValue;
     const duration = 1200;
     const start = performance.now();
+
     const update = (now) => {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      const val = Math.round(eased * target);
+      const val = Math.round(startVal + (target - startVal) * eased);
       this.el.textContent = val.toLocaleString();
       if (t < 1) requestAnimationFrame(update);
     };
@@ -3163,7 +2932,7 @@ class SkillsRadarChart {
     // Read current CSS variable value for consistent theme color
     const computedStyle = getComputedStyle(document.documentElement);
     const themeColor = computedStyle.getPropertyValue('--color-matrix-green').trim() || '#00FF8C';
-    
+
     // Parse hex to rgb
     const r = parseInt(themeColor.substring(1, 3), 16) || 0;
     const g = parseInt(themeColor.substring(3, 5), 16) || 255;
@@ -3505,7 +3274,7 @@ class KonamiCode {
         osc.start(ctx.currentTime + idx * 0.08);
         osc.stop(ctx.currentTime + idx * 0.08 + 0.22);
       });
-    } catch (e) {}
+    } catch (e) { }
   }
 
   _trigger() {

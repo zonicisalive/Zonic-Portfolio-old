@@ -808,30 +808,6 @@ body {
 
 }
 
-/* Large Desktop Enhancement */
-@media (min-width: 1400px) {
-    .nav {
-        padding: 0 4rem;
-    }
-
-    .nav-menu {
-        gap: 0.5rem;
-        padding: 0.6rem;
-    }
-
-    .nav-link {
-        font-size: 0.95rem;
-        padding: 0.75rem 1.75rem;
-    }
-}
-
-/* Ultra-wide screens */
-@media (min-width: 1920px) {
-    .nav {
-        max-width: 1600px;
-    }
-}
-
 /* ============================================
    LAYOUT & CONTAINERS
    ============================================ */
@@ -2194,17 +2170,34 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 380px));
+    justify-content: center;
     gap: var(--spacing-md);
     /* Smooth grid reorganization */
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
+.projects-grid.single-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.projects-grid.single-item .project-card {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
 }
 
 .project-card {
     /* Smooth position and size transitions */
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 1;
     cursor: pointer;
+    max-width: 380px;
+    width: 100%;
     /* H1 FIX: pointer affordance for interactive cards */
 }
 
@@ -2351,19 +2344,19 @@ body {
 /* Responsive grid - auto-adjusts columns */
 @media (max-width: 1200px) {
     .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 360px));
     }
 }
 
 @media (max-width: 900px) {
     .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 350px));
     }
 }
 
 @media (max-width: 768px) {
     .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: var(--spacing-sm);
     }
 }
@@ -2371,6 +2364,10 @@ body {
 @media (max-width: 480px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .project-card,
+    .projects-grid.single-item .project-card {
+        max-width: 100%;
     }
 }
 
@@ -4220,5 +4217,106 @@ body.konami-glitch-mode .nav {
         padding: 0.35rem 0.65rem !important;
         white-space: nowrap !important;
         margin: 1.2rem auto 0 !important;
+    }
+}
+
+/* ============================================
+   HIGH-RESOLUTION / 1440p & 4K DISPLAY SCALING
+   ============================================ */
+
+/* 1440p (QHD / 2K & Large Displays) */
+@media (min-width: 1440px) {
+    :root {
+        --container-max-width: 1380px;
+        --header-height: 88px;
+    }
+
+    html {
+        font-size: 18px; /* Proportional 12.5% scale on 1440p */
+    }
+
+    .nav {
+        padding: 0 4rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+        padding: 0.6rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.75rem 1.75rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 420px));
+        gap: 2.2rem;
+    }
+
+    .project-card {
+        max-width: 420px;
+    }
+
+    .projects-grid.single-item .project-card {
+        max-width: 420px;
+    }
+}
+
+/* 1920px (Full HD Ultra-wide & 1440p Widescreen) */
+@media (min-width: 1920px) {
+    :root {
+        --container-max-width: 1580px;
+        --header-height: 94px;
+    }
+
+    html {
+        font-size: 19.5px; /* ~22% scale */
+    }
+
+    .nav {
+        max-width: 1600px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 460px));
+        gap: 2.5rem;
+    }
+
+    .project-card {
+        max-width: 460px;
+    }
+
+    .projects-grid.single-item .project-card {
+        max-width: 460px;
+    }
+}
+
+/* 2560px+ (4K UHD & Super Ultra-wide) */
+@media (min-width: 2560px) {
+    :root {
+        --container-max-width: 1920px;
+        --header-height: 104px;
+    }
+
+    html {
+        font-size: 23px; /* Clean ~44% scaling for razor-sharp 4K viewing */
+    }
+
+    .nav {
+        max-width: 1920px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(440px, 540px));
+        gap: 3rem;
+    }
+
+    .project-card {
+        max-width: 520px;
+    }
+
+    .projects-grid.single-item .project-card {
+        max-width: 520px;
     }
 }

@@ -1,52 +1,48 @@
-<!-- assets/project4.svg -->
-<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-
+<!-- assets/project4.svg - mpvpaper-stop Wallpaper Daemon -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="mpvpaper-stop - Automatic Wallpaper Stop Daemon in C">
   <!-- Window -->
   <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-
   <!-- Title bar -->
   <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
   <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
   <circle cx="60" cy="44" r="5" fill="#FF6059"/>
   <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
   <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">backup.sh</text>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">mpvpaper-stop</text>
 
   <!-- Command -->
-  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF">$ ./backup.sh /home/user</text>
-  <text x="60" y="92" font-family="monospace" font-size="10" fill="#00FF8C">[✓] Backup started...</text>
+  <text x="56" y="78" font-family="monospace" font-size="9.5" fill="#00FF8C">$ ./mpvpaper-stop --daemon --compositor=niri</text>
+  <text x="56" y="94" font-family="monospace" font-size="9" fill="#00F0FF">[Daemon] Initialized · Event Loop active</text>
+  <line x1="56" y1="102" x2="344" y2="102" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
 
-  <!-- Divider -->
-  <line x1="60" y1="100" x2="340" y2="100" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- Focus & State Monitoring -->
+  <text x="56" y="118" font-family="monospace" font-size="9" fill="#808080">Target Process:</text>
+  <text x="160" y="118" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">mpvpaper (PID 5192)</text>
 
-  <!-- Backup target info -->
-  <text x="60" y="116" font-family="monospace" font-size="10" fill="#E0E0E0">Creating backup directory:</text>
-  <text x="60" y="130" font-family="monospace" font-size="9" fill="#808080">backup_2024-11-13_14-30-00</text>
+  <text x="56" y="134" font-family="monospace" font-size="9" fill="#808080">Focused Workspace:</text>
+  <text x="175" y="134" font-family="monospace" font-size="9" fill="#00F0FF">Workspace 1 [Active App]</text>
 
-  <!-- Progress label -->
-  <text x="60" y="150" font-family="monospace" font-size="10" fill="#E0E0E0">Copying files...</text>
+  <!-- Wallpaper State visual indicator -->
+  <rect x="56" y="146" width="288" height="34" rx="4" fill="#141414" stroke="#00FF8C" stroke-width="1"/>
+  <circle cx="72" cy="163" r="6" fill="#FEBC30">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="86" y="166" font-family="monospace" font-size="9.5" fill="#FEBC30" font-weight="bold">WALLPAPER PAUSED (Saving CPU / GPU)</text>
 
-  <!-- Progress bar track -->
-  <rect x="60" y="157" width="280" height="12" rx="6" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
-  <!-- Animated fill -->
-  <rect x="61" y="158" width="210" height="10" rx="5" fill="#00FF8C" fill-opacity="0.85">
-    <animate attributeName="width" from="0" to="210" dur="3s" repeatCount="indefinite"/>
-  </rect>
-  <text x="60" y="185" font-family="monospace" font-size="9" fill="#808080">2.3 GB / 3.1 GB  (75%)</text>
+  <!-- CPU usage bar comparison -->
+  <text x="56" y="196" font-family="monospace" font-size="8.5" fill="#808080">Active CPU: 0.05%</text>
+  <text x="195" y="196" font-family="monospace" font-size="8.5" fill="#2ACA45">Savings: ~18% GPU power</text>
+  <rect x="56" y="204" width="288" height="8" rx="4" fill="#1a1a1a"/>
+  <rect x="56" y="204" width="28" height="8" rx="4" fill="#00FF8C" fill-opacity="0.9"/>
 
-  <!-- Divider -->
-  <line x1="60" y1="193" x2="340" y2="193" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-  <!-- Stats -->
-  <text x="60" y="210" font-family="monospace" font-size="10" fill="#00F0FF">Files copied:</text>
-  <text x="168" y="210" font-family="monospace" font-size="10" fill="#E0E0E0">1,247</text>
-  <text x="60" y="226" font-family="monospace" font-size="10" fill="#00F0FF">Directories:</text>
-  <text x="160" y="226" font-family="monospace" font-size="10" fill="#E0E0E0">89</text>
+  <text x="56" y="226" font-family="monospace" font-size="8.5" fill="#00F0FF">Compositors: Niri · Hyprland · Sway · Wayland</text>
 
   <!-- Status bar -->
   <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
   <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Backup completed successfully!</text>
-
+  <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+  <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Daemon running in background [C Engine]</text>
+  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
 </svg>

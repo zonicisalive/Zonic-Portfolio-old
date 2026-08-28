@@ -63,7 +63,7 @@
 
 </head>
 
-<body>
+<body class="neon-reduced">
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -105,7 +105,7 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
-                    <button class="theme-toggle" type="button" aria-label="Toggle neon effects" aria-pressed="false"
+                    <button class="theme-toggle is-active" type="button" aria-label="Toggle neon effects" aria-pressed="true"
                         title="Toggle neon effects">
                         <!-- existing svg -->
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -779,599 +779,107 @@
                 <div class="project-filters" role="radiogroup" aria-label="Filter projects by category"
                     data-animate="fade-up">
                     <button class="filter-btn active" data-filter="all" role="radio" aria-checked="true">All</button>
+                    <button class="filter-btn" data-filter="system" role="radio" aria-checked="false">Systems / Linux</button>
                     <button class="filter-btn" data-filter="security" role="radio" aria-checked="false">Security</button>
+                    <button class="filter-btn" data-filter="c" role="radio" aria-checked="false">C / C++</button>
                     <button class="filter-btn" data-filter="rust" role="radio" aria-checked="false">Rust</button>
                     <button class="filter-btn" data-filter="python" role="radio" aria-checked="false">Python</button>
-                    <button class="filter-btn" data-filter="c" role="radio" aria-checked="false">C</button>
-                    <button class="filter-btn" data-filter="bash" role="radio" aria-checked="false">Bash</button>
                 </div>
 
                 <!-- Projects Grid -->
                 <div class="projects-grid" role="region" aria-live="polite">
 
-                    <!-- Project 1: Python Quiz App -->
-                    <article class="project-card" data-tags="python,education" data-project-id="1"
+                    <!-- Project 1: BitFM (C++ / Qt Linux File Manager) -->
+                    <article class="project-card" data-tags="system,c,linux" data-project-id="1"
                         data-animate="blur-up">
                         <div class="project-card-inner">
                             <div class="project-image">
-                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QuizApp - Interactive CLI quiz application">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">python quiz.py</text>
-                                  <!-- Command -->
-                                  <text x="60" y="80" font-family="monospace" font-size="11" fill="#00FF8C">$ python quiz.py</text>
-                                  <text x="60" y="97" font-family="monospace" font-size="10" fill="#00F0FF">Question 1/10:</text>
-                                  <text x="60" y="113" font-family="monospace" font-size="10" fill="#E0E0E0">What is 2 + 2?</text>
-                                  <line x1="60" y1="122" x2="340" y2="122" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <!-- Choices -->
-                                  <text x="60" y="140" font-family="monospace" font-size="10" fill="#808080">[A] 3</text>
-                                  <text x="60" y="158" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">[B] 4 ✓</text>
-                                  <text x="60" y="176" font-family="monospace" font-size="10" fill="#808080">[C] 5</text>
-                                  <text x="60" y="194" font-family="monospace" font-size="10" fill="#808080">[D] 6</text>
-                                  <line x1="60" y1="203" x2="340" y2="203" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <!-- Score -->
-                                  <text x="60" y="220" font-family="monospace" font-size="10" fill="#00F0FF">Score:</text>
-                                  <text x="110" y="220" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">8/10  (80%)</text>
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Quiz complete — all answers reviewed</text>
-                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-                                  </rect>
-                                </svg>
-                                <div class="project-overlay">
-                                    <button class="btn-view" data-project="1" aria-label="View QuizApp details">
-                                        View Details
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">QuizApp</h3>
-                                <p class="project-description">Interactive multiple-choice quiz (CLI) with scoring and
-                                    answer review.</p>
-                                <div class="project-tech">
-                                    <span class="tech-badge">Python</span>
-                                    <span class="tech-badge">CLI</span>
-                                    <span class="tech-badge">File I/O</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Run QuizApp demo">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                                        </svg>
-                                        Code
-                                    </a>
-                                    <a href="#" class="project-link" aria-label="View QuizApp source code">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                        </svg>
-                                        Repo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BitFM - Modern Linux File Manager in C++ and Qt">
+                                    <!-- Window Body -->
+                                    <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Title bar -->
+                                    <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                    <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                    <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                    <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">BitFM</text>
+                                    
+                                    <!-- Path Navigation Bar -->
+                                    <rect x="52" y="66" width="296" height="20" rx="4" fill="#141414" stroke="#00FF8C" stroke-width="0.75" stroke-opacity="0.5"/>
+                                    <text x="62" y="80" font-family="monospace" font-size="9" fill="#00F0FF">📍 /home/zonic/projects/BitFM/src</text>
+                                    
+                                    <!-- Sidebar & File Browser Layout -->
+                                    <rect x="52" y="92" width="75" height="142" rx="4" fill="#0f0f0f" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="58" y="106" font-family="monospace" font-size="8.5" fill="#B028FF" font-weight="bold">PLACES</text>
+                                    <text x="58" y="122" font-family="monospace" font-size="8" fill="#E0E0E0">🏠 Home</text>
+                                    <text x="58" y="136" font-family="monospace" font-size="8" fill="#00FF8C">📁 Projects</text>
+                                    <text x="58" y="150" font-family="monospace" font-size="8" fill="#808080">💾 Root (ext4)</text>
+                                    <text x="58" y="164" font-family="monospace" font-size="8" fill="#808080">☁️ Wayland</text>
 
-                    <!-- Project 2: C Student Report Card System -->
-                    <article class="project-card" data-tags="c,education" data-project-id="2" data-animate="blur-up"
-                        data-delay="80">
-                        <div class="project-card-inner">
-                            <div class="project-image">
-                                <svg class="project-card-svg shrink-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ReportCard - Student report card system in C">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">REPORT CARD</text>
-                                  <!-- Student info -->
-                                  <text x="60" y="78" font-family="monospace" font-size="10" fill="#00F0FF">Student:</text>
-                                  <text x="120" y="78" font-family="monospace" font-size="10" fill="#E0E0E0">John Doe</text>
-                                  <text x="60" y="94" font-family="monospace" font-size="10" fill="#00F0FF">Roll No:</text>
-                                  <text x="120" y="94" font-family="monospace" font-size="10" fill="#E0E0E0">2024001</text>
-                                  <line x1="60" y1="104" x2="340" y2="104" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <!-- Table header -->
-                                  <text x="60" y="120" font-family="monospace" font-size="10" fill="#B028FF" font-weight="bold">Subject</text>
-                                  <text x="280" y="120" font-family="monospace" font-size="10" fill="#B028FF" font-weight="bold">Marks</text>
-                                  <!-- Subjects -->
-                                  <text x="60" y="138" font-family="monospace" font-size="10" fill="#E0E0E0">Mathematics</text>
-                                  <text x="280" y="138" font-family="monospace" font-size="10" fill="#00FF8C">95</text>
-                                  <text x="60" y="156" font-family="monospace" font-size="10" fill="#E0E0E0">Physics</text>
-                                  <text x="280" y="156" font-family="monospace" font-size="10" fill="#00FF8C">88</text>
-                                  <text x="60" y="174" font-family="monospace" font-size="10" fill="#E0E0E0">Chemistry</text>
-                                  <text x="280" y="174" font-family="monospace" font-size="10" fill="#00FF8C">92</text>
-                                  <text x="60" y="192" font-family="monospace" font-size="10" fill="#808080">English</text>
-                                  <text x="280" y="192" font-family="monospace" font-size="10" fill="#00FF8C">78</text>
-                                  <text x="60" y="210" font-family="monospace" font-size="10" fill="#808080">Computer Sc.</text>
-                                  <text x="280" y="210" font-family="monospace" font-size="10" fill="#00FF8C">97</text>
-                                  <line x1="60" y1="218" x2="340" y2="218" stroke="#00FF8C" stroke-width="1"/>
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Grade: A+ · Percent: 90.00%</text>
-                                </svg>
-                                <div class="project-overlay">
-                                    <button class="btn-view" data-project="2" aria-label="View ReportCard details">
-                                        View Details
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">ReportCard</h3>
-                                <p class="project-description">Enter student marks for subjects, compute total,
-                                    percentage and grade; save/view records.</p>
-                                <div class="project-tech">
-                                    <span class="tech-badge">C</span>
-                                    <span class="tech-badge">File I/O</span>
-                                    <span class="tech-badge">Structs</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="View ReportCard demo">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                                        </svg>
-                                        Code
-                                    </a>
-                                    <a href="#" class="project-link" aria-label="View ReportCard source code">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                        </svg>
-                                        Repo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                                    <!-- Main File List Header -->
+                                    <text x="135" y="105" font-family="monospace" font-size="8.5" fill="#808080">Name</text>
+                                    <text x="250" y="105" font-family="monospace" font-size="8.5" fill="#808080">Size</text>
+                                    <text x="300" y="105" font-family="monospace" font-size="8.5" fill="#808080">Perm</text>
+                                    <line x1="133" y1="110" x2="348" y2="110" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
 
-                    <!-- Project 3: Bash System Info Dashboard -->
-                    <article class="project-card" data-tags="bash,education" data-project-id="3" data-animate="blur-up"
-                        data-delay="120">
-                        <div class="project-card-inner">
-                            <div class="project-image">
-                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SysInfo - Bash system information dashboard">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">sys_info.sh</text>
-                                  <!-- Header -->
-                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">=== SYSTEM INFO DASHBOARD ===</text>
-                                  <!-- Info rows -->
-                                  <text x="60" y="95" font-family="monospace" font-size="10" fill="#00FF8C">Hostname:</text>
-                                  <text x="148" y="95" font-family="monospace" font-size="10" fill="#E0E0E0">matrix-server</text>
-                                  <text x="60" y="112" font-family="monospace" font-size="10" fill="#00FF8C">Uptime:</text>
-                                  <text x="132" y="112" font-family="monospace" font-size="10" fill="#E0E0E0">42 days, 13:37:01</text>
-                                  <text x="60" y="129" font-family="monospace" font-size="10" fill="#00FF8C">Memory:</text>
-                                  <text x="136" y="129" font-family="monospace" font-size="10" fill="#E0E0E0">8.2 / 16.0 GB (51%)</text>
-                                  <!-- Memory bar -->
-                                  <rect x="60" y="135" width="280" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
-                                  <rect x="61" y="136" width="140" height="6" rx="3" fill="#00FF8C" fill-opacity="0.8"/>
-                                  <text x="60" y="162" font-family="monospace" font-size="10" fill="#00FF8C">Disk:</text>
-                                  <text x="100" y="162" font-family="monospace" font-size="10" fill="#E0E0E0">450 / 1024 GB (44%)</text>
-                                  <!-- Disk bar -->
-                                  <rect x="60" y="168" width="280" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
-                                  <rect x="61" y="169" width="122" height="6" rx="3" fill="#B028FF" fill-opacity="0.85"/>
-                                  <line x1="60" y1="185" x2="340" y2="185" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <!-- Processes -->
-                                  <text x="60" y="202" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Top Processes:</text>
-                                  <text x="60" y="218" font-family="monospace" font-size="9" fill="#808080">python  12.3% | nginx  8.1% | node  6.5%</text>
-                                  <text x="60" y="233" font-family="monospace" font-size="9" fill="#808080">Load avg: 0.82  0.79  0.65</text>
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Dashboard rendered successfully</text>
-                                  <rect x="60" y="252" width="6" height="10" fill="#00FF8C">
-                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-                                  </rect>
+                                    <!-- File rows -->
+                                    <text x="135" y="123" font-family="monospace" font-size="8.5" fill="#00FF8C">📁 core/</text>
+                                    <text x="250" y="123" font-family="monospace" font-size="8.5" fill="#808080">4.0 KB</text>
+                                    <text x="300" y="123" font-family="monospace" font-size="8.5" fill="#E0E0E0">drwxr-xr-x</text>
+
+                                    <text x="135" y="139" font-family="monospace" font-size="8.5" fill="#00F0FF">📄 main.cpp</text>
+                                    <text x="250" y="139" font-family="monospace" font-size="8.5" fill="#808080">8.2 KB</text>
+                                    <text x="300" y="139" font-family="monospace" font-size="8.5" fill="#E0E0E0">-rw-r--r--</text>
+
+                                    <text x="135" y="155" font-family="monospace" font-size="8.5" fill="#00F0FF">📄 window.cpp</text>
+                                    <text x="250" y="155" font-family="monospace" font-size="8.5" fill="#808080">14.6 KB</text>
+                                    <text x="300" y="155" font-family="monospace" font-size="8.5" fill="#E0E0E0">-rw-r--r--</text>
+
+                                    <text x="135" y="171" font-family="monospace" font-size="8.5" fill="#B028FF">⚙️ CMakeLists.txt</text>
+                                    <text x="250" y="171" font-family="monospace" font-size="8.5" fill="#808080">2.1 KB</text>
+                                    <text x="300" y="171" font-family="monospace" font-size="8.5" fill="#E0E0E0">-rw-r--r--</text>
+
+                                    <line x1="133" y1="180" x2="348" y2="180" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <!-- Performance Badge -->
+                                    <text x="135" y="196" font-family="monospace" font-size="8.5" fill="#00FF8C" font-weight="bold">⚡ Load Time: 12ms · Wayland (Niri/Hyprland)</text>
+                                    <text x="135" y="210" font-family="monospace" font-size="8" fill="#808080">Memory: 24MB · Qt6 / C++20 Native Engine</text>
+
+                                    <!-- Status bar -->
+                                    <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                    <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                    <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">BitFM running · 42 items indexed</text>
+                                    <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                    </rect>
                                 </svg>
                                 <div class="project-overlay">
-                                    <button class="btn-view" data-project="3" aria-label="View SysInfo details">
+                                    <button class="btn-view" data-project="1" aria-label="View BitFM details">
                                         View Details
                                     </button>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3 class="project-title">SysInfo</h3>
-                                <p class="project-description">Quick system snapshot: hostname, uptime, memory, disk and
-                                    top processes (Bash).</p>
+                                <h3 class="project-title">BitFM</h3>
+                                <p class="project-description">Modern, blazing-fast Linux file manager engineered with C++ and Qt for Wayland (Niri, Hyprland, Sway, GNOME, KDE) &amp; X11.</p>
                                 <div class="project-tech">
-                                    <span class="tech-badge">Bash</span>
+                                    <span class="tech-badge">C++</span>
+                                    <span class="tech-badge">Qt</span>
                                     <span class="tech-badge">Linux</span>
-                                    <span class="tech-badge">Shell</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Run SysInfo demo">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                                        </svg>
-                                        Code
-                                    </a>
-                                    <a href="#" class="project-link" aria-label="View SysInfo source code">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                        </svg>
-                                        Repo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 4: Bash Automated Backup Script -->
-                    <article class="project-card" data-tags="bash,education" data-project-id="4" data-animate="blur-up"
-                        data-delay="160">
-                        <div class="project-card-inner">
-                            <div class="project-image">
-                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BackupScript - Automated backup script in Bash">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">backup.sh</text>
-                                  <!-- Command -->
-                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF">$ ./backup.sh /home/user</text>
-                                  <text x="60" y="92" font-family="monospace" font-size="10" fill="#00FF8C">[✓] Backup started...</text>
-                                  <line x1="60" y1="100" x2="340" y2="100" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="116" font-family="monospace" font-size="10" fill="#E0E0E0">Creating backup directory:</text>
-                                  <text x="60" y="130" font-family="monospace" font-size="9" fill="#808080">backup_2024-11-13_14-30-00</text>
-                                  <!-- Progress -->
-                                  <text x="60" y="150" font-family="monospace" font-size="10" fill="#E0E0E0">Copying files...</text>
-                                  <rect x="60" y="157" width="280" height="12" rx="6" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
-                                  <rect x="61" y="158" width="210" height="10" rx="5" fill="#00FF8C" fill-opacity="0.85">
-                                    <animate attributeName="width" from="0" to="210" dur="3s" repeatCount="indefinite"/>
-                                  </rect>
-                                  <text x="60" y="185" font-family="monospace" font-size="9" fill="#808080">2.3 GB / 3.1 GB  (75%)</text>
-                                  <line x1="60" y1="193" x2="340" y2="193" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="210" font-family="monospace" font-size="10" fill="#00F0FF">Files copied:</text>
-                                  <text x="168" y="210" font-family="monospace" font-size="10" fill="#E0E0E0">1,247</text>
-                                  <text x="60" y="226" font-family="monospace" font-size="10" fill="#00F0FF">Directories:</text>
-                                  <text x="160" y="226" font-family="monospace" font-size="10" fill="#E0E0E0">89</text>
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Backup completed successfully!</text>
-                                </svg>
-                                <div class="project-overlay">
-                                    <button class="btn-view" data-project="4" aria-label="View BackupScript details">
-                                        View Details
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">BackupScript</h3>
-                                <p class="project-description">Copy folders to timestamped backups; safe and easy to
-                                    schedule with cron.</p>
-                                <div class="project-tech">
-                                    <span class="tech-badge">Bash</span>
-                                    <span class="tech-badge">Cron</span>
-                                    <span class="tech-badge">File Ops</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Run BackupScript demo">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                                        </svg>
-                                        Code
-                                    </a>
-                                    <a href="#" class="project-link" aria-label="View BackupScript source code">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                        </svg>
-                                        Repo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 5: C Number Guessing Game -->
-                    <article class="project-card" data-tags="c,education" data-project-id="5" data-animate="blur-up"
-                        data-delay="200">
-                        <div class="project-card-inner">
-                            <div class="project-image">
-                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GuessGame - Number guessing game in C">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">guess_game.c</text>
-                                  <!-- Header -->
-                                  <text x="200" y="76" font-family="monospace" font-size="11" fill="#00F0FF" text-anchor="middle" font-weight="bold">NUMBER GUESSING GAME</text>
-                                  <line x1="60" y1="83" x2="340" y2="83" stroke="#00FF8C" stroke-width="1"/>
-                                  <!-- Prompt -->
-                                  <text x="200" y="103" font-family="monospace" font-size="10" fill="#808080" text-anchor="middle">Guess a number between 1 and 100</text>
-                                  <!-- Mystery number box -->
-                                  <rect x="155" y="115" width="90" height="55" rx="8" fill="#00FF8C" fill-opacity="0.08" stroke="#00FF8C" stroke-width="2">
-                                    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
-                                  </rect>
-                                  <text x="200" y="153" font-family="monospace" font-size="32" fill="#00FF8C" text-anchor="middle" font-weight="bold">??</text>
-                                  <line x1="60" y1="181" x2="340" y2="181" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <!-- Hints -->
-                                  <text x="60" y="199" font-family="monospace" font-size="10" fill="#E0E0E0">Your guess:</text>
-                                  <text x="155" y="199" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">50</text>
-                                  <text x="60" y="216" font-family="monospace" font-size="10" fill="#B028FF">Hint: Too low! ↑</text>
-                                  <text x="60" y="233" font-family="monospace" font-size="10" fill="#00F0FF">Attempts:</text>
-                                  <text x="130" y="233" font-family="monospace" font-size="10" fill="#E0E0E0">4 / 10</text>
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#808080">Keep going! The number is between 50 and 100</text>
-                                </svg>
-                                <div class="project-overlay">
-                                    <button class="btn-view" data-project="5" aria-label="View GuessGame details">
-                                        View Details
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">GuessGame</h3>
-                                <p class="project-description">Classic number-guessing game (1â€“100) with hints and
-                                    attempt counter.</p>
-                                <div class="project-tech">
-                                    <span class="tech-badge">C</span>
-                                    <span class="tech-badge">stdlib</span>
-                                    <span class="tech-badge">Loops</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Play GuessGame demo">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                                        </svg>
-                                        Code
-                                    </a>
-                                    <a href="#" class="project-link" aria-label="View GuessGame source code">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                        </svg>
-                                        Repo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 6: Python Expense Tracker -->
-                    <article class="project-card" data-tags="python,education" data-project-id="6"
-                        data-animate="blur-up" data-delay="240">
-                        <div class="project-card-inner">
-                            <div class="project-image">
-                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ExpenseTracker - Simple CSV expense tracker in Python">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">expense_tracker.py</text>
-
-                                  <!-- Table headers -->
-                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Date</text>
-                                  <text x="130" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Category</text>
-                                  <text x="220" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">Amount</text>
-                                  <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-                                  <!-- Expense entries -->
-                                  <text x="60" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">11-10</text>
-                                  <text x="130" y="100" font-family="monospace" font-size="9" fill="#808080">Food</text>
-                                  <text x="220" y="100" font-family="monospace" font-size="9" fill="#00FF8C">$25.50</text>
-
-                                  <text x="60" y="116" font-family="monospace" font-size="9" fill="#E0E0E0">11-11</text>
-                                  <text x="130" y="116" font-family="monospace" font-size="9" fill="#808080">Transport</text>
-                                  <text x="220" y="116" font-family="monospace" font-size="9" fill="#00FF8C">$15.00</text>
-
-                                  <text x="60" y="132" font-family="monospace" font-size="9" fill="#E0E0E0">11-12</text>
-                                  <text x="130" y="132" font-family="monospace" font-size="9" fill="#808080">Shopping</text>
-                                  <text x="220" y="132" font-family="monospace" font-size="9" fill="#00FF8C">$89.99</text>
-
-                                  <text x="60" y="148" font-family="monospace" font-size="9" fill="#E0E0E0">11-13</text>
-                                  <text x="130" y="148" font-family="monospace" font-size="9" fill="#808080">Bills</text>
-                                  <text x="220" y="148" font-family="monospace" font-size="9" fill="#00FF8C">$120.00</text>
-
-                                  <line x1="60" y1="158" x2="340" y2="158" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-                                  <!-- Category Summary -->
-                                  <text x="60" y="174" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Totals by Category:</text>
-                                  <text x="60" y="190" font-family="monospace" font-size="9" fill="#808080">Food: $125.50  |  Transport: $45.00</text>
-                                  <text x="60" y="204" font-family="monospace" font-size="9" fill="#808080">Shopping: $289.99  |  Bills: $320.00</text>
-
-                                  <line x1="60" y1="214" x2="340" y2="214" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-                                  <!-- Total Expenses -->
-                                  <text x="60" y="230" font-family="monospace" font-size="10" fill="#00F0FF">Total Expenses:</text>
-                                  <text x="175" y="230" font-family="monospace" font-size="10" fill="#00FF8C" font-weight="bold">$780.49</text>
-
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Expenses saved to expenses.csv</text>
-                                  <!-- Blinking cursor -->
-                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-                                  </rect>
-                                </svg>
-                                <div class="project-overlay">
-                                    <button class="btn-view" data-project="6" aria-label="View ExpenseTracker details">
-                                        View Details
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">ExpenseTracker</h3>
-                                <p class="project-description">Add/view expenses saved to CSV, and show totals by
-                                    category (CLI).</p>
-                                <div class="project-tech">
-                                    <span class="tech-badge">Python</span>
-                                    <span class="tech-badge">CSV</span>
-                                    <span class="tech-badge">File I/O</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Run ExpenseTracker demo">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                                        </svg>
-                                        Code
-                                    </a>
-                                    <a href="#" class="project-link" aria-label="View ExpenseTracker source code">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                        </svg>
-                                        Repo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 7: Rust Wayland Gamma Controller -->
-                    <article class="project-card" data-tags="rust,wayland,system" data-project-id="7"
-                        data-animate="blur-up" data-delay="280">
-                        <div class="project-card-inner">
-                            <div class="project-image">
-                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="wl-gammactl - Wayland Gamma and Color Controller in Rust">
-                                  <!-- Terminal body -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
-
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">wl-gammactl-rust</text>
-
-                                  <!-- Command prompt -->
-                                  <text x="56" y="76" font-family="monospace" font-size="9" fill="#00FF8C">$ wl-gammactl --output eDP-1 \</text>
-                                  <text x="56" y="89" font-family="monospace" font-size="9" fill="#00FF8C">    --gamma 1.2 --temp 6500K --brightness 1.0</text>
-                                  <text x="56" y="102" font-family="monospace" font-size="9" fill="#00F0FF">[Wayland] Connected · wlr-gamma-control-v1</text>
-
-                                  <!-- Divider -->
-                                  <line x1="56" y1="112" x2="344" y2="112" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-                                  <!-- R channel label + bar -->
-                                  <text x="56" y="128" font-family="monospace" font-size="9" fill="#FF5555" font-weight="bold">R</text>
-                                  <rect x="70" y="118" width="200" height="10" rx="2" fill="#1a1a1a"/>
-                                  <rect x="70" y="118" width="160" height="10" rx="2" fill="#FF5555" fill-opacity="0.85"/>
-                                  <text x="278" y="128" font-family="monospace" font-size="9" fill="#FF5555">1.00</text>
-
-                                  <!-- G channel label + bar -->
-                                  <text x="56" y="148" font-family="monospace" font-size="9" fill="#50FA7B" font-weight="bold">G</text>
-                                  <rect x="70" y="138" width="200" height="10" rx="2" fill="#1a1a1a"/>
-                                  <rect x="70" y="138" width="176" height="10" rx="2" fill="#50FA7B" fill-opacity="0.85"/>
-                                  <text x="278" y="148" font-family="monospace" font-size="9" fill="#50FA7B">1.10</text>
-
-                                  <!-- B channel label + bar -->
-                                  <text x="56" y="168" font-family="monospace" font-size="9" fill="#8BE9FD" font-weight="bold">B</text>
-                                  <rect x="70" y="158" width="200" height="10" rx="2" fill="#1a1a1a"/>
-                                  <rect x="70" y="158" width="192" height="10" rx="2" fill="#8BE9FD" fill-opacity="0.85"/>
-                                  <text x="278" y="168" font-family="monospace" font-size="9" fill="#8BE9FD">1.20</text>
-
-                                  <!-- Divider -->
-                                  <line x1="56" y1="179" x2="344" y2="179" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-
-                                  <!-- Info rows -->
-                                  <text x="56" y="195" font-family="monospace" font-size="9" fill="#808080">Temp:</text>
-                                  <text x="96" y="195" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">6500K</text>
-                                  <text x="152" y="195" font-family="monospace" font-size="9" fill="#E0E0E0">Daylight Neutral</text>
-
-                                  <text x="56" y="210" font-family="monospace" font-size="9" fill="#808080">Bright:</text>
-                                  <text x="104" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">100%</text>
-                                  <text x="144" y="210" font-family="monospace" font-size="9" fill="#808080">Contrast:</text>
-                                  <text x="207" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.05</text>
-
-                                  <text x="56" y="225" font-family="monospace" font-size="9" fill="#808080">Sat:</text>
-                                  <text x="84" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.15</text>
-                                  <text x="120" y="225" font-family="monospace" font-size="9" fill="#808080">Gamma:</text>
-                                  <text x="171" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.20</text>
-
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Gamma ramp applied to eDP-1 [Rust]</text>
-                                  <!-- Blinking cursor -->
-                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-                                  </rect>
-                                </svg>
-                                <div class="project-overlay">
-                                    <button class="btn-view" data-project="7" aria-label="View wl-gammactl details">
-                                        View Details
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">wl-gammactl</h3>
-                                <p class="project-description">Fast Wayland gamma, brightness, contrast &amp; temperature controller in Rust.</p>
-                                <div class="project-tech">
-                                    <span class="tech-badge">Rust</span>
                                     <span class="tech-badge">Wayland</span>
-                                    <span class="tech-badge">CLI</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl repository">
+                                    <a href="https://github.com/ZonicExists/BitFM" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View BitFM repository">
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round">
                                             <path
-                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                                 d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
                                         </svg>
                                         Code
                                     </a>
-                                    <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl source code">
+                                    <a href="https://github.com/ZonicExists/BitFM" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View BitFM source code">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                                             <path
                                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
@@ -1383,71 +891,70 @@
                         </div>
                     </article>
 
-                    <!-- Project 8: Bit Vault (Zero-Knowledge Password Manager & File Vault) -->
-                    <article class="project-card" data-tags="security,typescript,crypto" data-project-id="8"
-                        data-animate="blur-up" data-delay="320">
+                    <!-- Project 2: Bit-Vault (Zero-Knowledge Password & Encrypted File Vault) -->
+                    <article class="project-card" data-tags="security,typescript,crypto" data-project-id="2"
+                        data-animate="blur-up" data-delay="80">
                         <div class="project-card-inner">
                             <div class="project-image">
                                 <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bit-Vault - Zero-Knowledge Password Manager &amp; Encrypted File Vault">
-                                  <!-- Window -->
-                                  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Window -->
+                                    <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Title bar -->
+                                    <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                    <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                    <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                    <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">Bit-Vault</text>
 
-                                  <!-- Title bar -->
-                                  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
-                                  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
-                                  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
-                                  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-                                  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">bit-vault.ts</text>
+                                    <!-- Vault Header -->
+                                    <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">🛡️ BIT VAULT — ZERO-KNOWLEDGE</text>
+                                    <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
 
-                                  <!-- Vault Header -->
-                                  <text x="60" y="76" font-family="monospace" font-size="10" fill="#00F0FF" font-weight="bold">🛡️ BIT VAULT — ZERO-KNOWLEDGE</text>
-                                  <line x1="60" y1="84" x2="340" y2="84" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <!-- Key Derivation / Encryption Status -->
+                                    <text x="60" y="100" font-family="monospace" font-size="9" fill="#808080">Cipher:</text>
+                                    <text x="110" y="100" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">AES-256-GCM</text>
+                                    <text x="200" y="100" font-family="monospace" font-size="9" fill="#808080">KDF:</text>
+                                    <text x="230" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">PBKDF2 (100k iter)</text>
 
-                                  <!-- Key Derivation / Encryption Status -->
-                                  <text x="60" y="100" font-family="monospace" font-size="9" fill="#808080">Cipher:</text>
-                                  <text x="110" y="100" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">AES-256-GCM</text>
-                                  <text x="200" y="100" font-family="monospace" font-size="9" fill="#808080">KDF:</text>
-                                  <text x="230" y="100" font-family="monospace" font-size="9" fill="#E0E0E0">PBKDF2 (100k iter)</text>
+                                    <line x1="60" y1="108" x2="340" y2="108" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
 
-                                  <line x1="60" y1="108" x2="340" y2="108" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <!-- Vault Items list -->
+                                    <text x="60" y="125" font-family="monospace" font-size="9" fill="#E0E0E0">🔑 GitHub Account</text>
+                                    <text x="220" y="125" font-family="monospace" font-size="9" fill="#00F0FF">2FA [649 201]</text>
+                                    <text x="310" y="125" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
 
-                                  <!-- Vault Items list -->
-                                  <text x="60" y="125" font-family="monospace" font-size="9" fill="#E0E0E0">🔑 GitHub Account</text>
-                                  <text x="220" y="125" font-family="monospace" font-size="9" fill="#00F0FF">2FA [649 201]</text>
-                                  <text x="310" y="125" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+                                    <text x="60" y="142" font-family="monospace" font-size="9" fill="#E0E0E0">💳 Primary Card</text>
+                                    <text x="220" y="142" font-family="monospace" font-size="9" fill="#808080">•••• 4242</text>
+                                    <text x="310" y="142" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
 
-                                  <text x="60" y="142" font-family="monospace" font-size="9" fill="#E0E0E0">💳 Primary Card</text>
-                                  <text x="220" y="142" font-family="monospace" font-size="9" fill="#808080">•••• 4242</text>
-                                  <text x="310" y="142" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+                                    <text x="60" y="159" font-family="monospace" font-size="9" fill="#E0E0E0">📁 tax_return_2025.pdf</text>
+                                    <text x="220" y="159" font-family="monospace" font-size="9" fill="#808080">Encrypted (1.4MB)</text>
+                                    <text x="310" y="159" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
 
-                                  <text x="60" y="159" font-family="monospace" font-size="9" fill="#E0E0E0">📁 tax_return_2025.pdf</text>
-                                  <text x="220" y="159" font-family="monospace" font-size="9" fill="#808080">Encrypted (1.4MB)</text>
-                                  <text x="310" y="159" font-family="monospace" font-size="9" fill="#2ACA45">🔒</text>
+                                    <line x1="60" y1="168" x2="340" y2="168" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
 
-                                  <line x1="60" y1="168" x2="340" y2="168" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <!-- Security Audit Row -->
+                                    <text x="60" y="185" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Security Audit (k-Anonymity):</text>
+                                    <text x="60" y="200" font-family="monospace" font-size="9" fill="#2ACA45">✓ 0 Exposed Passwords Found</text>
 
-                                  <!-- Security Audit Row -->
-                                  <text x="60" y="185" font-family="monospace" font-size="9.5" fill="#00F0FF" font-weight="bold">Security Audit (k-Anonymity):</text>
-                                  <text x="60" y="200" font-family="monospace" font-size="9" fill="#2ACA45">✓ 0 Exposed Passwords Found</text>
+                                    <text x="60" y="217" font-family="monospace" font-size="9" fill="#808080">TOTP Timer:</text>
+                                    <rect x="130" y="210" width="150" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
+                                    <rect x="131" y="211" width="105" height="6" rx="3" fill="#00FF8C" fill-opacity="0.85"/>
+                                    <text x="290" y="217" font-family="monospace" font-size="9" fill="#00FF8C">21s</text>
 
-                                  <text x="60" y="217" font-family="monospace" font-size="9" fill="#808080">TOTP Timer:</text>
-                                  <rect x="130" y="210" width="150" height="8" rx="4" fill="#1a1a1a" stroke="#00FF8C" stroke-width="1"/>
-                                  <rect x="131" y="211" width="105" height="6" rx="3" fill="#00FF8C" fill-opacity="0.85"/>
-                                  <text x="290" y="217" font-family="monospace" font-size="9" fill="#00FF8C">21s</text>
-
-                                  <!-- Status bar -->
-                                  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-                                  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-                                  <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-                                  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Zero-Knowledge Vault Locked &amp; Secured</text>
-                                  <!-- Blinking cursor -->
-                                  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-                                  </rect>
+                                    <!-- Status bar -->
+                                    <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                    <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                    <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Zero-Knowledge Vault Locked &amp; Secured</text>
+                                    <!-- Blinking cursor -->
+                                    <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                    </rect>
                                 </svg>
                                 <div class="project-overlay">
-                                    <button class="btn-view" data-project="8" aria-label="View Bit-Vault details">
+                                    <button class="btn-view" data-project="2" aria-label="View Bit-Vault details">
                                         View Details
                                     </button>
                                 </div>
@@ -1471,6 +978,366 @@
                                         Code
                                     </a>
                                     <a href="https://github.com/ZonicExists/Bit-Vault" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Bit-Vault source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Rust Wayland Gamma Controller -->
+                    <article class="project-card" data-tags="system,rust,wayland" data-project-id="3"
+                        data-animate="blur-up" data-delay="120">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="wl-gammactl - Wayland Gamma and Color Controller in Rust">
+                                    <!-- Terminal body -->
+                                    <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Title bar -->
+                                    <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                    <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                    <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                    <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">wl-gammactl</text>
+
+                                    <!-- Command prompt -->
+                                    <text x="56" y="76" font-family="monospace" font-size="9" fill="#00FF8C">$ wl-gammactl --output eDP-1 \</text>
+                                    <text x="56" y="89" font-family="monospace" font-size="9" fill="#00FF8C">    --gamma 1.2 --temp 6500K --brightness 1.0</text>
+                                    <text x="56" y="102" font-family="monospace" font-size="9" fill="#00F0FF">[Wayland] Connected · wlr-gamma-control-v1</text>
+
+                                    <!-- Divider -->
+                                    <line x1="56" y1="112" x2="344" y2="112" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                    <!-- R channel label + bar -->
+                                    <text x="56" y="128" font-family="monospace" font-size="9" fill="#FF5555" font-weight="bold">R</text>
+                                    <rect x="70" y="118" width="200" height="10" rx="2" fill="#1a1a1a"/>
+                                    <rect x="70" y="118" width="160" height="10" rx="2" fill="#FF5555" fill-opacity="0.85"/>
+                                    <text x="278" y="128" font-family="monospace" font-size="9" fill="#FF5555">1.00</text>
+
+                                    <!-- G channel label + bar -->
+                                    <text x="56" y="148" font-family="monospace" font-size="9" fill="#50FA7B" font-weight="bold">G</text>
+                                    <rect x="70" y="138" width="200" height="10" rx="2" fill="#1a1a1a"/>
+                                    <rect x="70" y="138" width="176" height="10" rx="2" fill="#50FA7B" fill-opacity="0.85"/>
+                                    <text x="278" y="148" font-family="monospace" font-size="9" fill="#50FA7B">1.10</text>
+
+                                    <!-- B channel label + bar -->
+                                    <text x="56" y="168" font-family="monospace" font-size="9" fill="#8BE9FD" font-weight="bold">B</text>
+                                    <rect x="70" y="158" width="200" height="10" rx="2" fill="#1a1a1a"/>
+                                    <rect x="70" y="158" width="192" height="10" rx="2" fill="#8BE9FD" fill-opacity="0.85"/>
+                                    <text x="278" y="168" font-family="monospace" font-size="9" fill="#8BE9FD">1.20</text>
+
+                                    <!-- Divider -->
+                                    <line x1="56" y1="179" x2="344" y2="179" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                    <!-- Info rows -->
+                                    <text x="56" y="195" font-family="monospace" font-size="9" fill="#808080">Temp:</text>
+                                    <text x="96" y="195" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">6500K</text>
+                                    <text x="152" y="195" font-family="monospace" font-size="9" fill="#E0E0E0">Daylight Neutral</text>
+
+                                    <text x="56" y="210" font-family="monospace" font-size="9" fill="#808080">Bright:</text>
+                                    <text x="104" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">100%</text>
+                                    <text x="144" y="210" font-family="monospace" font-size="9" fill="#808080">Contrast:</text>
+                                    <text x="207" y="210" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.05</text>
+
+                                    <text x="56" y="225" font-family="monospace" font-size="9" fill="#808080">Sat:</text>
+                                    <text x="84" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.15</text>
+                                    <text x="120" y="225" font-family="monospace" font-size="9" fill="#808080">Gamma:</text>
+                                    <text x="171" y="225" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">1.20</text>
+
+                                    <!-- Status bar -->
+                                    <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                    <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                    <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Gamma ramp applied to eDP-1 [Rust]</text>
+                                    <!-- Blinking cursor -->
+                                    <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                    </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="3" aria-label="View wl-gammactl details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">wl-gammactl</h3>
+                                <p class="project-description">Fast Wayland gamma, brightness, contrast &amp; temperature controller in Rust.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Rust</span>
+                                    <span class="tech-badge">Wayland</span>
+                                    <span class="tech-badge">CLI</span>
+                                    <span class="tech-badge">System</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl repository">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="https://github.com/ZonicExists/wl-gammactl-rust" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View wl-gammactl source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: mpvpaper-stop (C / Wayland Wallpaper Daemon) -->
+                    <article class="project-card" data-tags="system,c,linux" data-project-id="4"
+                        data-animate="blur-up" data-delay="160">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="mpvpaper-stop - Automatic Wallpaper Stop Daemon in C">
+                                    <!-- Window -->
+                                    <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Title bar -->
+                                    <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                    <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                    <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                    <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">mpvpaper-stop</text>
+
+                                    <!-- Command -->
+                                    <text x="56" y="78" font-family="monospace" font-size="9.5" fill="#00FF8C">$ ./mpvpaper-stop --daemon --compositor=niri</text>
+                                    <text x="56" y="94" font-family="monospace" font-size="9" fill="#00F0FF">[Daemon] Initialized · Event Loop active</text>
+                                    <line x1="56" y1="102" x2="344" y2="102" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                    <!-- Focus & State Monitoring -->
+                                    <text x="56" y="118" font-family="monospace" font-size="9" fill="#808080">Target Process:</text>
+                                    <text x="160" y="118" font-family="monospace" font-size="9" fill="#00FF8C" font-weight="bold">mpvpaper (PID 5192)</text>
+
+                                    <text x="56" y="134" font-family="monospace" font-size="9" fill="#808080">Focused Workspace:</text>
+                                    <text x="175" y="134" font-family="monospace" font-size="9" fill="#00F0FF">Workspace 1 [Active App]</text>
+
+                                    <!-- Wallpaper State visual indicator -->
+                                    <rect x="56" y="146" width="288" height="34" rx="4" fill="#141414" stroke="#00FF8C" stroke-width="1"/>
+                                    <circle cx="72" cy="163" r="6" fill="#FEBC30">
+                                        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="86" y="166" font-family="monospace" font-size="9.5" fill="#FEBC30" font-weight="bold">WALLPAPER PAUSED (Saving CPU / GPU)</text>
+
+                                    <!-- CPU usage bar comparison -->
+                                    <text x="56" y="196" font-family="monospace" font-size="8.5" fill="#808080">Active CPU: 0.05%</text>
+                                    <text x="195" y="196" font-family="monospace" font-size="8.5" fill="#2ACA45">Savings: ~18% GPU power</text>
+                                    <rect x="56" y="204" width="288" height="8" rx="4" fill="#1a1a1a"/>
+                                    <rect x="56" y="204" width="28" height="8" rx="4" fill="#00FF8C" fill-opacity="0.9"/>
+
+                                    <text x="56" y="226" font-family="monospace" font-size="8.5" fill="#00F0FF">Compositors: Niri · Hyprland · Sway · Wayland</text>
+
+                                    <!-- Status bar -->
+                                    <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                    <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                    <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Daemon running in background [C Engine]</text>
+                                    <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                    </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="4" aria-label="View mpvpaper-stop details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">mpvpaper-stop</h3>
+                                <p class="project-description">Automatic stop &amp; pause daemon for mpvpaper animated live wallpapers on Linux Wayland (Hyprland, Sway, Niri) to save CPU/GPU.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">Linux</span>
+                                    <span class="tech-badge">Wayland</span>
+                                    <span class="tech-badge">Daemon</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ZonicExists/mpvpaper-stop" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View mpvpaper-stop repository">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="https://github.com/ZonicExists/mpvpaper-stop" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View mpvpaper-stop source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Zade (Discord Self-Bot in Python) -->
+                    <article class="project-card" data-tags="python,automation,security" data-project-id="5"
+                        data-animate="blur-up" data-delay="200">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zade - Discord Automation &amp; Self-Bot in Python">
+                                    <!-- Window -->
+                                    <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Title bar -->
+                                    <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                    <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                    <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                    <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">Zade</text>
+
+                                    <!-- Command -->
+                                    <text x="56" y="78" font-family="monospace" font-size="9.5" fill="#00FF8C">$ python zade.py --mode=stealth --guard</text>
+                                    <text x="56" y="94" font-family="monospace" font-size="9" fill="#00F0FF">[Gateway] Logged in as: Zade · WS v10</text>
+                                    <line x1="56" y1="102" x2="344" y2="102" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                    <!-- Bot features & logs -->
+                                    <text x="56" y="120" font-family="monospace" font-size="9" fill="#B028FF" font-weight="bold">🛡️ RATE-LIMIT GUARD:</text>
+                                    <text x="180" y="120" font-family="monospace" font-size="9" fill="#00FF8C">Multi-Layered Active</text>
+
+                                    <text x="56" y="138" font-family="monospace" font-size="9" fill="#808080">Purge Engine:</text>
+                                    <text x="145" y="138" font-family="monospace" font-size="9" fill="#E0E0E0">120 messages sanitized</text>
+
+                                    <text x="56" y="156" font-family="monospace" font-size="9" fill="#808080">Visual Archive:</text>
+                                    <text x="155" y="156" font-family="monospace" font-size="9" fill="#00F0FF">HTML export generated</text>
+
+                                    <!-- Security metrics bar -->
+                                    <rect x="56" y="168" width="288" height="34" rx="4" fill="#141414" stroke="#00FF8C" stroke-width="1"/>
+                                    <text x="68" y="184" font-family="monospace" font-size="9" fill="#00FF8C">Token Safety: Isolated · No Telemetry Leak</text>
+                                    <text x="68" y="196" font-family="monospace" font-size="8.5" fill="#808080">Async Dispatcher: 0 blocked requests</text>
+
+                                    <text x="56" y="222" font-family="monospace" font-size="8.5" fill="#2ACA45">✓ Terminal Remote Control: READY</text>
+
+                                    <!-- Status bar -->
+                                    <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                    <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                    <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Zade core active · Safe Rate-Limits</text>
+                                    <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                    </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="5" aria-label="View Zade details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Zade</h3>
+                                <p class="project-description">Professional-grade Discord self-bot featuring cleanup automation, visual archives, and multi-layered rate-limit protection.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Discord</span>
+                                    <span class="tech-badge">Automation</span>
+                                    <span class="tech-badge">Security</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ZonicExists/Zade" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Zade repository">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="https://github.com/ZonicExists/Zade" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Zade source code">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path
+                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Autonomous Discord AI Agent (Chatbot) -->
+                    <article class="project-card" data-tags="python,ai,automation" data-project-id="6"
+                        data-animate="blur-up" data-delay="240">
+                        <div class="project-card-inner">
+                            <div class="project-image">
+                                <svg class="project-card-svg" width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chatbot - Autonomous Discord AI Agent in Python">
+                                    <!-- Window -->
+                                    <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+                                    <!-- Title bar -->
+                                    <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+                                    <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+                                    <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+                                    <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+                                    <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">Chatbot</text>
+                                    
+                                    <!-- Command -->
+                                    <text x="60" y="78" font-family="monospace" font-size="9.5" fill="#00FF8C">$ python agent.py --graph=langgraph</text>
+                                    <text x="60" y="95" font-family="monospace" font-size="9" fill="#00F0FF">[Agent] LangGraph State Engine · ChromaDB Vector Memory</text>
+                                    <line x1="60" y1="104" x2="340" y2="104" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+
+                                    <!-- Reasoning step -->
+                                    <text x="60" y="122" font-family="monospace" font-size="8.5" fill="#B028FF">🧠 REASONING (LangGraph Node):</text>
+                                    <text x="60" y="138" font-family="monospace" font-size="8.5" fill="#E0E0E0">1. Parse intent → 2. Query ChromaDB → 3. OpenRouter LLM</text>
+
+                                    <!-- Chat exchange -->
+                                    <line x1="60" y1="148" x2="340" y2="148" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="60" y="165" font-family="monospace" font-size="9" fill="#808080">User: How do I configure Niri on Wayland?</text>
+                                    <text x="60" y="183" font-family="monospace" font-size="9" fill="#00FF8C">AI Agent: Checking vector store &amp; generating config...</text>
+                                    <text x="60" y="199" font-family="monospace" font-size="8.5" fill="#00F0FF">↳ Context recalled: ~/.config/niri/config.kdl [Match: 99.1%]</text>
+
+                                    <line x1="60" y1="210" x2="340" y2="210" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="60" y="226" font-family="monospace" font-size="8.5" fill="#808080">Multi-Model Router: Claude / GPT / DeepSeek</text>
+
+                                    <!-- Status bar -->
+                                    <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
+                                    <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+                                    <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Agent Session active · Vector Memory online</text>
+                                    <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
+                                       <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                    </rect>
+                                </svg>
+                                <div class="project-overlay">
+                                    <button class="btn-view" data-project="6" aria-label="View Chatbot details">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Chatbot (AI Agent)</h3>
+                                <p class="project-description">Autonomous Discord AI Agent built with LangGraph state machine, ChromaDB persistent vector memory, and multi-model routing.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">LangGraph</span>
+                                    <span class="tech-badge">AI / Agent</span>
+                                    <span class="tech-badge">ChromaDB</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ZonicExists/chatbot" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Chatbot repository">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                        </svg>
+                                        Code
+                                    </a>
+                                    <a href="https://github.com/ZonicExists/chatbot" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Chatbot source code">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                                             <path
                                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
@@ -1763,7 +1630,7 @@
     <div class="visitor-hud" aria-label="Site visitor count">
         <span class="vc-label">CONN</span>
         <span class="vc-sep">&gt;</span>
-        <span id="visitor-count" class="vc-count">----</span>
+        <span id="visitor-count" class="vc-count">154</span>
         <span class="vc-unit">visits</span>
     </div>
 
