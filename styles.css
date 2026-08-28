@@ -1823,67 +1823,82 @@ body {
 
 .timeline {
     position: relative;
-    padding-left: var(--spacing-md);
+    padding-left: 2rem;
+    margin-left: 0.5rem;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 6px;
+    bottom: 6px;
     width: 2px;
-    background: var(--color-matrix-green);
+    background: linear-gradient(to bottom, var(--color-matrix-green), var(--color-cyan), rgba(var(--color-matrix-green-rgb), 0.2));
     box-shadow: var(--glow-intensity);
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: var(--spacing-md);
-    padding-left: var(--spacing-md);
+    margin-bottom: 2.2rem;
+    padding-left: 1.2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 
 .timeline-marker {
     position: absolute;
-    left: -37px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
+    left: calc(-2rem - 6px);
+    top: 0.2rem;
+    width: 14px;
+    height: 14px;
     background: var(--color-matrix-green);
-    border: 2px solid var(--color-bg);
+    border: 3px solid var(--color-bg);
     border-radius: 50%;
-    box-shadow: var(--glow-intensity);
+    box-shadow: 0 0 10px var(--color-matrix-green);
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.25);
+    background: var(--color-cyan);
+    box-shadow: 0 0 14px var(--color-cyan);
 }
 
 .timeline-item::before {
     content: attr(data-year);
-    position: absolute;
-    left: -80px;
-    top: 0;
-    color: var(--color-cyan);
+    display: inline-block;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    background: rgba(var(--color-cyan-rgb), 0.1);
+    border: 1px solid rgba(var(--color-cyan-rgb), 0.35);
+    padding: 0.2rem 0.65rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.08em;
 }
 
 .timeline-item h3 {
     color: var(--color-matrix-green);
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+    font-weight: 600;
 }
 
 .timeline-item p {
     color: var(--color-text-dim);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {
     .about-content {
         grid-template-columns: 1fr;
-    }
-
-    .timeline-item::before {
-        position: static;
-        display: block;
-        margin-bottom: 0.5rem;
     }
 }
 
