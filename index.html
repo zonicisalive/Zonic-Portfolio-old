@@ -362,59 +362,51 @@
                         <div class="certification-spinner-container">
                             <div class="certification-item" data-animate="fade-up" data-delay="100">
                                 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="60" y="80" width="80" height="60" rx="4" fill="none" stroke="var(--color-matrix-green)"
-                                        stroke-width="6" />
-                                    <path d="M75 80 V55 C75 40 125 40 125 55 V80" fill="none" stroke="var(--color-matrix-green)"
-                                        stroke-width="6" />
-                                    <line x1="40" y1="170" x2="160" y2="170" stroke="var(--color-matrix-green)" stroke-width="2"
-                                        stroke-dasharray="5,5">
-                                        <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s"
-                                            repeatCount="indefinite" />
+                                    <!-- Outer Shield -->
+                                    <path d="M100 30 L160 60 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V60 Z" fill="none" stroke="var(--color-matrix-green)" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- Inner Lock / Core -->
+                                    <rect x="75" y="90" width="50" height="40" rx="6" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
+                                    <path d="M85 90 V75 C85 66 115 66 115 75 V90" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
+                                    <circle cx="100" cy="105" r="4" fill="var(--color-matrix-green)"/>
+                                    <line x1="100" y1="109" x2="100" y2="120" stroke="var(--color-matrix-green)" stroke-width="3"/>
+                                    <!-- Animated Scanner Line -->
+                                    <line x1="45" y1="70" x2="155" y2="70" stroke="var(--color-matrix-green)" stroke-width="2" opacity="0.8">
+                                        <animate attributeName="y1" values="50;160;50" dur="2.5s" repeatCount="indefinite"/>
+                                        <animate attributeName="y2" values="50;160;50" dur="2.5s" repeatCount="indefinite"/>
                                     </line>
                                 </svg>
                                 <span>Google Cybersecurity <strong>[Progress]</strong></span>
                             </div>
                             <div class="certification-item" data-animate="fade-up" data-delay="200">
                                 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M100 30 L160 55 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V55 L100 30"
-                                        fill="none" stroke="var(--color-matrix-green)" stroke-width="6">
-                                        <animate attributeName="stroke-dasharray" values="0,600;600,0" dur="3s"
-                                            repeatCount="indefinite" />
-                                    </path>
-                                    <circle cx="100" cy="100" r="10" fill="var(--color-matrix-green)">
-                                        <animate attributeName="opacity" values="1;0;1" dur="1s"
-                                            repeatCount="indefinite" />
+                                    <!-- Outer Shield -->
+                                    <path d="M100 30 L160 55 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V55 Z" fill="none" stroke="var(--color-matrix-green)" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- Central Security Plus (+) Symbol -->
+                                    <line x1="100" y1="75" x2="100" y2="135" stroke="var(--color-cyan)" stroke-width="8" stroke-linecap="round"/>
+                                    <line x1="70" y1="105" x2="130" y2="105" stroke="var(--color-cyan)" stroke-width="8" stroke-linecap="round"/>
+                                    <!-- Pulse Center -->
+                                    <circle cx="100" cy="105" r="6" fill="var(--color-matrix-green)">
+                                        <animate attributeName="r" values="4;8;4" dur="1.5s" repeatCount="indefinite"/>
+                                        <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
                                     </circle>
                                 </svg>
-
                                 <span>CompTIA Security+ [Planned]</span>
                             </div>
                             <div class="certification-item" data-animate="fade-up" data-delay="300">
-                                <svg width="200" height="200" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="scanner-1" x1="0" x2="0" y1="0" y2="1">
-                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
-                                            <stop offset="50%" stop-color="var(--color-matrix-green)" stop-opacity="1" />
-                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M150 75 H80 V155 H150 M80 115 H140" fill="none" stroke="var(--color-matrix-green)"
-                                        stroke-width="10" stroke-linecap="square">
-                                        <animate attributeName="stroke-dasharray" values="0,400;400,0" dur="2.5s"
-                                            repeatCount="indefinite" />
-                                    </path>
-                                    <circle cx="120" cy="115" r="70" fill="none" stroke="var(--color-matrix-green)" stroke-width="1"
-                                        opacity="0.5">
-                                        <animate attributeName="r" values="70;90;70" dur="2s"
-                                            repeatCount="indefinite" />
-                                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s"
-                                            repeatCount="indefinite" />
+                                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Hexagonal Reticle / Terminal Target -->
+                                    <polygon points="100,35 155,67 155,133 100,165 45,133 45,67" fill="none" stroke="var(--color-matrix-green)" stroke-width="4"/>
+                                    <!-- Target Crosshairs -->
+                                    <line x1="100" y1="45" x2="100" y2="80" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <line x1="100" y1="120" x2="100" y2="155" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <line x1="55" y1="100" x2="80" y2="100" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <line x1="120" y1="100" x2="145" y2="100" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <!-- Target Lock Blip -->
+                                    <circle cx="100" cy="100" r="12" fill="none" stroke="var(--color-matrix-green)" stroke-width="3">
+                                        <animate attributeName="r" values="8;18;8" dur="2s" repeatCount="indefinite"/>
+                                        <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
                                     </circle>
-                                    <rect x="50" y="25" width="140" height="30" fill="url(#scanner-1)">
-                                        <animate attributeName="y" values="25;155;25" dur="3s"
-                                            repeatCount="indefinite" />
-                                    </rect>
+                                    <circle cx="100" cy="100" r="4" fill="var(--color-cyan)"/>
                                 </svg>
                                 <span>eJPT [Planned]</span>
                             </div>
@@ -562,59 +554,51 @@
                             </div>
                             <div class="certification-item" data-animate="fade-up" data-delay="100">
                                 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="60" y="80" width="80" height="60" rx="4" fill="none" stroke="var(--color-matrix-green)"
-                                        stroke-width="6" />
-                                    <path d="M75 80 V55 C75 40 125 40 125 55 V80" fill="none" stroke="var(--color-matrix-green)"
-                                        stroke-width="6" />
-                                    <line x1="40" y1="170" x2="160" y2="170" stroke="var(--color-matrix-green)" stroke-width="2"
-                                        stroke-dasharray="5,5">
-                                        <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s"
-                                            repeatCount="indefinite" />
+                                    <!-- Outer Shield -->
+                                    <path d="M100 30 L160 60 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V60 Z" fill="none" stroke="var(--color-matrix-green)" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- Inner Lock / Core -->
+                                    <rect x="75" y="90" width="50" height="40" rx="6" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
+                                    <path d="M85 90 V75 C85 66 115 66 115 75 V90" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
+                                    <circle cx="100" cy="105" r="4" fill="var(--color-matrix-green)"/>
+                                    <line x1="100" y1="109" x2="100" y2="120" stroke="var(--color-matrix-green)" stroke-width="3"/>
+                                    <!-- Animated Scanner Line -->
+                                    <line x1="45" y1="70" x2="155" y2="70" stroke="var(--color-matrix-green)" stroke-width="2" opacity="0.8">
+                                        <animate attributeName="y1" values="50;160;50" dur="2.5s" repeatCount="indefinite"/>
+                                        <animate attributeName="y2" values="50;160;50" dur="2.5s" repeatCount="indefinite"/>
                                     </line>
                                 </svg>
                                 <span>Google Cybersecurity <strong>[Progress]</strong></span>
                             </div>
                             <div class="certification-item" data-animate="fade-up" data-delay="200">
                                 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M100 30 L160 55 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V55 L100 30"
-                                        fill="none" stroke="var(--color-matrix-green)" stroke-width="6">
-                                        <animate attributeName="stroke-dasharray" values="0,600;600,0" dur="3s"
-                                            repeatCount="indefinite" />
-                                    </path>
-                                    <circle cx="100" cy="100" r="10" fill="var(--color-matrix-green)">
-                                        <animate attributeName="opacity" values="1;0;1" dur="1s"
-                                            repeatCount="indefinite" />
+                                    <!-- Outer Shield -->
+                                    <path d="M100 30 L160 55 V110 C160 150 100 175 100 175 C100 175 40 150 40 110 V55 Z" fill="none" stroke="var(--color-matrix-green)" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- Central Security Plus (+) Symbol -->
+                                    <line x1="100" y1="75" x2="100" y2="135" stroke="var(--color-cyan)" stroke-width="8" stroke-linecap="round"/>
+                                    <line x1="70" y1="105" x2="130" y2="105" stroke="var(--color-cyan)" stroke-width="8" stroke-linecap="round"/>
+                                    <!-- Pulse Center -->
+                                    <circle cx="100" cy="105" r="6" fill="var(--color-matrix-green)">
+                                        <animate attributeName="r" values="4;8;4" dur="1.5s" repeatCount="indefinite"/>
+                                        <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
                                     </circle>
                                 </svg>
-
                                 <span>CompTIA Security+ [Planned]</span>
                             </div>
                             <div class="certification-item" data-animate="fade-up" data-delay="300">
-                                <svg width="200" height="200" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="scanner-2" x1="0" x2="0" y1="0" y2="1">
-                                            <stop offset="0%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
-                                            <stop offset="50%" stop-color="var(--color-matrix-green)" stop-opacity="1" />
-                                            <stop offset="100%" stop-color="var(--color-matrix-green)" stop-opacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M150 75 H80 V155 H150 M80 115 H140" fill="none" stroke="var(--color-matrix-green)"
-                                        stroke-width="10" stroke-linecap="square">
-                                        <animate attributeName="stroke-dasharray" values="0,400;400,0" dur="2.5s"
-                                            repeatCount="indefinite" />
-                                    </path>
-                                    <circle cx="120" cy="115" r="70" fill="none" stroke="var(--color-matrix-green)" stroke-width="1"
-                                        opacity="0.5">
-                                        <animate attributeName="r" values="70;90;70" dur="2s"
-                                            repeatCount="indefinite" />
-                                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s"
-                                            repeatCount="indefinite" />
+                                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Hexagonal Reticle / Terminal Target -->
+                                    <polygon points="100,35 155,67 155,133 100,165 45,133 45,67" fill="none" stroke="var(--color-matrix-green)" stroke-width="4"/>
+                                    <!-- Target Crosshairs -->
+                                    <line x1="100" y1="45" x2="100" y2="80" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <line x1="100" y1="120" x2="100" y2="155" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <line x1="55" y1="100" x2="80" y2="100" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <line x1="120" y1="100" x2="145" y2="100" stroke="var(--color-cyan)" stroke-width="3"/>
+                                    <!-- Target Lock Blip -->
+                                    <circle cx="100" cy="100" r="12" fill="none" stroke="var(--color-matrix-green)" stroke-width="3">
+                                        <animate attributeName="r" values="8;18;8" dur="2s" repeatCount="indefinite"/>
+                                        <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
                                     </circle>
-                                    <rect x="50" y="25" width="140" height="30" fill="url(#scanner-2)">
-                                        <animate attributeName="y" values="25;155;25" dur="3s"
-                                            repeatCount="indefinite" />
-                                    </rect>
+                                    <circle cx="100" cy="100" r="4" fill="var(--color-cyan)"/>
                                 </svg>
                                 <span>eJPT [Planned]</span>
                             </div>
