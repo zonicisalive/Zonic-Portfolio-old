@@ -1,43 +1,49 @@
-<!-- assets/project5.svg - Zade Discord Self-Bot & Automation -->
 <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zade - Discord Automation &amp; Self-Bot in Python">
+  <style>
+    :root {
+      --color-matrix-green: #00FF8C;
+      --color-cyan: #00F0FF;
+      --color-purple: #B028FF;
+    }
+  </style>
   <!-- Window -->
-  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="2"/>
   <!-- Title bar -->
-  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.08"/>
   <circle cx="60" cy="44" r="5" fill="#FF6059"/>
   <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
   <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">Zade</text>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="var(--color-matrix-green, #00FF8C)" text-anchor="middle" font-weight="bold">Zade</text>
 
   <!-- Command -->
-  <text x="56" y="78" font-family="monospace" font-size="9.5" fill="#00FF8C">$ python zade.py --mode=stealth --guard</text>
-  <text x="56" y="94" font-family="monospace" font-size="9" fill="#00F0FF">[Gateway] Logged in as: Zade · WS v10</text>
-  <line x1="56" y1="102" x2="344" y2="102" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="56" y="78" font-family="monospace" font-size="9.5" fill="var(--color-matrix-green, #00FF8C)">$ python zade.py --mode=stealth --guard</text>
+  <text x="56" y="94" font-family="monospace" font-size="9" fill="var(--color-cyan, #00F0FF)">[Gateway] Logged in as: Zade · WS v10</text>
+  <line x1="56" y1="102" x2="344" y2="102" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
 
   <!-- Bot features & logs -->
-  <text x="56" y="120" font-family="monospace" font-size="9" fill="#B028FF" font-weight="bold">🛡️ RATE-LIMIT GUARD:</text>
-  <text x="180" y="120" font-family="monospace" font-size="9" fill="#00FF8C">Multi-Layered Active</text>
+  <text x="56" y="120" font-family="monospace" font-size="9" fill="var(--color-purple, #B028FF)" font-weight="bold">🛡️ RATE-LIMIT GUARD:</text>
+  <text x="180" y="120" font-family="monospace" font-size="9" fill="var(--color-matrix-green, #00FF8C)">Multi-Layered Active</text>
 
   <text x="56" y="138" font-family="monospace" font-size="9" fill="#808080">Purge Engine:</text>
   <text x="145" y="138" font-family="monospace" font-size="9" fill="#E0E0E0">120 messages sanitized</text>
 
   <text x="56" y="156" font-family="monospace" font-size="9" fill="#808080">Visual Archive:</text>
-  <text x="155" y="156" font-family="monospace" font-size="9" fill="#00F0FF">HTML export generated</text>
+  <text x="155" y="156" font-family="monospace" font-size="9" fill="var(--color-cyan, #00F0FF)">HTML export generated</text>
 
   <!-- Security metrics bar -->
-  <rect x="56" y="168" width="288" height="34" rx="4" fill="#141414" stroke="#00FF8C" stroke-width="1"/>
-  <text x="68" y="184" font-family="monospace" font-size="9" fill="#00FF8C">Token Safety: Isolated · No Telemetry Leak</text>
+  <rect x="56" y="168" width="288" height="34" rx="4" fill="#141414" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="1"/>
+  <text x="68" y="184" font-family="monospace" font-size="9" fill="var(--color-matrix-green, #00FF8C)">Token Safety: Isolated · No Telemetry Leak</text>
   <text x="68" y="196" font-family="monospace" font-size="8.5" fill="#808080">Async Dispatcher: 0 blocked requests</text>
 
   <text x="56" y="222" font-family="monospace" font-size="8.5" fill="#2ACA45">✓ Terminal Remote Control: READY</text>
 
   <!-- Status bar -->
-  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="40" y="242" width="320" height="28" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
   <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-  <text x="68" y="261" font-family="monospace" font-size="9" fill="#00FF8C">Zade core active · Safe Rate-Limits</text>
-  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  <text x="68" y="261" font-family="monospace" font-size="9" fill="var(--color-matrix-green, #00FF8C)">Zade core active · Safe Rate-Limits</text>
+  <rect x="330" y="252" width="6" height="10" fill="var(--color-matrix-green, #00FF8C)">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 </svg>

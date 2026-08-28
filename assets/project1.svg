@@ -1,24 +1,30 @@
-<!-- assets/project1.svg - BitFM Linux File Manager -->
 <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BitFM - Modern Linux File Manager in C++ and Qt">
+  <style>
+    :root {
+      --color-matrix-green: #00FF8C;
+      --color-cyan: #00F0FF;
+      --color-purple: #B028FF;
+    }
+  </style>
   <!-- Window Body -->
-  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="#00FF8C" stroke-width="2"/>
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="2"/>
   <!-- Title bar -->
-  <rect x="40" y="30" width="320" height="28" rx="8" fill="#00FF8C" fill-opacity="0.08"/>
-  <rect x="40" y="50" width="320" height="8" fill="#00FF8C" fill-opacity="0.08"/>
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.08"/>
   <circle cx="60" cy="44" r="5" fill="#FF6059"/>
   <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
   <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
-  <text x="200" y="49" font-family="monospace" font-size="10" fill="#00FF8C" text-anchor="middle" font-weight="bold">BitFM</text>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="var(--color-matrix-green, #00FF8C)" text-anchor="middle" font-weight="bold">BitFM</text>
   
   <!-- Path Navigation Bar -->
-  <rect x="52" y="66" width="296" height="20" rx="4" fill="#141414" stroke="#00FF8C" stroke-width="0.75" stroke-opacity="0.5"/>
-  <text x="62" y="80" font-family="monospace" font-size="9" fill="#00F0FF">📍 /home/zonic/projects/BitFM/src</text>
+  <rect x="52" y="66" width="296" height="20" rx="4" fill="#141414" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.75" stroke-opacity="0.5"/>
+  <text x="62" y="80" font-family="monospace" font-size="9" fill="var(--color-cyan, #00F0FF)">📍 /home/zonic/projects/BitFM/src</text>
   
   <!-- Sidebar & File Browser Layout -->
-  <rect x="52" y="92" width="75" height="142" rx="4" fill="#0f0f0f" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
-  <text x="58" y="106" font-family="monospace" font-size="8.5" fill="#B028FF" font-weight="bold">PLACES</text>
+  <rect x="52" y="92" width="75" height="142" rx="4" fill="#0f0f0f" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="58" y="106" font-family="monospace" font-size="8.5" fill="var(--color-purple, #B028FF)" font-weight="bold">PLACES</text>
   <text x="58" y="122" font-family="monospace" font-size="8" fill="#E0E0E0">🏠 Home</text>
-  <text x="58" y="136" font-family="monospace" font-size="8" fill="#00FF8C">📁 Projects</text>
+  <text x="58" y="136" font-family="monospace" font-size="8" fill="var(--color-matrix-green, #00FF8C)">📁 Projects</text>
   <text x="58" y="150" font-family="monospace" font-size="8" fill="#808080">💾 Root (ext4)</text>
   <text x="58" y="164" font-family="monospace" font-size="8" fill="#808080">☁️ Wayland</text>
 
@@ -26,36 +32,36 @@
   <text x="135" y="105" font-family="monospace" font-size="8.5" fill="#808080">Name</text>
   <text x="250" y="105" font-family="monospace" font-size="8.5" fill="#808080">Size</text>
   <text x="300" y="105" font-family="monospace" font-size="8.5" fill="#808080">Perm</text>
-  <line x1="133" y1="110" x2="348" y2="110" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="133" y1="110" x2="348" y2="110" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
 
   <!-- File rows -->
-  <text x="135" y="123" font-family="monospace" font-size="8.5" fill="#00FF8C">📁 core/</text>
+  <text x="135" y="123" font-family="monospace" font-size="8.5" fill="var(--color-matrix-green, #00FF8C)">📁 core/</text>
   <text x="250" y="123" font-family="monospace" font-size="8.5" fill="#808080">4.0 KB</text>
   <text x="300" y="123" font-family="monospace" font-size="8.5" fill="#E0E0E0">drwxr-xr-x</text>
 
-  <text x="135" y="139" font-family="monospace" font-size="8.5" fill="#00F0FF">📄 main.cpp</text>
+  <text x="135" y="139" font-family="monospace" font-size="8.5" fill="var(--color-cyan, #00F0FF)">📄 main.cpp</text>
   <text x="250" y="139" font-family="monospace" font-size="8.5" fill="#808080">8.2 KB</text>
   <text x="300" y="139" font-family="monospace" font-size="8.5" fill="#E0E0E0">-rw-r--r--</text>
 
-  <text x="135" y="155" font-family="monospace" font-size="8.5" fill="#00F0FF">📄 window.cpp</text>
+  <text x="135" y="155" font-family="monospace" font-size="8.5" fill="var(--color-cyan, #00F0FF)">📄 window.cpp</text>
   <text x="250" y="155" font-family="monospace" font-size="8.5" fill="#808080">14.6 KB</text>
   <text x="300" y="155" font-family="monospace" font-size="8.5" fill="#E0E0E0">-rw-r--r--</text>
 
-  <text x="135" y="171" font-family="monospace" font-size="8.5" fill="#B028FF">⚙️ CMakeLists.txt</text>
+  <text x="135" y="171" font-family="monospace" font-size="8.5" fill="var(--color-purple, #B028FF)">⚙️ CMakeLists.txt</text>
   <text x="250" y="171" font-family="monospace" font-size="8.5" fill="#808080">2.1 KB</text>
   <text x="300" y="171" font-family="monospace" font-size="8.5" fill="#E0E0E0">-rw-r--r--</text>
 
-  <line x1="133" y1="180" x2="348" y2="180" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="133" y1="180" x2="348" y2="180" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
   <!-- Performance Badge -->
-  <text x="135" y="196" font-family="monospace" font-size="8.5" fill="#00FF8C" font-weight="bold">⚡ Load Time: 12ms · Wayland (Niri/Hyprland)</text>
+  <text x="135" y="196" font-family="monospace" font-size="8.5" fill="var(--color-matrix-green, #00FF8C)" font-weight="bold">⚡ Load Time: 12ms · Wayland (Niri/Hyprland)</text>
   <text x="135" y="210" font-family="monospace" font-size="8" fill="#808080">Memory: 24MB · Qt6 / C++20 Native Engine</text>
 
   <!-- Status bar -->
-  <rect x="40" y="242" width="320" height="28" fill="#00FF8C" fill-opacity="0.06"/>
-  <line x1="40" y1="242" x2="360" y2="242" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="40" y="242" width="320" height="28" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
   <text x="60" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
-  <text x="72" y="261" font-family="monospace" font-size="9" fill="#00FF8C">BitFM running · 42 items indexed</text>
-  <rect x="330" y="252" width="6" height="10" fill="#00FF8C">
-      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  <text x="72" y="261" font-family="monospace" font-size="9" fill="var(--color-matrix-green, #00FF8C)">BitFM running · 42 items indexed</text>
+  <rect x="330" y="252" width="6" height="10" fill="var(--color-matrix-green, #00FF8C)">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 </svg>
