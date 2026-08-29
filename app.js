@@ -1316,6 +1316,20 @@ class ProjectModal {
         code: '',
         images: ['assets/project6.svg'],
         demoUrl: 'https://github.com/ZonicExists/chatbot'
+      },
+      '7': {
+        title: 'Jugglr',
+        description: 'An intelligent, high-performance filesystem automation & threat-defense daemon built in Rust. Features declarative TOML rules, inotify engine, security quarantine, leaked secrets scanner, and native desktop GUI.',
+        features: [
+          'Event-driven inotify watcher with sliding-window debounce & recursive directory monitoring',
+          'Declarative TOML rule engine with regex captures, EXIF/ID3 extractors & MIME inspection',
+          'Threat Defense & Quarantine: Double-extension detection, RTLO traps, secret scanner & VirusTotal v3',
+          'Atomic actions (move, copy, template rename, trash, zip-safe extract) & ~7.1 MB RSS footprint'
+        ],
+        tech: ['Rust', 'Linux', 'Security', 'Automation', 'System'],
+        code: '',
+        images: ['assets/project7.svg'],
+        demoUrl: 'https://github.com/ZonicExists/Jugglr'
       }
     };
 

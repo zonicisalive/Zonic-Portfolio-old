@@ -84,6 +84,11 @@
 - **Tech Stack**: `Python`, `LangGraph`, `AI / Agent`, `ChromaDB`
 - **Repository**: [https://github.com/ZonicExists/chatbot](https://github.com/ZonicExists/chatbot)
 
+### 7. Jugglr
+- **Description**: Intelligent, high-performance filesystem automation & threat-defense daemon built in Rust. Features declarative TOML rules, inotify engine, security quarantine, leaked secrets scanner, and native desktop GUI.
+- **Tech Stack**: `Rust`, `Linux`, `Security`, `Automation`, `System`
+- **Repository**: [https://github.com/ZonicExists/Jugglr](https://github.com/ZonicExists/Jugglr)
+
 ---
 
 ## 💻 Interactive Site Features & Terminal

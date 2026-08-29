@@ -1,0 +1,44 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jugglr - Filesystem Automation and Threat-Defense Daemon in Rust">
+  <style>
+    :root {
+      --color-matrix-green: #00FF8C;
+      --color-cyan: #00F0FF;
+      --color-purple: #B028FF;
+    }
+  </style>
+  <!-- Window -->
+  <rect x="40" y="30" width="320" height="240" rx="8" fill="#0a0a0a" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="2"/>
+  <!-- Title bar -->
+  <rect x="40" y="30" width="320" height="28" rx="8" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.08"/>
+  <rect x="40" y="50" width="320" height="8" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.08"/>
+  <circle cx="60" cy="44" r="5" fill="#FF6059"/>
+  <circle cx="78" cy="44" r="5" fill="#FEBC30"/>
+  <circle cx="96" cy="44" r="5" fill="#2ACA45"/>
+  <text x="200" y="49" font-family="monospace" font-size="10" fill="var(--color-matrix-green, #00FF8C)" text-anchor="middle" font-weight="bold">Jugglr</text>
+
+  <!-- Command -->
+  <text x="56" y="78" font-family="monospace" font-size="9.5" fill="var(--color-matrix-green, #00FF8C)">$ jugglr --daemon --config rules.toml</text>
+  <text x="56" y="94" font-family="monospace" font-size="9" fill="var(--color-cyan, #00F0FF)">[Watcher] inotify active · Debounce: 500ms · 7.1MB RSS</text>
+  <line x1="56" y1="102" x2="344" y2="102" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Threat defense & automation rows -->
+  <text x="56" y="120" font-family="monospace" font-size="9" fill="var(--color-purple, #B028FF)" font-weight="bold">🛡️ THREAT DEFENSE &amp; QUARANTINE:</text>
+  <text x="56" y="138" font-family="monospace" font-size="8.5" fill="#2ACA45">✓ Neutralized: resume.pdf.sh (Double-Ext)</text>
+  <text x="56" y="154" font-family="monospace" font-size="8.5" fill="var(--color-cyan, #00F0FF)">🔒 Secret Scanner: AWS / OpenAI / SSH (0 leaks)</text>
+
+  <!-- Pipeline Box -->
+  <rect x="56" y="166" width="288" height="36" rx="4" fill="#141414" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="1"/>
+  <text x="68" y="181" font-family="monospace" font-size="8.5" fill="var(--color-matrix-green, #00FF8C)">⚡ Action: ~/Downloads/invoice.pdf</text>
+  <text x="68" y="194" font-family="monospace" font-size="8.5" fill="#808080">↳ Atomic Move → ~/Finance/2026/ (12ms)</text>
+
+  <text x="56" y="224" font-family="monospace" font-size="8.5" fill="var(--color-cyan, #00F0FF)">Rules: Declarative TOML · EXIF / ID3 / Regex Engine</text>
+
+  <!-- Status bar -->
+  <rect x="40" y="242" width="320" height="28" fill="var(--color-matrix-green, #00FF8C)" fill-opacity="0.06"/>
+  <line x1="40" y1="242" x2="360" y2="242" stroke="var(--color-matrix-green, #00FF8C)" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="56" y="261" font-family="monospace" font-size="9" fill="#2ACA45" font-weight="bold">✓</text>
+  <text x="68" y="261" font-family="monospace" font-size="9" fill="var(--color-matrix-green, #00FF8C)">Jugglr Daemon active · 0.0% CPU [Rust]</text>
+  <rect x="330" y="252" width="6" height="10" fill="var(--color-matrix-green, #00FF8C)">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
