@@ -128,76 +128,208 @@ const PREFERS_REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduc
 
 
 // ============================================
-// STELLAR FIELD (THREE.JS)
+// CINEMATIC SCROLL 3D ENGINE (THREE.JS)
+// Atmospheric Cyberspace & Digital Hyperspace
 // ============================================
 class StellarField {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
-    if (!this.canvas || typeof THREE === 'undefined' || PREFERS_REDUCED_MOTION) {
+    if (!this.canvas || typeof THREE === 'undefined') {
       return;
     }
 
+    this.reducedMotion = typeof PREFERS_REDUCED_MOTION !== 'undefined' ? PREFERS_REDUCED_MOTION : false;
+    this.isVisible = true;
+    this.currentProgress = 0;
+    this.targetProgress = 0;
+    this.velocity = 0;
+
+    // Default theme colors (Matrix Green, Cyan, Purple)
+    this.primaryColor = new THREE.Color('#00FF8C');
+    this.secondaryColor = new THREE.Color('#00F0FF');
+    this.tertiaryColor = new THREE.Color('#B028FF');
+
+    this.initScene();
+    this.createCyberGrid();
+    this.createDataParticles();
+    this.createDigitalStreamColumns();
+
+    this.bindEvents();
+    this.handleScroll();
+    this.animate = this.animate.bind(this);
+    requestAnimationFrame(this.animate);
+  }
+
+  initScene() {
     this.scene = new THREE.Scene();
+    // Deep cyber fog to fade particles into black depth
+    this.scene.fog = new THREE.FogExp2(0x000000, 0.0075);
+
     this.camera = new THREE.PerspectiveCamera(
-      65,
+      60,
       window.innerWidth / window.innerHeight,
       0.1,
-      1000
+      600
     );
-    this.camera.position.z = 6;
+    this.camera.position.set(0, 0, 10);
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      alpha: true
+      alpha: true,
+      powerPreference: 'high-performance',
+      antialias: false
     });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-
-    this.scrollTarget = 0;
-    this.starCount = 1200;
-
-    this.createStars();
-    this.animate = this.animate.bind(this);
-
-    window.addEventListener('resize', () => this.handleResize());
-    window.addEventListener('scroll', () => this.handleScroll());
-    this.handleScroll();
-    this.animate();
   }
 
-  createStars() {
+  // Ground perspective cyber grid (anchored low at the bottom of the viewport)
+  createCyberGrid() {
+    const gridLength = 260;
+    const gridWidth = 36;
+    const lineSpacing = 2.4;
+    const floorY = -5.0;
+
+    const floorPoints = [];
+    // Longitudinal lines (Z-direction)
+    for (let x = -gridWidth / 2; x <= gridWidth / 2; x += lineSpacing) {
+      floorPoints.push(new THREE.Vector3(x, floorY, 15));
+      floorPoints.push(new THREE.Vector3(x, floorY, -gridLength));
+    }
+    // Cross lines (X-direction)
+    for (let z = 15; z >= -gridLength; z -= lineSpacing * 2) {
+      floorPoints.push(new THREE.Vector3(-gridWidth / 2, floorY, z));
+      floorPoints.push(new THREE.Vector3(gridWidth / 2, floorY, z));
+    }
+
+    const floorGeo = new THREE.BufferGeometry().setFromPoints(floorPoints);
+    this.gridMaterial = new THREE.LineBasicMaterial({
+      color: this.primaryColor,
+      transparent: true,
+      opacity: 0.18,
+      blending: THREE.AdditiveBlending
+    });
+    this.floorGrid = new THREE.LineSegments(floorGeo, this.gridMaterial);
+    this.scene.add(this.floorGrid);
+  }
+
+  // Deep field of glowing cyber particles & digital dust (open center corridor)
+  createDataParticles() {
+    this.particleCount = 1800;
     const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(this.starCount * 3);
-    const colors = new Float32Array(this.starCount * 3);
-    const tempColor = new THREE.Color();
+    const positions = new Float32Array(this.particleCount * 3);
+    const colors = new Float32Array(this.particleCount * 3);
 
-    for (let i = 0; i < this.starCount; i++) {
+    for (let i = 0; i < this.particleCount; i++) {
       const i3 = i * 3;
-      positions[i3] = (Math.random() - 0.5) * 18;
-      positions[i3 + 1] = (Math.random() - 0.5) * 18;
-      positions[i3 + 2] = (Math.random() - 0.5) * 18;
 
-      tempColor.setHSL(0.36 + Math.random() * 0.1, 1, 0.5);
-      colors[i3] = tempColor.r;
-      colors[i3 + 1] = tempColor.g;
-      colors[i3 + 2] = tempColor.b;
+      // Keep center viewing corridor unobstructed: place particles mainly in periphery and depth
+      let x = (Math.random() - 0.5) * 38;
+      let y = (Math.random() - 0.5) * 22;
+      const z = 15 - Math.random() * 230;
+
+      // Clear corridor right in front of the camera
+      if (Math.abs(x) < 4.5 && Math.abs(y) < 3.5 && z > -20) {
+        x += (x >= 0 ? 5.5 : -5.5);
+      }
+
+      positions[i3] = x;
+      positions[i3 + 1] = y;
+      positions[i3 + 2] = z;
+
+      // Palette: 60% Matrix Green, 30% Cyan, 10% Purple
+      const rand = Math.random();
+      let col = this.primaryColor;
+      if (rand > 0.9) col = this.tertiaryColor;
+      else if (rand > 0.6) col = this.secondaryColor;
+
+      colors[i3] = col.r;
+      colors[i3 + 1] = col.g;
+      colors[i3 + 2] = col.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    const material = new THREE.PointsMaterial({
+    this.particleMaterial = new THREE.PointsMaterial({
       vertexColors: true,
-      size: 0.08,
+      size: 0.085,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.75,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       sizeAttenuation: true
     });
 
-    this.points = new THREE.Points(geometry, material);
-    this.scene.add(this.points);
+    this.particles = new THREE.Points(geometry, this.particleMaterial);
+    this.scene.add(this.particles);
+  }
+
+  // Peripheral vertical digital stream columns (matching the Matrix rain feel without center clutter)
+  createDigitalStreamColumns() {
+    this.colCount = 45;
+    this.dropsPerCol = 10;
+    const total = this.colCount * this.dropsPerCol;
+
+    const positions = new Float32Array(total * 3);
+    const colors = new Float32Array(total * 3);
+    this.colSpeeds = new Float32Array(this.colCount);
+    this.colBaseY = new Float32Array(this.colCount);
+
+    let ptr = 0;
+    for (let c = 0; c < this.colCount; c++) {
+      // Position streams strictly on the left/right flanks and in depth
+      const side = c % 2 === 0 ? 1 : -1;
+      const x = side * (8.5 + Math.random() * 12);
+      const z = 10 - Math.random() * 220;
+      const baseY = 6 - Math.random() * 12;
+
+      this.colBaseY[c] = baseY;
+      this.colSpeeds[c] = 0.03 + Math.random() * 0.05;
+
+      for (let d = 0; d < this.dropsPerCol; d++) {
+        const idx = ptr * 3;
+        positions[idx] = x;
+        positions[idx + 1] = baseY + d * 0.4;
+        positions[idx + 2] = z;
+
+        const fade = 1 - (d / this.dropsPerCol);
+        if (d === 0) {
+          colors[idx] = 1; colors[idx + 1] = 1; colors[idx + 2] = 1; // Head drop
+        } else {
+          colors[idx] = this.primaryColor.r * fade * 0.7;
+          colors[idx + 1] = this.primaryColor.g * fade;
+          colors[idx + 2] = this.primaryColor.b * fade * 0.5;
+        }
+        ptr++;
+      }
+    }
+
+    this.streamGeo = new THREE.BufferGeometry();
+    this.streamGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    this.streamGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    this.streamMat = new THREE.PointsMaterial({
+      vertexColors: true,
+      size: 0.1,
+      transparent: true,
+      opacity: 0.65,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true
+    });
+
+    this.streams = new THREE.Points(this.streamGeo, this.streamMat);
+    this.scene.add(this.streams);
+  }
+
+  bindEvents() {
+    window.addEventListener('resize', () => this.handleResize(), { passive: true });
+    window.addEventListener('scroll', () => this.handleScroll(), { passive: true });
+
+    document.addEventListener('visibilitychange', () => {
+      this.isVisible = !document.hidden;
+    });
   }
 
   handleResize() {
@@ -207,16 +339,95 @@ class StellarField {
   }
 
   handleScroll() {
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    this.scrollTarget = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    this.targetProgress = docHeight > 0 ? Math.min(Math.max(window.scrollY / docHeight, 0), 1) : 0;
+  }
+
+  updatePalette(primaryHex, secondaryHex, tertiaryHex) {
+    this.primaryColor.set(primaryHex || '#00FF8C');
+    this.secondaryColor.set(secondaryHex || '#00F0FF');
+    this.tertiaryColor.set(tertiaryHex || '#B028FF');
+
+    // Update floor grid
+    if (this.gridMaterial) this.gridMaterial.color.copy(this.primaryColor);
+
+    // Update particles
+    if (this.particles) {
+      const colors = this.particles.geometry.attributes.color.array;
+      for (let i = 0; i < this.particleCount; i++) {
+        const i3 = i * 3;
+        const rand = (i % 10) / 10;
+        let col = this.primaryColor;
+        if (rand > 0.8) col = this.secondaryColor;
+        else if (rand > 0.6) col = this.tertiaryColor;
+
+        colors[i3] = col.r;
+        colors[i3 + 1] = col.g;
+        colors[i3 + 2] = col.b;
+      }
+      this.particles.geometry.attributes.color.needsUpdate = true;
+    }
   }
 
   animate() {
-    if (!this.points) return;
+    if (!this.isVisible) {
+      requestAnimationFrame(this.animate);
+      return;
+    }
 
-    this.points.rotation.y += 0.0008;
-    const targetX = this.scrollTarget * 0.6 - 0.3;
-    this.points.rotation.x += (targetX - this.points.rotation.x) * 0.015;
+    // Weighted inertia (video scrubbing sensation)
+    const lerpRate = this.reducedMotion ? 0.035 : 0.055;
+    const prevProgress = this.currentProgress;
+    this.currentProgress += (this.targetProgress - this.currentProgress) * lerpRate;
+    this.velocity = this.currentProgress - prevProgress;
+
+    const p = this.currentProgress;
+
+    // Smooth forward travel along Z axis (from Z = 10 down to Z = -160)
+    const startZ = 10;
+    const endZ = -160;
+    const cameraZ = startZ + p * (endZ - startZ);
+
+    // Gentle organic swaying that feels like floating through space
+    const targetX = Math.sin(p * Math.PI * 2.0) * 1.2;
+    const targetY = Math.cos(p * Math.PI * 1.5) * 0.4;
+
+    this.camera.position.z = cameraZ;
+    this.camera.position.x += (targetX - this.camera.position.x) * 0.06;
+    this.camera.position.y += (targetY - this.camera.position.y) * 0.06;
+
+    // Look straight ahead down the cyber corridor
+    const lookAheadDist = 20;
+    this.camera.lookAt(targetX * 0.2, targetY * 0.2, cameraZ - lookAheadDist);
+
+    // Subtle banking/roll
+    const targetRoll = -Math.sin(p * Math.PI * 2.0) * 0.03 + this.velocity * 2.0;
+    this.camera.rotation.z += (targetRoll - this.camera.rotation.z) * 0.05;
+
+    // Animate peripheral digital rain streams
+    if (this.streams && this.streamGeo) {
+      const pos = this.streamGeo.attributes.position.array;
+      let ptr = 0;
+      for (let c = 0; c < this.colCount; c++) {
+        this.colBaseY[c] -= this.colSpeeds[c];
+        if (this.colBaseY[c] < -6.0) {
+          this.colBaseY[c] = 7.0;
+        }
+        const baseY = this.colBaseY[c];
+
+        for (let d = 0; d < this.dropsPerCol; d++) {
+          const idx = ptr * 3;
+          pos[idx + 1] = baseY + d * 0.4;
+          ptr++;
+        }
+      }
+      this.streamGeo.attributes.position.needsUpdate = true;
+    }
+
+    // Subtle ambient particle drift
+    if (this.particles) {
+      this.particles.rotation.z = p * Math.PI * 0.25;
+    }
 
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.animate);
@@ -3126,6 +3337,11 @@ class MatrixCustomizer {
     if (window.skillsRadarChart && typeof window.skillsRadarChart.updateColors === 'function') {
       window.skillsRadarChart.updateColors(palette.primary);
     }
+
+    // Update 3D cinematic scroll engine palette
+    if (window.stellarField && typeof window.stellarField.updatePalette === 'function') {
+      window.stellarField.updatePalette(palette.primary, palette.secondary, palette.tertiary);
+    }
   }
 
   _darkenColor(hex, percent) {
@@ -3492,7 +3708,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Matrix Rain
     const matrixRain = new MatrixRain('matrix-canvas');
     window.matrixRain = matrixRain;
-    new StellarField('stellar-canvas');
+    window.stellarField = new StellarField('stellar-canvas');
 
     // Initialize Custom Cursor (only on non-touch devices)
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
