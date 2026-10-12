@@ -1,5 +1,7 @@
 # Zonic Portfolio (OLD WONT BE UPDATED NOW)
 
+Check latest site (Code isn't published of it): https://zonicisalive.com  
+
 Welcome to my personal portfolio! This project showcases my skills, certifications, and projects in a highly interactive, "Matrix" inspired design.
 
 ## Features
