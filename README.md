@@ -1,8 +1,8 @@
-# Zonic Portfolio
+# Zonic Portfolio (OLD WONT BE UPDATED NOW)
 
 Welcome to my personal portfolio! This project showcases my skills, certifications, and projects in a highly interactive, "Matrix" inspired design.
 
-## 🚀 Features
+## Features
 
 - **Matrix Rain Background:** An immersive, dynamic canvas-based Matrix rain effect.
 - **WebGL Starfield:** A cosmic background layer for depth and visual appeal.
@@ -12,7 +12,7 @@ Welcome to my personal portfolio! This project showcases my skills, certificatio
 - **Responsive Design:** Optimized for all screen sizes, from mobile to ultra-wide desktops.
 - **Glassmorphism & Neon Aesthetics:** Modern UI elements with blurred backgrounds and neon highlights.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Frontend:** HTML5, CSS3 (Vanilla), JavaScript (ES6+)
 - **Animations:** [Anime.js](https://animejs.com/)
@@ -20,14 +20,14 @@ Welcome to my personal portfolio! This project showcases my skills, certificatio
 - **Icons/Visuals:** Custom SVG illustrations
 - **Deployment:** GitHub Pages (zonicisalive.com)
 
-## 📁 Project Structure
+## Project Structure
 
 - `index.html`: Main entry point and structural layout.
 - `styles.css`: Comprehensive styling for the entire portfolio.
 - `app.js`: Core logic for animations, terminal, and interactivity.
 - `assets/`: Folder containing images, SVGs, and other media.
 
-## ⌨️ Terminal Commands
+## Terminal Commands
 
 The simulated terminal supports several commands to interact with the portfolio:
 - `help`: Lists all available commands.
@@ -37,6 +37,6 @@ The simulated terminal supports several commands to interact with the portfolio:
 - `contact`: Provides contact information.
 - `clear`: Clears the terminal screen.
 
-## 📜 License
+## License
 
-This project is personal and all rights are reserved. Feel free to explore the code for inspiration!
+This project was personal. Feel free to use as you wish. Please remove info before using it!
